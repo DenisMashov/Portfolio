@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Space Grotesk", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     background-color: #1a1a1a;
     color: #fff;
     display: flex;
@@ -29,17 +29,19 @@ body {
     height: 150px;
     object-fit: cover;
     display: block;
-    margin: 15px 404px;
+    margin: 15px auto; /* Adjusted for centered avatar */
     border-radius: 50%;
 }
 
 .header h2 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
+    margin: 10px 0; /* Same margin as bio and location */
     color: #fff;
 }
+
 .bio {
     font-size: 1.2rem;
-    margin: 10px 0;
+    margin: 5px 0; /* Same margin as header and location */
     color: #bbb;
     display: flex;
     justify-content: center;
@@ -53,15 +55,16 @@ body {
 .bio i {
     color: #f39c12;
 }
+
 .location {
     font-size: 1.2rem;
-    margin: 15px 0;
+    margin: 5px 0; /* Same margin as header and bio */
     color: #bbb;
     display: flex;
     justify-content: center;
     align-items: center;
-   margin-right: 10px;
 }
+
 .location i {
     color: #e74c3c;
 }
@@ -97,16 +100,16 @@ body {
 }
 
 .project-name a {
-    color: white; /* Set text color to white */
-    font-size: 1.5rem; /* Slightly larger font size */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth color transition when hovered */
-    margin-bottom: 15px; /* Space between project name and position */
-    display: block; /* Ensure it's treated like a block element */
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-bottom: 15px;
+    display: block;
 }
 
 .project-name a:hover {
-    color: #b1b0b1; /* Change color on hover (optional) */
+    color: #b1b0b1;
 }
 
 .project-position {
@@ -116,7 +119,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
-    margin-top: 5px; /* Space between name and position */
+    margin-top: 5px;
 }
 
 .project-position i {
