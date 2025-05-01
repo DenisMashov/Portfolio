@@ -112,25 +112,37 @@ body {
     color: #b1b0b1;
 }
 
-.project-position {
-    font-size: 1rem;
-    color: #bbb;
+.project-icons {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
     margin-top: 5px;
 }
 
-.project-position i {
-    margin-right: 10px;
-    color: #3498db;
+.project-icons i {
+    font-size: 1.4rem;
+    margin: 5px;
+    color: #fff;
+    transition: color 0.3s ease;
 }
 
+.project-icons i:hover {
+    color: #b1b0b1;
+}
+
+/* Proje pozisyonlarını ortalama */
+.project-position {
+    font-size: 1rem;
+    color: #bbb;
+    display: block; /* Artık flex değil, blok düzende olacak */
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
+/* Proje içeriği düzenlemesi */
 .project-bio {
     font-size: 0.9rem;
     color: #ccc;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .social-media {
@@ -185,6 +197,7 @@ body {
         margin: 10px 5px;
     }
 }
+
 .show-more {
     margin-top: 30px;
 }
