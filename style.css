@@ -37,8 +37,7 @@ body {
     font-size: 2.5rem;
     color: #fff;
 }
-
-.bio, .location {
+.bio {
     font-size: 1.2rem;
     margin: 10px 0;
     color: #bbb;
@@ -54,7 +53,15 @@ body {
 .bio i {
     color: #f39c12;
 }
-
+.location {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    color: #bbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-right: 10px;
+}
 .location i {
     color: #e74c3c;
 }
