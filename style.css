@@ -28,7 +28,7 @@ body {
 
 .avatar img {
     width: 120px;
-    height: 150px;
+    height: 120px;
     object-fit: cover;
     display: block;
     margin: 20px auto;
