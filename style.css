@@ -89,11 +89,17 @@ body {
     border-radius: 50%;
 }
 
-.project-name {
-    font-size: 1.5rem;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    color: #fff;
+.project-name a {
+    color: white; /* Set text color to white */
+    font-size: 1.5rem; /* Slightly larger font size */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition when hovered */
+    margin-bottom: 15px; /* Space between project name and position */
+    display: block; /* Ensure it's treated like a block element */
+}
+
+.project-name a:hover {
+    color: #b1b0b1; /* Change color on hover (optional) */
 }
 
 .project-position {
@@ -103,6 +109,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
+    margin-top: 5px; /* Space between name and position */
 }
 
 .project-position i {
