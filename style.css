@@ -1,0 +1,163 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #fff; /* White text for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 1000px; /* Maximum width for larger screens */
+    padding: 20px;
+    background-color: #2c2c2c; /* Dark container background */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.avatar img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto;
+    border-radius: 50% / 40%; /* Oval shape */
+}
+.header h1 {
+    font-size: 2.5rem;
+    color: #fff; /* Light color for the name */
+}
+
+.bio, .location {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #bbb; /* Lighter gray for bio and location */
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.project {
+    background-color: #333; /* Dark background for project cards */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.project-banner {
+    width: 100%;           /* Ensures the banner stretches across the full width */
+    height: auto;          /* Keeps the aspect ratio intact and prevents zooming */
+    max-height: 250px;     /* Set a max-height to control the size of the banner */
+    border-radius: 10px;   /* Rounded corners for the banner */
+}
+
+.project-logo {
+    width: 50px;
+    height: 50px;
+    margin-top: -30px;
+    border-radius: 50%;
+}
+
+.project-name {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #fff; /* White text for project name */
+}
+
+.project-position {
+    font-size: 1rem;
+    color: #bbb; /* Lighter gray for position */
+}
+
+.project-bio {
+    font-size: 0.9rem;
+    color: #ccc; /* Even lighter text for project description */
+}
+
+/* Social Media Icons Styling */
+.social-media {
+    margin: 30px 0;
+}
+
+.social-icon {
+    font-size: 2rem; /* Size of the icons */
+    margin: 0 20px;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 50%;
+    transition: color 0.3s ease;
+    display: inline-block;
+    color: #fff; /* Default color for icons */
+}
+
+/* Discord Icon */
+.social-icon.discord {
+    color: #7289da;
+}
+
+.social-icon.discord:hover {
+    color: #5a6fb8; /* Change color on hover */
+}
+
+/* Steam Icon */
+.social-icon.steam {
+    color: #171a21;
+}
+
+.social-icon.steam:hover {
+    color: #1b2328; /* Change color on hover */
+}
+
+/* Instagram Icon */
+.social-icon.instagram {
+    color: #e4405f;
+}
+
+.social-icon.instagram:hover {
+    color: #c13584; /* Change color on hover */
+}
+
+/* YouTube Icon */
+.social-icon.youtube {
+    color: #ff0000;
+}
+
+.social-icon.youtube:hover {
+    color: #cc0000; /* Change color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .bio, .location {
+        font-size: 1rem;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .social-icon {
+        font-size: 1.5rem; /* Adjust icon size for smaller screens */
+        margin: 10px 5px;
+    }
+}
