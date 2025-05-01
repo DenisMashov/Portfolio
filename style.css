@@ -21,7 +21,6 @@ body {
     width: 100%;
     max-width: 1000px; /* Maximum width for larger screens */
     padding: 20px;
-    background-color: #2c2c2c; /* Dark container background */
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
