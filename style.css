@@ -1,4 +1,3 @@
-/* Global styles */
 * {
     margin: 0;
     padding: 0;
@@ -53,14 +52,13 @@ body {
 }
 
 .bio i {
-    color: #f39c12; /* Yellow for admin icon */
+    color: #f39c12;
 }
 
 .location i {
-    color: #e74c3c; /* Red for map marker */
+    color: #e74c3c;
 }
 
-/* Projects Grid */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -68,7 +66,6 @@ body {
     margin: 30px 0;
 }
 
-/* Project Card */
 .project {
     background-color: #333;
     border-radius: 10px;
@@ -95,7 +92,7 @@ body {
 .project-name {
     font-size: 1.5rem;
     margin-top: 10px;
-    margin-bottom: 15px; /* Increased space between project name and position */
+    margin-bottom: 15px;
     color: #fff;
 }
 
@@ -105,7 +102,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px; /* Increased space between position and bio */
+    margin-bottom: 15px;
 }
 
 .project-position i {
@@ -116,17 +113,16 @@ body {
 .project-bio {
     font-size: 0.9rem;
     color: #ccc;
-    margin-bottom: 20px; /* Added space below bio */
+    margin-bottom: 20px;
 }
 
-/* Social Media Icons */
 .social-media {
     margin: 30px 0;
 }
 
 .social-icon {
     font-size: 2rem;
-    margin: 0 20px;
+    margin: 0 15px;
     text-decoration: none;
     padding: 12px;
     border-radius: 50%;
@@ -135,7 +131,7 @@ body {
     color: #fff;
 }
 
-/* Icon Specific Colors */
+/* Icon Colors */
 .social-icon.discord { color: #7289da; }
 .social-icon.discord:hover { color: #5a6fb8; }
 
@@ -147,6 +143,12 @@ body {
 
 .social-icon.youtube { color: #ff0000; }
 .social-icon.youtube:hover { color: #cc0000; }
+
+.social-icon.spotify { color: #1DB954; }
+.social-icon.spotify:hover { color: #1ed760; }
+
+.social-icon.letterboxd { color: #d5d5d5; }
+.social-icon.letterboxd:hover { color: #ff8000; }
 
 @media (max-width: 768px) {
     .header h1 {
