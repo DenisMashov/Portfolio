@@ -1,5 +1,12 @@
 {
   "rewrites": [
-    { "source": "/:path*", "destination": "/:path*.html" }
+    {
+      "source": "/:path*.html",
+      "destination": "/:path*.html"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
+    }
   ]
 }
