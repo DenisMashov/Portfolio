@@ -1,5 +1,5 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
-Allow: /
+Allow: /sitemap.xml
 Sitemap: https://www.denis1337.xyz/sitemap.xml
