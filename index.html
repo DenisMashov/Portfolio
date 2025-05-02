@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Denis - Portfolio</title>
-    
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="Denis - Portfolio.">
     <meta name="keywords" content="Denis, Denis1337, Denis Mashov, Georgian Community, Georgian Community Discord">
@@ -28,11 +28,18 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-EHS2GQWVJG');
     </script>
 </head>
 <body>
+    <!-- Light Mode Toggle Button -->
+    <button class="mode-toggle" onclick="toggleMode()">🌞</button>
+
+    <!-- Error Message (Inbox Style) -->
+    <div id="error-message" class="error-message">
+        <p class="error-text">Light mode is sucks!</p>
+    </div>
+
     <div class="container">
         <section class="avatar">
             <img src="img/avatar.jpg" alt="Denis Avatar">
@@ -46,6 +53,7 @@
             </p>
         </header>
 
+        <!-- Projects Section -->
         <section class="projects">
             <!-- First Project: Georgian Community -->
             <div class="project">
@@ -55,7 +63,6 @@
                 <div class="project-positions">
                     <p class="project-position">Owner</p>
                 </div>
-                <!-- Project Icon Section Below Project Name -->
                 <div class="project-icons">
                     <i class="fa-solid fa-crown"></i> <!-- Server Owner Icon -->
                 </div>
@@ -70,9 +77,8 @@
                 <div class="project-positions">
                     <p class="project-position">Founder</p>
                 </div>
-                <!-- Project Icon Section Below Project Name -->
                 <div class="project-icons">
-                    <i class="fa-solid fa-user-tie"></i><!-- Founder Icon -->
+                    <i class="fa-solid fa-user-tie"></i> <!-- Founder Icon -->
                 </div>
                 <p class="project-bio">G-Online is a freelancer marketplace offering Discord server services. Connect, share, and find the best solutions for your server's needs.</p>
             </div>
@@ -85,7 +91,6 @@
                 <div class="project-positions">
                     <p class="project-position">Discord Admin</p>
                 </div>
-                <!-- Project Icon Section Below Project Name -->
                 <div class="project-icons">
                     <i class="fa-solid fa-gavel"></i> <!-- Discord Admin Icon -->
                 </div>
@@ -112,7 +117,6 @@
             <a href="https://www.youtube.com/@DenisMashov1337" target="_blank" class="social-icon youtube">
                 <i class="fab fa-youtube"></i>
             </a>
-            <!-- Added Spotify and Letterboxd links -->
             <a href="https://open.spotify.com/user/bhn46vbx7g6mmjqse0kgmqo5a" target="_blank" class="social-icon spotify">
                 <i class="fab fa-spotify"></i>
             </a>
@@ -121,5 +125,19 @@
             </a>
         </section>
     </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Function to toggle between light and dark mode
+        function toggleMode() {
+            // Show the error message
+            document.getElementById("error-message").style.display = "block";
+            
+            // Wait for 1.5 seconds, then proceed to Rick Roll
+            setTimeout(function() {
+                window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";  // Rick Roll link
+            }, 1500);
+        }
+    </script>
 </body>
 </html>
