@@ -1,16 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/portfolio-projects",
-      "destination": "/portfolio-projects.html"
-    },
-    {
-      "source": "/about",
-      "destination": "/about.html"
-    },
-    {
-      "source": "/contact",
-      "destination": "/contact.html"
+      "source": "/:path*.html",
+      "destination": "/:path*"
     },
     {
       "source": "/sitemap.xml",
