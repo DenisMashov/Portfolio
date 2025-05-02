@@ -1,19 +1,8 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "public/index.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/public/index.html"
-    },
-    {
-      "src": "/portfolio-projects",
-      "dest": "/public/portfolio-projects.html"
+      "source": "/:path.html",
+      "destination": "/:path"
     }
   ]
 }
