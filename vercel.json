@@ -5,5 +5,15 @@
       "src": "index.html",
       "use": "@vercel/static"
     }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/portfolio-projects",
+      "dest": "/portfolio-projects.html"
+    }
   ]
 }
