@@ -49,7 +49,7 @@ body {
 }
 
 .bio i, .location i {
-    margin-right: 10px;
+    margin-right: -5px;
 }
 
 .bio i {
