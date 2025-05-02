@@ -3,3 +3,12 @@
     { "source": "/:path*", "destination": "/:path*.html" }
   ]
 }
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ]
+}
