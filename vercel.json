@@ -3,10 +3,6 @@
     {
       "source": "/:path*.html",
       "destination": "/:path*"
-    },
-    {
-      "source": "/sitemap.xml",
-      "destination": "/sitemap.xml"
     }
   ]
 }
