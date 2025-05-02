@@ -129,16 +129,14 @@ body {
     color: #b1b0b1;
 }
 
-/* Proje pozisyonlarını ortalama */
 .project-position {
     font-size: 1rem;
     color: #bbb;
-    display: block; /* Artık flex değil, blok düzende olacak */
+    display: block; 
     margin-top: -10px;
     margin-bottom: 5px;
 }
 
-/* Proje içeriği düzenlemesi */
 .project-bio {
     font-size: 0.9rem;
     color: #ccc;
@@ -215,4 +213,85 @@ body {
 .show-more-btn:hover {
     background-color: #b1b0b1;
     color: #1a1a1a;
+}
+
+/* Light Mode */
+body.light-mode {
+    background-color: #fff;
+    color: #333;
+}
+
+.container.light-mode {
+    background-color: #fff;
+}
+
+.project.light-mode {
+    background-color: #f9f9f9;
+}
+
+.project-name a.light-mode {
+    color: #333;
+}
+
+.project-icons i.light-mode {
+    color: #333;
+}
+
+.social-icon.light-mode {
+    color: #333;
+}
+
+/* Icon Hover Effects */
+.project-name a:hover.light-mode,
+.project-icons i:hover.light-mode,
+.social-icon:hover.light-mode {
+    color: #b1b0b1;
+}
+
+/* Mode Toggle Button */
+.mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.mode-toggle:hover {
+    color: #b1b0b1;
+}
+
+body.light-mode .mode-toggle {
+    color: #333;
+}
+
+/* Joke Message */
+#joke-message {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#joke-message p {
+    color: red;
+    font-size: 2rem;
+    font-weight: bold;
+}
+/* Error Message - Inbox Style */
+.error-message {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e74c3c;
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
