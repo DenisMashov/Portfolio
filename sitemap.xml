@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Homepage -->
   <url>
-    <loc>https://www.denis1337.xyz</loc>
+    <loc>https://www.denis1337.xyz/</loc>
     <lastmod>2025-05-03</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Portfolio Projects Page -->
-  <url>
-    <loc>https://www.denis1337.xyz/portfolio-projects</loc>
-    <lastmod>2025-05-03</lastmod>
-    <priority>0.8</priority>
-  </url>
-
 </urlset>
