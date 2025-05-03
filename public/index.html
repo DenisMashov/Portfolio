@@ -167,5 +167,35 @@
             }, 1500);
         }
     </script>
+
+  <h2>🎵 Now Playing on Spotify</h2>
+  <div class="now-playing" id="nowPlaying">
+    <p>Loading...</p>
+  </div>
+
+  <script>
+    async function fetchNowPlaying() {
+      try {
+        const res = await fetch('https://your-vercel-app.vercel.app/api/now-playing'); // Replace with your URL
+        const data = await res.json();
+
+        const html = `
+          <img src="${data.image}" alt="Album Art" />
+          <div class="track-info">
+            <strong>${data.track}</strong><br>
+            <em>${data.artist}</em><br>
+            <a href="${data.url}" target="_blank">Open on Last.fm</a>
+          </div>
+        `;
+
+        document.getElementById('nowPlaying').innerHTML = html;
+      } catch (error) {
+        document.getElementById('nowPlaying').innerText = 'Failed to load song info.';
+        console.error(error);
+      }
+    }
+
+    fetchNowPlaying();
+  </script>
 </body>
 </html>
