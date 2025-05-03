@@ -1,147 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Denis - Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denis - Portfolio</title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Denis - Portfolio | Hi, I'm Denis — a gamer, freelancer, and community builder. Check out my portfolio and projects like Georgian Community and G-Online.">
-  <meta name="keywords" content="Denis, Denis1337, Denis Mashov, portfolio, Georgian Community, Discord">
-  <meta name="author" content="Denis Mashov">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Denis | Portfolio"/>
-  <meta property="og:url" content="https://www.denis1337.xyz"/>
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.denis1337.xyz/img/avatar.jpg"/>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Denis - Portfolio | Hi, I'm Denis — a gamer, freelancer, and community builder. Check out my portfolio and projects like Georgian Community and G-Online.">
+    <meta name="keywords" content="Denis, Denis1337, Denis Mashov, Georgian Community, Georgian Community Discord">
+    <meta name="author" content="Denis Mashov">
+    <meta name="robots" content="index, follow">
 
-  <!-- Sitemap -->
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"/>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="sitemap" type="xml" href="https://www.denis1337.xyz/sitemap.xml">
 
-  <!-- SVG favicon -->
-  <link rel="icon" href="/img/favicon.svg" type="img/svg+xml">
+    <!-- FAV Icon -->
+    <link rel="icon" href="img/favicon.svg" type="image/svg">
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css"/>
-
-  <!-- Structured Data: JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Denis Mashov",
-    "alternateName": "Denis1337",
-    "url": "https://www.denis1337.xyz",
-    "image": "https://www.denis1337.xyz/img/avatar.jpg",
-    "jobTitle": "Freelancer & Community Builder",
-    "description": "Hi, I'm Denis — a gamer, freelancer, and community creator behind projects like Georgian Community and G-Online.",
-    "sameAs": [
-      "https://discord.com/users/385117340028764165",
-      "https://steamcommunity.com/id/DenisMashov1337",
-      "https://www.instagram.com/denismashov04",
-      "https://www.youtube.com/@DenisMashov1337",
-      "https://open.spotify.com/user/bhn46vbx7g6mmjqse0kgmqo5a",
-      "https://letterboxd.com/Denis1337/films"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Tbilisi",
-      "addressCountry": "Georgia"
+    <!-- CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Structured Data: JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Denis Mashov",
+      "alternateName": "Denis1337",
+      "url": "https://www.denis1337.xyz",
+      "image": "https://www.denis1337.xyz/img/avatar.jpg",
+      "jobTitle": "Freelancer & Community Builder",
+      "description": "Hi, I'm Denis — a gamer, freelancer, and community creator behind projects like Georgian Community and G-Online.",
+      "sameAs": [
+        "https://discord.com/users/385117340028764165",
+        "https://steamcommunity.com/id/DenisMashov1337",
+        "https://www.instagram.com/denismashov04",
+        "https://www.youtube.com/@DenisMashov1337",
+        "https://open.spotify.com/user/bhn46vbx7g6mmjqse0kgmqo5a",
+        "https://letterboxd.com/Denis1337/films/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tbilisi",
+        "addressCountry": "Georgia"
+      }
     }
-  }
-  </script>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHS2GQWVJG"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-EHS2GQWVJG');
-  </script>
+    </script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHS2GQWVJG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EHS2GQWVJG');
+    </script>
 </head>
 <body>
-  <!-- Light Mode Toggle Button -->
-  <button class="mode-toggle" onclick="toggleMode()">🌞</button>
+    <!-- Light Mode Toggle Button -->
+    <button class="mode-toggle" onclick="toggleMode()">🌞</button>
 
-  <!-- Light Mode Joke -->
-  <div id="error-message" class="error-message">
-    <p class="error-text">Light mode sucks!</p>
-  </div>
+    <!-- Error Message (Inbox Style) -->
+    <div id="error-message" class="error-message">
+        <p class="error-text">Light mode sucks!</p>
+    </div>
 
-  <div class="container">
-    <section class="avatar">
-      <img src="/img/avatar.jpg" alt="Denis Avatar">
-    </section>
+    <div class="container">
+        <section class="avatar">
+            <img src="img/avatar.jpg" alt="Denis Avatar">
+        </section>
 
-    <header class="header">
-      <h2>Denis</h2>
-      <p class="bio">👋 Hello, I am just a gamer and freelancer.</p>
-      <p class="location"><i class="fas fa-map-marker-alt"></i> Tbilisi, Georgia</p>
-    </header>
+        <header class="header">
+            <h2>Denis</h2>
+            <p class="bio">👋 hello, i am just a gamer and freelancer.</p>
+            <p class="location">
+                <i class="fas fa-map-marker-alt"></i> Tbilisi, Georgia
+            </p>
+        </header>
 
-    <!-- Projects Section -->
-    <section class="projects">
-      <!-- Georgian Community -->
-      <div class="project">
-        <img src="/img/gcbanner.png" alt="Georgian Community Banner" class="project-banner"/>
-        <img src="/img/gclogo.png" alt="Georgian Community Logo" class="project-logo" />
-        <h3 class="project-name"><a href="https://discord.gg/M8bD4qJmkN" target="_blank">Georgian Community</a></h3>
-        <p class="project-position">Owner</p>
-        <i class="fa-solid fa-crown"></i>
-        <p class="project-bio">Georgian Community is a server, where opportunities are not limited. Get closer with new people, play together and have discussions about everything.</p>
-      </div>
+        <!-- Projects Section -->
+        <section class="projects">
+            <!-- First Project: Georgian Community -->
+            <div class="project">
+                <img src="img/gcbanner.png" alt="Georgian Community Banner" class="project-banner">
+                <img src="img/gclogo.png" alt="Georgian Community Logo" class="project-logo">
+                <h3 class="project-name"><a href="https://discord.gg/M8bD4qJmkN" target="_blank">Georgian Community</a></h3>
+                <div class="project-positions">
+                    <p class="project-position">Owner</p>
+                </div>
+                <div class="project-icons">
+                    <i class="fa-solid fa-crown"></i> <!-- Server Owner Icon -->
+                </div>
+                <p class="project-bio">Georgian Community is a server, where opportunities are not limited. Get closer with new people, play together and have discussions about everything. Participate in Events and Giveaways.</p>
+            </div>
 
-      <!-- G-Online Services -->
-      <div class="project">
-        <img src="/img/gosbanner.png" alt="G-Online Services Banner" class="project-banner"/>
-        <img src="/img/goslogo.png" alt="G-Online Services Logo" class="project-logo"/>
-        <h3 class="project-name"><a href="https://discord.gg/GBMfc7VMpC" target="_blank">G-Online Services</a></h3>
-        <p class="project-position">Founder</p>
-        <i class="fa-solid fa-user-tie"></i>
-        <p class="project-bio">G-Online is a freelancer marketplace offering Discord server services. Connect, share, and find the best solutions for your server's needs.</p>
-      </div>
+            <!-- Second Project: G-Online Services -->
+            <div class="project">
+                <img src="img/gosbanner.png" alt="G-Online Services Banner" class="project-banner">
+                <img src="img/goslogo.png" alt="G-Online Services Logo" class="project-logo">
+                <h3 class="project-name"><a href="https://discord.gg/GBMfc7VMpC" target="_blank">G-Online Services</a></h3>
+                <div class="project-positions">
+                    <p class="project-position">Founder</p>
+                </div>
+                <div class="project-icons">
+                    <i class="fa-solid fa-user-tie"></i> <!-- Founder Icon -->
+                </div>
+                <p class="project-bio">G-Online is a freelancer marketplace offering Discord server services. Connect, share, and find the best solutions for your server's needs.</p>
+            </div>
 
-      <!-- Lux Empire -->
-      <div class="project">
-        <img src="/img/luxbanner.png" alt="Lux Empire Banner" class="project-banner"/>
-        <img src="/img/luxlogo.png" alt="Lux Empire Logo" class="project-logo"/>
-        <h3 class="project-name"><a href="https://discord.gg/gffJHkrWMw" target="_blank">The Lux Empire</a></h3>
-        <p class="project-position">Discord Admin</p>
-        <i class="fa-solid fa-gavel"></i>
-        <p class="project-bio">Lux Empire is a vibrant roleplaying community within GTA V FiveM. Join us for custom features, immersive experiences, and a welcoming environment.</p>
-      </div>
-    </section>
+            <!-- Third Project: Lux -->
+            <div class="project">
+                <img src="img/luxbanner.png" alt="Lux Empire Banner" class="project-banner">
+                <img src="img/luxlogo.png" alt="Lux Empire Logo" class="project-logo">
+                <h3 class="project-name"><a href="https://discord.gg/gffJHkrWMw" target="_blank">The Lux Empire</a></h3>
+                <div class="project-positions">
+                    <p class="project-position">Discord Admin</p>
+                </div>
+                <div class="project-icons">
+                    <i class="fa-solid fa-gavel"></i> <!-- Discord Admin Icon -->
+                </div>
+                <p class="project-bio">Lux Empire is a vibrant roleplaying community within GTA V FiveM. Join us for custom features, immersive experiences, and a welcoming environment.</p>
+            </div>
+        </section>
 
-    <!-- More Projects Button -->
-    <section class="show-more">
-      <a href="/portfolio-projects" class="show-more-btn">Show More...</a>
-    </section>
+        <!-- Show More Projects Button -->
+        <section class="show-more">
+            <a href="/portfolio-projects" target="_blank" class="show-more-btn">Show More...</a>
+        </section>
 
-    <!-- Social Media -->
-    <section class="social-media">
-      <a href="https://discord.com/users/385117340028764165" target="_blank" class="social-icon"><i class="fab fa-discord"></i></a>
-      <a href="https://steamcommunity.com/id/DenisMashov1337" target="_blank" class="social-icon"><i class="fab fa-steam"></i></a>
-      <a href="https://www.instagram.com/denismashov04" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.youtube.com/@DenisMashov1337" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
-      <a href="https://open.spotify.com/user/bhn46vbx7g6mmjqse0kgmqo5a" target="_blank" class="social-icon"><i class="fab fa-spotify"></i></a>
-      <a href="https://letterboxd.com/Denis1337/films" target="_blank" class="social-icon"><i class="fa-brands fa-square-letterboxd"></i></a>
-    </section>
-  </div>
+        <!-- Social Media Icons Section -->
+        <section class="social-media">
+            <a href="https://discord.com/users/385117340028764165" target="_blank" class="social-icon discord">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://steamcommunity.com/id/DenisMashov1337" target="_blank" class="social-icon steam">
+                <i class="fab fa-steam"></i>
+            </a>
+            <a href="https://www.instagram.com/denismashov04" target="_blank" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@DenisMashov1337" target="_blank" class="social-icon youtube">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://open.spotify.com/user/bhn46vbx7g6mmjqse0kgmqo5a" target="_blank" class="social-icon spotify">
+                <i class="fab fa-spotify"></i>
+            </a>
+            <a href="https://letterboxd.com/Denis1337/films/" target="_blank" class="social-icon letterboxd">
+                <i class="fa-brands fa-square-letterboxd"></i>
+            </a>
+        </section>
+    </div>
 
-  <!-- Dark Mode Joke Script -->
-  <script>
-    function toggleMode() {
-      document.getElementById("error-message").style.display = "block";
-      setTimeout(() => {
-        window.location.href = "https://youtu.be/iuy9HX7FIoI";
-      }, 1500);
-    }
-  </script>
+    <!-- JavaScript -->
+    <script>
+        // Function to toggle between light and dark mode
+        function toggleMode() {
+            // Show the error message
+            document.getElementById("error-message").style.display = "block";
+            
+            // Wait for 1.5 second
+            setTimeout(function() {
+                window.location.href = "https://youtu.be/iuy9HX7FIoI";  //   .-. .. -.-. -.- / .-. --- .-.. .-.. . -..
+            }, 1500);
+        }
+    </script>
 </body>
 </html>
