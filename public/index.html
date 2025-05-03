@@ -168,5 +168,50 @@
             }, 1500);
         }
     </script>
+
+<!-- Current Song Section -->
+<section class="current-song">
+    <h3>Currently Playing</h3>
+    <div id="song-info">
+        <p id="song-name">Loading...</p>
+        <p id="song-artist">Loading...</p>
+        <p id="song-album">Loading...</p>
+        <a id="song-url" href="#" target="_blank">Listen on Last.fm</a>
+        <img id="song-image" src="" alt="Song Image" style="max-width: 200px; max-height: 200px;"/>
+    </div>
+</section>
+
+<script>
+    // Function to fetch the current song from your API
+    async function fetchCurrentSong() {
+        try {
+            const response = await fetch('/api/now-playing'); // Adjust the URL to match your API endpoint
+            const data = await response.json();
+
+            // Check if a song is currently playing
+            if (data.name && data.artist && data.album && data.image) {
+                document.getElementById('song-name').textContent = data.name;
+                document.getElementById('song-artist').textContent = `Artist: ${data.artist}`;
+                document.getElementById('song-album').textContent = `Album: ${data.album}`;
+                document.getElementById('song-url').href = data.url;
+                document.getElementById('song-image').src = data.image;
+            } else {
+                document.getElementById('song-name').textContent = 'No song is currently playing.';
+                document.getElementById('song-artist').textContent = '';
+                document.getElementById('song-album').textContent = '';
+                document.getElementById('song-url').style.display = 'none'; // Hide the link if no song is playing
+                document.getElementById('song-image').style.display = 'none'; // Hide the image if no song is playing
+            }
+        } catch (error) {
+            console.error('Error fetching song data:', error);
+            document.getElementById('song-name').textContent = 'Error loading song data';
+        }
+    }
+
+    // Call the function to fetch the song when the page loads
+    window.onload = fetchCurrentSong;
+</script>
+
+
 </body>
 </html>
