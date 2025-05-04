@@ -357,7 +357,7 @@ body.light-mode .mode-toggle {
   background-color: #444;
   height: 4px;
   border-radius: 4px;
-  margin-top: 8px;
+  margin-top: 5px;
   overflow: hidden;
 }
 
@@ -366,16 +366,6 @@ body.light-mode .mode-toggle {
   height: 100%;
   width: 0%;
   transition: width 0.2s linear;
-}
-/* Hide scrollbar on all platforms but allow scrolling */
-body {
-  overflow: auto; /* or scroll */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
-}
-
-body::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari, Opera */
 }
 .time-wrapper {
   display: flex;
