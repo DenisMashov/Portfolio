@@ -15,11 +15,25 @@ body {
     margin: 0;
     overflow: auto;  /* Allows scrolling */
     -ms-overflow-style: none;  /* For Internet Explorer */
-    scrollbar-width: none;     /* For Firefox */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent; /* For Firefox */
 }
 
 body::-webkit-scrollbar {
-    display: none;  /* For Webkit browsers (Chrome, Safari, Edge) */
+    width: 6px; /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent; /* Track (background of the scrollbar) */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3); /* Minimalist color for the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); /* Slightly darker thumb color on hover */
 }
 
 .container {
