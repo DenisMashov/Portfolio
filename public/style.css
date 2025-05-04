@@ -118,7 +118,7 @@ body {
 }
 
 .project-icons i {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     margin: 5px;
     color: #fff;
     transition: color 0.3s ease;
@@ -132,7 +132,7 @@ body {
     font-size: 1rem;
     color: #bbb;
     display: block; 
-    margin-top: -10px;
+    margin-top: -18.5px;
     margin-bottom: 5px;
 }
 
