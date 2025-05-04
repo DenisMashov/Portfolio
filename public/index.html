@@ -82,18 +82,22 @@
             </p>
         </header>
 
-    <!-- Real-time Spotify Widget -->
-  <div id="spotify-widget" class="hidden">
-     <img id="album-art" src="" alt="Album Art">
-     <div class="song-info">
-      <div id="song-name">Song name</div>
-     <div id="artist-name">Artist</div>
-     <div class="progress-container">
-       <div id="progress-bar"></div>
-     </div>
-   </div>
- </div>
- 
+<!-- Real-time Spotify Widget -->
+<div id="spotify-widget" class="hidden">
+  <img id="album-art" src="" alt="Album Art">
+  <div class="song-info">
+    <div id="song-name">Song name</div>
+    <div id="artist-name">Artist</div>
+    <div class="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+    <div class="time-wrapper">
+      <span id="time-display">0:00 / 0:00</span>
+    </div>
+  </div>
+</div>
+
+
         <!-- Projects Section -->
         <section class="projects">
             <!-- First Project: Georgian Community -->
@@ -211,17 +215,28 @@ ws.addEventListener("message", (event) => {
   }
 });
 
+function formatTime(ms) {
+  const totalSeconds = Math.floor(ms / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+}
+
 function updateProgress() {
   const now = Date.now();
   const elapsed = now - start;
   const percent = Math.min((elapsed / duration) * 100, 100);
   document.getElementById("progress-bar").style.width = percent + "%";
 
+  const timeDisplay = `${formatTime(elapsed)} / ${formatTime(duration)}`;
+  document.getElementById("time-display").textContent = timeDisplay;
+
   if (percent < 100) {
     requestAnimationFrame(updateProgress);
   }
 }
 </script>
+
 
 <!-- Existing script for the light mode button -->
     <script>
