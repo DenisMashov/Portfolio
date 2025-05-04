@@ -251,5 +251,26 @@ function updateProgress() {
             }, 1500);
         }
     </script>
+
+<script>
+
+// hide scroll
+document.addEventListener('DOMContentLoaded', () => {
+  // Dynamically inject CSS to hide the scrollbar
+  const style = document.createElement('style');
+  style.textContent = `
+    body {
+      overflow: scroll;            /* Keeps scroll working */
+      -ms-overflow-style: none;    /* Hide scrollbar in IE and Edge */
+      scrollbar-width: none;       /* Hide scrollbar in Firefox */
+    }
+    body::-webkit-scrollbar {
+      display: none;               /* Hide scrollbar in Chrome, Brave, Safari, Opera */
+    }
+  `;
+  document.head.appendChild(style);
+});
+    </script>
+
 </body>
 </html>
