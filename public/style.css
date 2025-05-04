@@ -377,3 +377,15 @@ body {
 body::-webkit-scrollbar {
   display: none;             /* Chrome, Safari, Opera */
 }
+.time-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+#time-display {
+  font-size: 0.9em;
+  margin-top: 4.4px;
+  color: #bbb;
+  font-variant-numeric: tabular-nums;
+}
