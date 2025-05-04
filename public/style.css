@@ -295,3 +295,73 @@ body.light-mode .mode-toggle {
     display: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
+/* ==== Spotify Widget (Scoped & Safe) ==== */
+#spotify-widget {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 30px;
+  color: #fff;
+  width: 100%;
+  max-width: 350px;
+  font-family: "Space Grotesk", sans-serif;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s ease-in-out;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#spotify-widget.hidden {
+  display: none;
+}
+
+#spotify-widget #album-art {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+#spotify-widget .song-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+#spotify-widget #song-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#spotify-widget #artist-name {
+  font-size: 0.85rem;
+  color: #b3b3b3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+#spotify-widget .progress-container {
+  width: 100%;
+  background-color: #444;
+  height: 6px;
+  border-radius: 4px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+#spotify-widget #progress-bar {
+  background-color: #1DB954;
+  height: 100%;
+  width: 0%;
+  transition: width 0.2s linear;
+}
+
