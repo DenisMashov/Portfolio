@@ -253,22 +253,17 @@ function updateProgress() {
     </script>
 
 <script>
-
 // hide scroll
+// Wait for the DOM to fully load
 document.addEventListener('DOMContentLoaded', () => {
-  // Dynamically inject CSS to hide the scrollbar
-  const style = document.createElement('style');
-  style.textContent = `
-    body {
-      overflow: scroll;            /* Keeps scroll working */
-      -ms-overflow-style: none;    /* Hide scrollbar in IE and Edge */
-      scrollbar-width: none;       /* Hide scrollbar in Firefox */
-    }
-    body::-webkit-scrollbar {
-      display: none;               /* Hide scrollbar in Chrome, Brave, Safari, Opera */
-    }
-  `;
-  document.head.appendChild(style);
+  // Hide scrollbar for all browsers but allow scrolling
+  document.body.style.overflow = 'scroll';               // Keeps scroll working
+  document.body.style.scrollbarWidth = 'none';           // For Firefox
+  document.body.style.msOverflowStyle = 'none';         // For IE/Edge
+  
+  // Hide scrollbars in Webkit-based browsers (Chrome, Brave, Safari, Opera)
+  document.body.style.setProperty('-webkit-overflow-scrolling', 'touch'); // For smoother scrolling
+  document.body.style.setProperty('::-webkit-scrollbar', 'display: none'); // Hide scrollbar in Webkit
 });
     </script>
 
