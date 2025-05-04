@@ -13,7 +13,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    overflow: hidden;  /* Hide scrollbar for the entire body */
+    overflow: auto;  /* Allows scrolling */
     -ms-overflow-style: none;  /* For Internet Explorer */
     scrollbar-width: none;     /* For Firefox */
 }
