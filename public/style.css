@@ -367,3 +367,13 @@ body.light-mode .mode-toggle {
   width: 0%;
   transition: width 0.2s linear;
 }
+/* Hide scrollbar on all platforms but allow scrolling */
+body {
+  overflow: auto; /* or scroll */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
