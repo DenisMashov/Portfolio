@@ -253,7 +253,6 @@ function updateProgress() {
     </script>
 
 <script>
-// hide scroll
 // Wait for the DOM to fully load
 document.addEventListener('DOMContentLoaded', () => {
   // Hide scrollbar for all browsers but allow scrolling
@@ -261,9 +260,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.style.scrollbarWidth = 'none';           // For Firefox
   document.body.style.msOverflowStyle = 'none';         // For IE/Edge
   
-  // Hide scrollbars in Webkit-based browsers (Chrome, Brave, Safari, Opera)
-  document.body.style.setProperty('-webkit-overflow-scrolling', 'touch'); // For smoother scrolling
-  document.body.style.setProperty('::-webkit-scrollbar', 'display: none'); // Hide scrollbar in Webkit
+  // For Webkit-based browsers (Chrome, Brave, Safari, Opera), hide scrollbar
+  document.body.style.setProperty('overflow', 'scroll'); // Ensure scrolling is enabled
+  document.body.style.setProperty('::-webkit-scrollbar', 'display: none'); // Hide scrollbar in Webkit browsers
 });
     </script>
 
