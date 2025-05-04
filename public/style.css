@@ -336,7 +336,7 @@ body.light-mode .mode-toggle {
 
 #spotify-widget #song-name {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 444;
   color: #fff;
   white-space: nowrap;
   overflow: hidden;
