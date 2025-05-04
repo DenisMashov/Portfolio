@@ -13,6 +13,13 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    overflow: hidden;  /* Hide scrollbar for the entire body */
+    -ms-overflow-style: none;  /* For Internet Explorer */
+    scrollbar-width: none;     /* For Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;  /* For Webkit browsers (Chrome, Safari, Edge) */
 }
 
 .container {
@@ -194,9 +201,11 @@ body {
         margin: 10px 5px;
     }
 }
+
 .show-more {
     margin-top: 25px;
 }
+
 .show-more-btn {
     color: #fff;
     font-size: 0.9rem;
@@ -206,36 +215,45 @@ body {
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .show-more-btn:hover {
     background-color: #b1b0b1;
     color: #1a1a1a;
 }
+
 /* Light Mode */
 body.light-mode {
     background-color: #fff;
     color: #333;
 }
+
 .container.light-mode {
     background-color: #fff;
 }
+
 .project.light-mode {
     background-color: #f9f9f9;
 }
+
 .project-name a.light-mode {
     color: #333;
 }
+
 .project-icons i.light-mode {
     color: #333;
 }
+
 .social-icon.light-mode {
     color: #333;
 }
+
 /* Icon Hover Effects */
 .project-name a:hover.light-mode,
 .project-icons i:hover.light-mode,
 .social-icon:hover.light-mode {
     color: #b1b0b1;
 }
+
 /* Mode Toggle Button */
 .mode-toggle {
     position: absolute;
@@ -249,22 +267,27 @@ body.light-mode {
     cursor: pointer;
     transition: color 0.3s ease;
 }
+
 .mode-toggle:hover {
     color: #b1b0b1;
 }
+
 body.light-mode .mode-toggle {
     color: #333;
 }
+
 /* Joke Message */
 #joke-message {
     text-align: center;
     margin-top: 20px;
 }
+
 #joke-message p {
     color: red;
     font-size: 2rem;
     font-weight: bold;
 }
+
 /* Error Message - Inbox Style */
 .error-message {
     position: fixed;
@@ -279,6 +302,7 @@ body.light-mode .mode-toggle {
     display: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
+
 /* ==== Spotify Widget ==== */
 #spotify-widget {
   display: flex;
@@ -296,9 +320,11 @@ body.light-mode .mode-toggle {
   margin-left: auto;
   margin-right: auto;
 }
+
 #spotify-widget.hidden {
   display: none;
 }
+
 #spotify-widget #album-art {
   width: 64px;
   height: 64px;
@@ -306,6 +332,7 @@ body.light-mode .mode-toggle {
   margin-right: 12px;  /* Reduce the space on the right */
   object-fit: cover;
 }
+
 #spotify-widget .song-info {
   display: flex;  /* Align song name and artist name horizontally */
   flex-direction: column;  /* Stack the song name and artist name vertically */
@@ -313,6 +340,7 @@ body.light-mode .mode-toggle {
   flex: 1;
   overflow: hidden;
 }
+
 #spotify-widget #song-name {
   font-size: 1rem;
   font-weight: 444;
@@ -323,6 +351,7 @@ body.light-mode .mode-toggle {
   margin-bottom: 2px;  /* Add a little space between song name and artist name */
   text-align: left; /* Align to the left */
 }
+
 #spotify-widget #artist-name {
   font-size: 0.85rem;
   color: #b3b3b3;
@@ -331,6 +360,7 @@ body.light-mode .mode-toggle {
   text-overflow: ellipsis;
   text-align: left; /* Align to the left */
 }
+
 #spotify-widget .progress-container {
   width: 100%;
   background-color: #444;
@@ -339,12 +369,14 @@ body.light-mode .mode-toggle {
   margin-top: 8px;
   overflow: hidden;
 }
+
 #spotify-widget #progress-bar {
   background-color: #1DB954;
   height: 100%;
   width: 0%;
   transition: width 0.2s linear;
 }
+
 .time-wrapper {
   display: flex;
   justify-content: flex-start;
