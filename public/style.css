@@ -299,12 +299,12 @@ body.light-mode .mode-toggle {
   display: flex;
   align-items: center;
   justify-content: flex-start;  /* Align the title, artist name, and image to the left */
-  background-color: #2a2a2a;
   border-radius: 12px;
   padding: 10px;
   margin-top: 20px;
   color: #fff;
   width: 100%;
+  border: 2px solid #3a6e46;
   max-width: 350px;
   font-family: "Space Grotesk", sans-serif;
   transition: opacity 0.3s ease-in-out;
