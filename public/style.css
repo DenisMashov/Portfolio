@@ -129,7 +129,7 @@ body {
 }
 
 .project-position {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #bbb;
     display: block; 
     margin-top: -18.5px;
@@ -139,7 +139,7 @@ body {
 .project-bio {
     font-size: 0.9rem;
     color: #ccc;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 
 .social-media {
@@ -301,7 +301,7 @@ body.light-mode .mode-toggle {
   justify-content: flex-start;  /* Align the title, artist name, and image to the left */
   border-radius: 12px;
   padding: 10px;
-  margin-top: 20px;
+  margin-top: 15px;
   color: #fff;
   width: 100%;
   border: 2px solid #3a6e46;
