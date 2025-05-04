@@ -156,8 +156,75 @@
     </div>
 
 
-<a href="https://discord.com/users/385117340028764165"><img src="https://lanyard.cnrad.dev/api/385117340028764165?bg=1a1a1a&borderRadius=60px&hideProfile=true&hideClan=true" /></a>
-    
+<!-- Other existing content -->
+
+<!-- Real-time Spotify Widget -->
+<div id="spotify-widget" class="hidden">
+  <img id="album-art" src="" alt="Album Art">
+  <div class="song-info">
+    <div id="song-name">Song name</div>
+    <div id="artist-name">Artist</div>
+    <div class="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Spotify Widget -->
+<script>
+const userId = "385117340028764165"; // your Discord user ID
+const ws = new WebSocket("wss://api.lanyard.rest/socket");
+
+let start = null;
+let end = null;
+let duration = 0;
+
+ws.addEventListener("open", () => {
+  ws.send(JSON.stringify({
+    op: 2,
+    d: {
+      subscribe_to_id: userId
+    }
+  }));
+});
+
+ws.addEventListener("message", (event) => {
+  const data = JSON.parse(event.data);
+  if (data.t === "INIT_STATE" || data.t === "PRESENCE_UPDATE") {
+    const presence = data.d;
+    if (presence.spotify) {
+      const spotify = presence.spotify;
+
+      document.getElementById("spotify-widget").classList.remove("hidden");
+      document.getElementById("album-art").src = spotify.album_art_url;
+      document.getElementById("song-name").textContent = spotify.song;
+      document.getElementById("artist-name").textContent = spotify.artist;
+
+      start = spotify.timestamps.start;
+      end = spotify.timestamps.end;
+      duration = end - start;
+
+      updateProgress();
+    } else {
+      document.getElementById("spotify-widget").classList.add("hidden");
+    }
+  }
+});
+
+function updateProgress() {
+  const now = Date.now();
+  const elapsed = now - start;
+  const percent = Math.min((elapsed / duration) * 100, 100);
+  document.getElementById("progress-bar").style.width = percent + "%";
+
+  if (percent < 100) {
+    requestAnimationFrame(updateProgress);
+  }
+}
+</script>
+
+<!-- Existing script for the light mode button -->
+
     <!-- JavaScript -->
     <script>
         // Function to toggle between light and dark mode
