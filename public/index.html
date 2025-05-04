@@ -252,26 +252,29 @@ function updateProgress() {
         }
     </script>
 
-<script>
-// hide.js
+    <script>
+        // JavaScript to hide scrollbars but still allow scrolling
 
-// Wait for the DOM to fully load
-document.addEventListener('DOMContentLoaded', () => {
-  // Create a <style> element to inject CSS into the document
-  const style = document.createElement('style');
-  style.textContent = `
-    body {
-      overflow: scroll !important;           /* Allow scrolling */
-      -ms-overflow-style: none !important;    /* Hide scrollbar in IE/Edge */
-      scrollbar-width: none !important;       /* Hide scrollbar in Firefox */
-    }
-    
-    body::-webkit-scrollbar {
-      display: none !important;               /* Hide scrollbar in Webkit browsers (Chrome, Brave, Safari, Opera) */
-    }
-  `;
-  document.head.appendChild(style);  // Add the style to the head of the document
-});
+        document.addEventListener('DOMContentLoaded', () => {
+            // Apply styles directly to hide scrollbars but keep scroll functionality
+            document.body.style.overflow = 'scroll';  // Keeps scrolling, hides scrollbar on mobile/desktop
+            document.documentElement.style.overflow = 'scroll'; // Ensure scroll is enabled on <html> tag
+
+            // Specific handling for webkit-based browsers (Chrome, Brave, Safari, etc.)
+            const style = document.createElement('style');
+            style.textContent = `
+                body::-webkit-scrollbar {
+                    display: none !important;  /* Hide scrollbar in Webkit browsers (Chrome, Brave, Safari, Opera) */
+                }
+            `;
+            document.head.appendChild(style); // Inject the styles into the head of the document
+
+            // Specific handling for Firefox
+            document.body.style.scrollbarWidth = 'none'; // Hide scrollbar in Firefox
+
+            // Specific handling for IE/Edge
+            document.body.style.msOverflowStyle = 'none'; // Hide scrollbar in IE/Edge
+        });
     </script>
 
 </body>
