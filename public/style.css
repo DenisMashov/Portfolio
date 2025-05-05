@@ -319,7 +319,7 @@ body.light-mode .mode-toggle {
   /* Gradient border trick */
   border: 2px solid transparent;
   background: linear-gradient(#1a1a1a, #1a1a1a) padding-box,
-              linear-gradient(to right, #0f4022, #1db954) border-box;
+              linear-gradient(to left, #0f4022, #1db954) border-box;
 }
 
 
