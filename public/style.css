@@ -304,19 +304,24 @@ body.light-mode .mode-toggle {
 #spotify-widget {
   display: flex;
   align-items: center;
-  justify-content: flex-start;  /* Align the title, artist name, and image to the left */
+  justify-content: flex-start;
   border-radius: 12px;
   padding: 10px;
   margin-top: 15px;
   color: #fff;
   width: 100%;
-  border: 2px solid #3a6e46;
   max-width: 350px;
   font-family: "Space Grotesk", sans-serif;
   transition: opacity 0.3s ease-in-out;
   margin-left: auto;
   margin-right: auto;
+
+  /* Gradient border trick */
+  border: 2px solid transparent;
+  background: linear-gradient(#1a1a1a, #1a1a1a) padding-box,
+              linear-gradient(to right, #0f4022, #1db954) border-box;
 }
+
 
 #spotify-widget.hidden {
   display: none;
