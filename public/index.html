@@ -177,67 +177,114 @@
 <!-- S C R I P T S -->
 
 <!-- JavaScript for Spotify Widget -->
-<!-- JavaScript for Spotify Widget -->
 <script>
-const userId = "385117340028764165"; // your Discord user ID
-const ws = new WebSocket("wss://api.lanyard.rest/socket");
+(() => {
+  const userId = "385117340028764165";
+  const ws = new WebSocket("wss://api.lanyard.rest/socket");
 
-let start = null;
-let end = null;
-let duration = 0;
+  const widget = document.getElementById("spotify-widget");
+  const albumArt = document.getElementById("album-art");
+  const songName = document.getElementById("song-name");
+  const artistName = document.getElementById("artist-name");
+  const progressBar = document.getElementById("progress-bar");
+  const timeDisplay = document.getElementById("time-display");
 
-ws.addEventListener("open", () => {
-  ws.send(JSON.stringify({
-    op: 2,
-    d: {
-      subscribe_to_id: userId
+  let animationFrameId = null;
+  let timeoutId = null;
+  let start = 0, end = 0, duration = 0;
+
+  const formatTime = (ms) => {
+    const totalSeconds = Math.floor(ms / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  const updateProgress = () => {
+    const now = Date.now();
+    const elapsed = now - start;
+    const percent = Math.min((elapsed / duration) * 100, 100);
+
+    progressBar.style.width = `${percent}%`;
+    timeDisplay.textContent = `${formatTime(elapsed)} / ${formatTime(duration)}`;
+
+    if (now >= end) {
+      // Track has ended — give it 2 seconds before hiding in case Discord delays update
+      timeoutId = setTimeout(resetWidget, 2000);
+      return;
     }
-  }));
-});
 
-ws.addEventListener("message", (event) => {
-  const data = JSON.parse(event.data);
-  if (data.t === "INIT_STATE" || data.t === "PRESENCE_UPDATE") {
-    const presence = data.d;
-    if (presence.spotify) {
-      const spotify = presence.spotify;
+    animationFrameId = requestAnimationFrame(updateProgress);
+  };
 
-      document.getElementById("spotify-widget").classList.remove("hidden");
-      document.getElementById("album-art").src = spotify.album_art_url;
-      document.getElementById("song-name").textContent = spotify.song;
-      document.getElementById("artist-name").textContent = spotify.artist;
+  const resetWidget = () => {
+    cancelAnimationFrame(animationFrameId);
+    clearTimeout(timeoutId);
+    widget.classList.add("hidden");
+    progressBar.style.width = "0%";
+    timeDisplay.textContent = "0:00 / 0:00";
+  };
 
-      start = spotify.timestamps.start;
-      end = spotify.timestamps.end;
-      duration = end - start;
-
-      updateProgress();
-    } else {
-      document.getElementById("spotify-widget").classList.add("hidden");
+  const handleSpotifyPresence = (spotify) => {
+    if (!spotify) {
+      resetWidget();
+      return;
     }
-  }
-});
 
-function formatTime(ms) {
-  const totalSeconds = Math.floor(ms / 1000);
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = totalSeconds % 60;
-  return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-}
+    // Clear old timers/frames
+    cancelAnimationFrame(animationFrameId);
+    clearTimeout(timeoutId);
 
-function updateProgress() {
-  const now = Date.now();
-  const elapsed = now - start;
-  const percent = Math.min((elapsed / duration) * 100, 100);
-  document.getElementById("progress-bar").style.width = percent + "%";
+    widget.classList.remove("hidden");
+    albumArt.src = spotify.album_art_url;
+    songName.textContent = spotify.song;
+    artistName.textContent = spotify.artist;
 
-  const timeDisplay = `${formatTime(elapsed)} / ${formatTime(duration)}`;
-  document.getElementById("time-display").textContent = timeDisplay;
+    start = spotify.timestamps.start;
+    end = spotify.timestamps.end;
+    duration = end - start;
 
-  if (percent < 100) {
-    requestAnimationFrame(updateProgress);
-  }
-}
+    updateProgress();
+  };
+
+  const subscribe = () => {
+    ws.send(JSON.stringify({
+      op: 2,
+      d: { subscribe_to_id: userId }
+    }));
+  };
+
+  ws.addEventListener("open", subscribe);
+
+  ws.addEventListener("message", ({ data }) => {
+    try {
+      const parsed = JSON.parse(data);
+      const eventType = parsed.t;
+      const spotify = parsed?.d?.spotify;
+
+      if (eventType === "INIT_STATE" || eventType === "PRESENCE_UPDATE") {
+        handleSpotifyPresence(spotify);
+      }
+    } catch (err) {
+      console.error("Lanyard WebSocket parse error:", err);
+    }
+  });
+
+  ws.addEventListener("error", (err) => {
+    console.error("Lanyard WebSocket error:", err);
+    resetWidget();
+  });
+
+  ws.addEventListener("close", () => {
+    console.warn("Lanyard WebSocket closed. Attempting reconnect in 5s...");
+    resetWidget();
+    setTimeout(() => {
+      location.reload(); // Safe, simple way to re-init the whole page/socket
+    }, 5000);
+  });
+})();
+</script>
+
 </script>
 </body>
 </html>
