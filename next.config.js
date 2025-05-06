@@ -3,7 +3,7 @@ module.exports = {
     return [
       {
         source: '/sitemap.xml',
-        destination: '/api/sitemap', // gerçek sitemap endpoint'in burası
+        destination: '/api/sitemap', //  sitemap
       },
     ]
   },
