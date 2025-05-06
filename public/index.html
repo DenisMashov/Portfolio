@@ -177,6 +177,22 @@
 <!-- S C R I P T S -->
 
 <!-- JavaScript for Spotify Widget -->
+<!-- Real-time Spotify Widget -->
+<div id="spotify-widget" class="hidden">
+  <img id="album-art" src="" alt="Album Art" loading="lazy">
+  <div class="song-info">
+    <div id="song-name">Song name</div>
+    <div id="artist-name">Artist</div>
+    <div class="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+    <div class="time-wrapper">
+      <span id="time-display">0:00 / 0:00</span>
+    </div>
+  </div>
+</div>
+<p id="status-message">Loading Spotify data...</p>
+
 <script>
 const userId = "385117340028764165"; // your Discord user ID
 let ws = null;
@@ -217,20 +233,21 @@ function connect() {
         lastUpdateTime = Date.now();
         updateProgress();
       } else {
-        hideWidget("Listening to Nothing or Offline.");
+        hideWidget("Listening to Nothing or Offline");  // No music playing
       }
     }
   });
 
   ws.addEventListener("error", (err) => {
     console.error("WebSocket error:", err);
-    hideWidget("Connection error occurred.");
+    // No user-facing error message shown.
+    setTimeout(connect, 3000); // Try to reconnect after 3 seconds
   });
 
   ws.addEventListener("close", () => {
     console.warn("WebSocket closed. Reconnecting in 3 seconds...");
-    hideWidget("Connection lost, attempting to reconnect...");
-    setTimeout(connect, 3000);
+    // No user-facing error message shown, just trying to reconnect.
+    setTimeout(connect, 10000); // Try to reconnect after 10 seconds
   });
 }
 
@@ -271,10 +288,7 @@ function updateProgress() {
   }
 }
 
-// Initial connection
 connect();
-</script>
-
 </script>
 
 <!-- Existing script for the light mode button -->
