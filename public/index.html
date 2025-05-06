@@ -225,7 +225,7 @@ function connect() {
   ws.addEventListener("error", (err) => {
     console.error("WebSocket error:", err);
     // No user-facing error message shown.
-    setTimeout(connect, 3000); // Try to reconnect after 3 seconds
+    setTimeout(connect, 10000); // Try to reconnect after 10 seconds
   });
 
   ws.addEventListener("close", () => {
