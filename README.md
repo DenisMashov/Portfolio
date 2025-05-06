@@ -7,4 +7,4 @@
 - Discord Servers (Name/Role/Icon & Banner)
 - Social Media Links
 
-![image](https://github.com/user-attachments/assets/b6e1ba7e-8506-4251-8488-c0902dbf8ef9)
+![image](https://github.com/user-attachments/assets/e7cea928-ee48-49b3-82c0-c14c22c32a6a)
