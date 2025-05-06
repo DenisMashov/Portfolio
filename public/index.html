@@ -278,9 +278,6 @@
   ws.addEventListener("close", () => {
     console.warn("Lanyard WebSocket closed. Attempting reconnect in 5s...");
     resetWidget();
-    setTimeout(() => {
-      location.reload(); // Safe, simple way to re-init the whole page/socket
-    }, 5000);
   });
 })();
 </script>
