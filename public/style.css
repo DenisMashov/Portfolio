@@ -1,149 +1,306 @@
-/* ================= RESET ================= */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* ================= BODY ================= */
 body {
-  font-family: "Source Sans 3", sans-serif;
-  background-color: #1a1a1a;
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
+    font-family: "Source Sans 3", sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
-/* ================= CONTAINER ================= */
 .container {
-  width: 100%;
-  max-width: 1100px;
-  padding: 30px 20px 40px;
-  text-align: center;
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 15px;
 }
 
-/* ================= AVATAR ================= */
 .avatar img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 12px auto 15px;
-  display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: 15px auto;
+    border-radius: 50%;
 }
 
-/* ================= HEADER ================= */
 .header h2 {
-  font-size: 2.2rem;
-  margin-bottom: 6px;
+    font-size: 2.1rem;
+    margin: 10px 0;
+    color: #fff;
 }
 
-.bio,
+.bio {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    color: #bbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bio i, .location i {
+    margin-right: 5px;
+}
+
+.bio i {
+    color: #f39c12;
+}
+
 .location {
-  font-size: 1.15rem;
-  color: #bbb;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
+    font-size: 1.2rem;
+    margin: 5px 0;
+    color: #bbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.bio i { color: #f39c12; }
-.location i { color: #e74c3c; }
+.location i {
+    color: #e74c3c;
+}
 
-/* ================= PROJECTS GRID ================= */
 .projects {
-  margin-top: 35px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 🔥 yan yana */
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
 }
 
-/* ================= PROJECT CARD ================= */
 .project {
-  background-color: #333;
-  border-radius: 14px;
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
 }
 
-/* ================= BANNER ================= */
 .project-banner {
-  width: 100%;
-  height: 180px;
-  border-radius: 10px;
-  object-fit: cover;
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    border-radius: 10px;
+    object-fit: contain;
 }
 
-/* ================= LOGO ================= */
 .project-logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  margin: -28px auto 10px;
-  background-color: #333;
-  padding: 3px;
+    width: 50px;
+    height: 50px;
+    margin-top: -30px;
+    border-radius: 50%;
 }
 
-/* ================= TITLE ================= */
 .project-name a {
-  color: #fff;
-  font-size: 1.25rem;
-  text-decoration: none;
-  transition: color 0.25s ease;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-bottom: 15px;
+    display: block;
 }
 
 .project-name a:hover {
-  color: #b1b0b1;
+    color: #b1b0b1;
 }
 
-/* ================= POSITION ================= */
+.project-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.project-icons i {
+    font-size: 1.15rem;
+    margin: 5px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.project-icons i:hover {
+    color: #b1b0b1;
+}
+
 .project-position {
-  font-size: 0.95rem;
-  color: #bbb;
-  margin: 4px 0 10px;
+    font-size: 0.95rem;
+    color: #bbb;
+    display: block; 
+    margin-top: -18.5px;
+    margin-bottom: 5px;
 }
 
-/* ================= BIO ================= */
 .project-bio {
-  font-size: 0.92rem;
-  color: #ccc;
-  line-height: 1.45;
-  margin-top: auto;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 0px;
 }
 
-/* ================= SOCIAL MEDIA ================= */
 .social-media {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px;
+    margin: 40px 0 0 0;  /* Üst kısmında boşluk bırakıyoruz, alt kısmı sıfırlıyoruz */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .social-icon {
-  font-size: 1.7rem;
-  padding: 8px;
-  border-radius: 50%;
-  transition: transform 0.2s ease, color 0.2s ease;
+    font-size: 1.7rem;
+    margin: 0;  /* Sosyal ikonlar arasındaki boşluğu sıfırlıyoruz */
+    padding: 9.5px;
+    border-radius: 50%;
+    transition: color 0.3s ease;
+    display: inline-block;
+    color: #fff;
 }
 
-.social-icon:hover {
-  transform: translateY(-3px);
-}
-
-/* Icon colors */
+/* Icon Colors */
 .social-icon.discord { color: #7289da; }
-.social-icon.steam { color: #00adee; }
-.social-icon.instagram { color: #e4405f; }
-.social-icon.youtube { color: #ff0000; }
-.social-icon.spotify { color: #1DB954; }
-.social-icon.letterboxd { color: #d5d5d5; }
+.social-icon.discord:hover { color: #5a6fb8; }
 
-/* ================= SPOTIFY (ESKI HAL) ================= */
+.social-icon.steam { color: #00adee; }
+.social-icon.steam:hover { color: #66c0f4; }
+
+.social-icon.instagram { color: #e4405f; }
+.social-icon.instagram:hover { color: #c13584; }
+
+.social-icon.youtube { color: #ff0000; }
+.social-icon.youtube:hover { color: #cc0000; }
+
+.social-icon.spotify { color: #1DB954; }
+.social-icon.spotify:hover { color: #1ed760; }
+
+.social-icon.letterboxd { color: #d5d5d5; }
+.social-icon.letterboxd:hover { color: #ff8000; }
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .bio, .location {
+        font-size: 1rem;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .social-icon {
+        font-size: 1.5rem;
+        margin: 10px 5px;
+    }
+}
+
+.show-more {
+    margin-top: 25px;
+}
+
+.show-more-btn {
+    color: #fff;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: 1.4px solid #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.show-more-btn:hover {
+    background-color: #b1b0b1;
+    color: #1a1a1a;
+}
+
+/* Light Mode */
+body.light-mode {
+    background-color: #fff;
+    color: #333;
+}
+
+.container.light-mode {
+    background-color: #fff;
+}
+
+.project.light-mode {
+    background-color: #f9f9f9;
+}
+
+.project-name a.light-mode {
+    color: #333;
+}
+
+.project-icons i.light-mode {
+    color: #333;
+}
+
+.social-icon.light-mode {
+    color: #333;
+}
+
+/* Icon Hover Effects */
+.project-name a:hover.light-mode,
+.project-icons i:hover.light-mode,
+.social-icon:hover.light-mode {
+    color: #b1b0b1;
+}
+
+/* Mode Toggle Button */
+.mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.mode-toggle:hover {
+    color: #b1b0b1;
+}
+
+body.light-mode .mode-toggle {
+    color: #333;
+}
+
+/* Joke Message */
+#joke-message {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#joke-message p {
+    color: red;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Error Message - Inbox Style */
+.error-message {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e74c3c;
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ==== Spotify Widget ==== */
 #spotify-widget {
   display: flex;
   align-items: center;
@@ -155,52 +312,58 @@ body {
   width: 100%;
   max-width: 350px;
   font-family: "Space Grotesk", sans-serif;
+  transition: opacity 0.3s ease-in-out;
   margin-left: auto;
   margin-right: auto;
 
+  /* Gradient border trick */
   border: 2px solid transparent;
-  background:
-    linear-gradient(#1a1a1a, #1a1a1a) padding-box,
-    linear-gradient(to left, #0f4022, #1db954) border-box;
+  background: linear-gradient(#1a1a1a, #1a1a1a) padding-box,
+              linear-gradient(to left, #0f4022, #1db954) border-box;
 }
+
 
 #spotify-widget.hidden {
   display: none;
 }
 
-#album-art {
+#spotify-widget #album-art {
   width: 64px;
   height: 64px;
   border-radius: 8px;
-  margin-right: 12px;
+  margin-right: 12px;  /* Reduce the space on the right */
   object-fit: cover;
 }
 
-.song-info {
-  display: flex;
-  flex-direction: column;
+#spotify-widget .song-info {
+  display: flex;  /* Align song name and artist name horizontally */
+  flex-direction: column;  /* Stack the song name and artist name vertically */
+  justify-content: flex-start;
   flex: 1;
   overflow: hidden;
 }
 
-#song-name {
+#spotify-widget #song-name {
   font-size: 1rem;
   font-weight: 444;
   color: #fff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-bottom: 2px;  /* Add a little space between song name and artist name */
+  text-align: left; /* Align to the left */
 }
 
-#artist-name {
+#spotify-widget #artist-name {
   font-size: 0.85rem;
   color: #b3b3b3;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: left; /* Align to the left */
 }
 
-.progress-container {
+#spotify-widget .progress-container {
   width: 100%;
   background-color: #444;
   height: 4px;
@@ -209,50 +372,22 @@ body {
   overflow: hidden;
 }
 
-#progress-bar {
+#spotify-widget #progress-bar {
   background-color: #1DB954;
   height: 100%;
   width: 0%;
+  transition: width 0.2s linear;
+}
+
+.time-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 #time-display {
   font-size: 0.9em;
-  margin-top: 4px;
+  margin-top: 4.4px;
   color: #bbb;
-}
-
-/* ================= MODE TOGGLE ================= */
-.mode-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: transparent;
-  border: none;
-  font-size: 1.2rem;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* ================= ERROR MESSAGE ================= */
-.error-message {
-  position: fixed;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #e74c3c;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-size: 1.1rem;
-  display: none;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .projects {
-    grid-template-columns: 1fr;
-  }
-
-  .project-banner {
-    height: 160px;
-  }
+  font-variant-numeric: tabular-nums;
 }
