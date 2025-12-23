@@ -1,43 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Denis - More</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denis - Portfolio</title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Denis - Portfolio | Hi, I'm Denis — a gamer, freelancer, and community builder.">
-  <meta name="keywords" content="Denis, Denis1337, Denis Mashov, Denis Portfolio, Georgian Community, Discord">
-  <meta property="og:title" content="Denis | Portfolio">
-  <meta name="author" content="Denis Mashov">
-  <meta name="robots" content="index, follow">
+<!-- SEO Meta Tags -->
+<meta name="description" content="Denis - Portfolio | Hi, I'm Denis — a gamer, freelancer, and community builder.">
+<meta name="keywords" content="Denis, Denis1337, Denis Mashov, Denis Mashov Portfolio, Denis Portfolio, Georgian Community, Georgian Community Discord">
+<meta property="og:title" content="Denis | Portfolio">
+<meta name="author" content="Denis Mashov">
+<meta name="robots" content="index, follow">
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet"> 
 
-  <!-- Favicon -->
-  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<!-- Site Map -->
+<link rel="sitemap" type="xml" href="https://www.denis1337.xyz/sitemap.xml">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="more.css">
+<!-- FAV Icon -->
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+<!-- CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Structured Data: JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Denis Mashov",
+  "alternateName": "Denis1337",
+  "url": "https://www.denis1337.xyz",
+  "image": "https://www.denis1337.xyz/img/avatar.webp ",
+  "jobTitle": "Freelancer & Community Builder",
+  "description": "Hi, I'm Denis — a gamer, freelancer, and community creator behind projects like Georgian Community and G-Online.",
+  "sameAs": [
+    "https://discord.com/users/385117340028764165",
+    "https://steamcommunity.com/id/DenisMashov1337",
+    "https://www.instagram.com/denismashov04",
+    "https://www.youtube.com/@DenisMashov1337",
+    "https://open.spotify.com/user/bhn46vbx7g6mmjqse0kgmqo5a",
+    "https://letterboxd.com/Denis1337/films/"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tbilisi",
+    "addressCountry": "Georgia"
+  }
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EHS2GQWVJG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EHS2GQWVJG');
+</script>
+
+
 </head>
 <body>
-  <div class="container">
+    <!-- Light Mode Toggle Button -->
+    <button class="mode-toggle" onclick="toggleMode()">🌞</button>
+
+<!-- Error Message (Inbox Style) -->
+<div id="error-message" class="error-message">
+    <p class="error-text">Light mode sucks!</p>
+</div>
+
+<div class="container">
+    <section class="avatar">
+<img src="img/avatar.webp" alt="Denis Avatar" loading="lazy">
+    </section>
+
     <header class="header">
-<!--      <h2>Other Discord Servers</h2> -->
+        <h2>Denis</h2>
+        <p class="bio">👋 hello, i'm a community builder and freelancer.</p>
+        <p class="location">
+            <i class="fas fa-map-marker-alt"></i> Tbilisi, Georgia
+        </p>
     </header>
 
+<!-- Real-time Spotify Widget -->
+<div id="spotify-widget" class="hidden">
+  <img id="album-art" src="" alt="Album Art" loading="lazy">
+  <div class="song-info">
+    <div id="song-name">Song name</div>
+    <div id="artist-name">Artist</div>
+    <div class="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+    <div class="time-wrapper">
+      <span id="time-display">0:00 / 0:00</span>
+    </div>
+  </div>
+</div>
+<p id="status-message">Loading Spotify data...</p>
+
+
+    <!-- Projects Section -->
     <section class="projects">
-      <!-- Cyber -->
-      <div class="project">
+        <!-- Cyber -->
+        <div class="project">
         <img src="img/cyberbanner.webp" alt="Cyber Banner" class="project-banner" loading="lazy">
         <img src="img/cyberlogo.webp" alt="Cybe Logo" class="project-logo" loading="lazy">
         <h3 class="project-name"><a href="https://discord.gg/M8bD4qJmkN" target="_blank">Cybercraft</a></h3>
         <p class="project-position">Discord Admin</p>
         <p class="project-bio">Cybercraft is a Minecraft server offering a variety of exciting game modes like Survival, Lifesteal, BoxPvP, and more. Join the adventure and play your way!</p>
-      </div>
+        </div>
+    </section>
+
+<!-- S C R I P T S -->
+
 </body>
 </html>
