@@ -87,17 +87,12 @@ body {
 
 .project {
     background: rgba(255,255,255,0.03);
-
     border-radius: 14px;
     padding: 14px;
-
     text-align: center;
-
     position: relative;
     overflow: hidden;
-
     border: none;
-
     transition: transform 0.2s ease, background 0.2s ease;
 }
 
@@ -111,7 +106,6 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-
     background: radial-gradient(
         circle at 30% 20%,
         rgba(255,255,255,0.05),
@@ -136,9 +130,7 @@ body {
 .project-logo {
     width: 48px;
     height: 48px;
-
     margin-top: -24px;
-
     border-radius: 50%;
 }
 
@@ -149,11 +141,8 @@ body {
 .project-name a {
     color: #fff;
     font-size: 1.1rem;
-
     text-decoration: none;
-
     display: block;
-
     margin: 6px 0;
 }
 
@@ -166,15 +155,10 @@ body {
 
     font-size: 0.8rem;
     color: #ddd;
-
     padding: 4px 10px;
-
     border-radius: 999px;
-
     background: rgba(255,255,255,0.05);
-
     max-width: 90%;
-
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -187,14 +171,12 @@ body {
 .project-icons {
     display: flex;
     justify-content: center;
-
     margin-top: 4px;
 }
 
 .project-icons i {
     font-size: 1rem;
     margin: 4px;
-
     color: #ddd;
 }
 
@@ -205,7 +187,6 @@ body {
 .project-bio {
     font-size: 0.85rem;
     color: #b8b8b8;
-
     margin-top: 6px;
     line-height: 1.45;
 }
@@ -226,14 +207,11 @@ body {
     border-radius: 16px;
     background: #1f1f1f;
     border: 1px solid rgba(255,255,255,0.06);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 1.4rem;
     text-decoration: none;
-
     transition: all 0.3s ease;
 }
 
