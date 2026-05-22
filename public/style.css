@@ -33,29 +33,6 @@ body {
 }
 
 /* =========================
-ERROR MESSAGE
-========================= */
-
-.error-message {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    background: #e74c3c;
-    color: #fff;
-
-    padding: 12px 18px;
-    border-radius: 10px;
-
-    font-size: 14px;
-    font-weight: 500;
-
-    display: none;
-    z-index: 9999;
-}
-
-/* =========================
 CONTAINER
 ========================= */
 
@@ -109,13 +86,13 @@ PROJECT GRID
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 24px;
 
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 /* =========================
-PROJECT CARD
+PROJECT CARD (FIXED SPACING)
 ========================= */
 
 .project {
@@ -127,6 +104,8 @@ PROJECT CARD
     border: 1px solid rgba(255,255,255,0.05);
 
     transition: 0.25s ease;
+
+    padding-bottom: 12px; /* 🔥 IMPORTANT spacing fix */
 }
 
 .project:hover {
@@ -135,45 +114,42 @@ PROJECT CARD
 }
 
 /* =========================
-BANNERS (FIXED SIZE PROPERLY)
+BANNERS
 ========================= */
 
 .project-banner {
     width: 100%;
-    height: 140px;   /* 🔥 FIXED SMALLER AGAIN */
+    height: 120px;   /* slightly smaller = cleaner */
+
     object-fit: cover;
 
     display: block;
 
     opacity: 1 !important;
     filter: none !important;
-    mix-blend-mode: normal !important;
 }
 
 /* =========================
-CONTENT
+CONTENT (FIXED BORDERS / SPACING ISSUE)
 ========================= */
 
 .project-content {
-    padding: 15px;
+    padding: 18px 16px 20px 16px;  /* 🔥 MORE SPACE LEFT/RIGHT */
 }
 
 /* =========================
-LOGO
+LOGO (CENTER + BREATHING ROOM)
 ========================= */
 
 .project-logo {
-    width: 70px;
-    height: 70px;
+    width: 72px;
+    height: 72px;
 
     border-radius: 50%;
     object-fit: cover;
 
-    margin-top: -35px;
-    margin-left: auto;
-    margin-right: auto;
-
     display: block;
+    margin: -36px auto 10px auto;
 
     border: 4px solid #181818;
     background: #181818;
@@ -186,40 +162,45 @@ TEXT
 .project-name a {
     color: #fff;
     text-decoration: none;
+
     font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .project-position {
     color: #aaa;
     font-size: 0.9rem;
-    margin-top: 5px;
+
+    margin-top: 6px;
 }
 
 .project-bio {
     color: #bbb;
     font-size: 0.9rem;
-    margin-top: 8px;
+
+    margin-top: 10px;
     line-height: 1.5;
 }
 
 /* =========================
-SOCIAL MEDIA (FIXED LINE ISSUE)
+SOCIAL MEDIA (FIXED LINE ISSUE COMPLETELY)
 ========================= */
 
 .social-media {
     display: flex;
     justify-content: center;
-    align-items: center;   /* 🔥 FIX LINE ISSUE */
+    align-items: center;
 
-    flex-wrap: wrap;       /* 🔥 prevents overflow line */
+    flex-wrap: wrap;
 
     gap: 14px;
 
     margin-top: 40px;
     margin-bottom: 20px;
+
+    line-height: 0; /* 🔥 removes “weird text line” issue */
 }
 
-/* ICON STYLE */
 .social-icon {
     width: 52px;
     height: 52px;
@@ -232,8 +213,6 @@ SOCIAL MEDIA (FIXED LINE ISSUE)
 
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.06);
-
-    backdrop-filter: blur(8px);
 
     font-size: 1.5rem;
 
@@ -250,8 +229,8 @@ SOCIAL MEDIA (FIXED LINE ISSUE)
 
     width: 100%;
     height: 100%;
-
     background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
+
     opacity: 0;
     transition: 0.3s ease;
 }
@@ -264,20 +243,13 @@ SOCIAL MEDIA (FIXED LINE ISSUE)
     transform: translateY(-4px) scale(1.05);
 }
 
-/* =========================
-SOCIAL COLORS
-========================= */
-
+/* COLORS */
 .discord { color: #7289da; }
 .steam { color: #66c0f4; }
 .instagram { color: #e4405f; }
 .youtube { color: #ff0000; }
 .spotify { color: #1db954; }
-
-/* 🔥 FIX: LETTERBOXD BACK TO ORANGE */
-.letterboxd {
-    color: #ff8000;
-}
+.letterboxd { color: #ff8000; }
 
 /* =========================
 SPOTIFY
@@ -300,18 +272,6 @@ SPOTIFY
         linear-gradient(to left, #0f4022, #1db954) border-box;
 }
 
-#spotify-widget.hidden {
-    display: none;
-}
-
-#album-art {
-    width: 64px;
-    height: 64px;
-
-    border-radius: 8px;
-    margin-right: 10px;
-}
-
 /* =========================
 MOBILE
 ========================= */
@@ -321,11 +281,7 @@ MOBILE
         grid-template-columns: 1fr;
     }
 
-    .header h2 {
-        font-size: 2rem;
-    }
-
     .project-banner {
-        height: 120px; /* 🔥 even cleaner mobile */
+        height: 110px;
     }
 }
