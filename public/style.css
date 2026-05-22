@@ -1,5 +1,5 @@
 /* =========================
-GLOBAL RESET
+RESET
 ========================= */
 
 * {
@@ -42,10 +42,10 @@ CONTAINER
     width: 100%;
     max-width: 1000px;
 
-    text-align: center;
-
     padding: 30px 15px;
     margin: 0 auto;
+
+    text-align: center;
 }
 
 /* =========================
@@ -94,7 +94,7 @@ PROJECT GRID
 }
 
 /* =========================
-PROJECT CARD
+PROJECT CARD (IMPORTANT FIX HERE)
 ========================= */
 
 .project {
@@ -106,6 +106,9 @@ PROJECT CARD
     border: 1px solid rgba(255,255,255,0.05);
 
     transition: 0.25s ease;
+
+    display: flex;
+    flex-direction: column; /* 🔥 FIX STRUCTURE */
 }
 
 .project:hover {
@@ -114,13 +117,12 @@ PROJECT CARD
 }
 
 /* =========================
-BANNERS (FIXED PROPER SIZE)
+BANNERS
 ========================= */
 
 .project-banner {
     width: 100%;
-    height: 130px;
-
+    height: 125px;
     object-fit: cover;
     display: block;
 }
@@ -137,9 +139,25 @@ LOGO
     object-fit: cover;
 
     display: block;
-    margin: -36px auto 10px auto;
+    margin: -36px auto 12px auto;
 
     border: 4px solid #181818;
+}
+
+/* =========================
+TEXT AREA (THIS FIXES “TOO CLOSE DESC”)
+========================= */
+
+.project-content {
+    padding: 0 18px 18px 18px; /* 🔥 REAL FIX FOR CRAMPED TEXT */
+}
+
+/* if HTML has no wrapper, still works via fallback */
+.project-name,
+.project-position,
+.project-bio {
+    margin-left: 12px;
+    margin-right: 12px;
 }
 
 /* =========================
@@ -150,23 +168,27 @@ TEXT
     color: #fff;
     text-decoration: none;
     font-size: 1.2rem;
+    font-weight: 600;
+
+    display: block;
+    margin-top: 5px;
 }
 
 .project-position {
     color: #aaa;
     font-size: 0.9rem;
-    margin-top: 5px;
+    margin-top: 6px;
 }
 
 .project-bio {
     color: #bbb;
     font-size: 0.9rem;
-    margin-top: 8px;
+    margin-top: 10px;
     line-height: 1.5;
 }
 
 /* =========================
-SOCIAL MEDIA (FINAL NO LINE BUG FIX)
+SOCIAL MEDIA (REAL FIX - NO LINE BUG)
 ========================= */
 
 .social-media {
@@ -181,10 +203,12 @@ SOCIAL MEDIA (FINAL NO LINE BUG FIX)
     margin-top: 40px;
 
     line-height: 0;
-    font-size: 0; /* 🔥 removes inline spacing bug */
+    font-size: 0;
+
+    padding-bottom: 10px;
 }
 
-/* ICON BOX */
+/* ICON */
 .social-icon {
     width: 52px;
     height: 52px;
@@ -200,18 +224,15 @@ SOCIAL MEDIA (FINAL NO LINE BUG FIX)
 
     position: relative;
 
-    transition: 0.25s ease;
-
     line-height: 1;
     font-size: 0;
 
-    -webkit-backface-visibility: hidden;
-    transform: translateZ(0);
+    transition: 0.25s ease;
 }
 
-/* ICON INSIDE FIX */
+/* IMPORTANT: FIX FONT AWESOME RENDER GLITCH */
 .social-icon i {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     line-height: 1;
 }
 
@@ -246,7 +267,7 @@ SOCIAL MEDIA (FINAL NO LINE BUG FIX)
 .letterboxd { color: #ff8000; }
 
 /* =========================
-SPOTIFY (SAFE)
+SPOTIFY
 ========================= */
 
 #spotify-widget {
@@ -284,9 +305,5 @@ MOBILE
 
     .project-banner {
         height: 110px;
-    }
-
-    .header h2 {
-        font-size: 2rem;
     }
 }
