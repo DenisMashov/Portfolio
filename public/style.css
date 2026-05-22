@@ -135,12 +135,12 @@ PROJECT CARD
 }
 
 /* =========================
-BANNERS (FIXED SMALLER SIZE)
+BANNERS (FIXED SIZE PROPERLY)
 ========================= */
 
 .project-banner {
     width: 100%;
-    height: 150px;   /* 🔥 FIXED SMALLER */
+    height: 140px;   /* 🔥 FIXED SMALLER AGAIN */
     object-fit: cover;
 
     display: block;
@@ -203,18 +203,23 @@ TEXT
 }
 
 /* =========================
-SOCIAL MEDIA (OVERLAY BACK)
+SOCIAL MEDIA (FIXED LINE ISSUE)
 ========================= */
 
 .social-media {
     display: flex;
     justify-content: center;
+    align-items: center;   /* 🔥 FIX LINE ISSUE */
+
+    flex-wrap: wrap;       /* 🔥 prevents overflow line */
+
     gap: 14px;
 
     margin-top: 40px;
     margin-bottom: 20px;
 }
 
+/* ICON STYLE */
 .social-icon {
     width: 52px;
     height: 52px;
@@ -238,12 +243,14 @@ SOCIAL MEDIA (OVERLAY BACK)
     overflow: hidden;
 }
 
-/* glow overlay */
+/* hover glow */
 .social-icon::before {
     content: "";
     position: absolute;
+
     width: 100%;
     height: 100%;
+
     background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
     opacity: 0;
     transition: 0.3s ease;
@@ -257,12 +264,20 @@ SOCIAL MEDIA (OVERLAY BACK)
     transform: translateY(-4px) scale(1.05);
 }
 
-/* COLORS */
+/* =========================
+SOCIAL COLORS
+========================= */
+
 .discord { color: #7289da; }
 .steam { color: #66c0f4; }
 .instagram { color: #e4405f; }
 .youtube { color: #ff0000; }
 .spotify { color: #1db954; }
+
+/* 🔥 FIX: LETTERBOXD BACK TO ORANGE */
+.letterboxd {
+    color: #ff8000;
+}
 
 /* =========================
 SPOTIFY
@@ -311,6 +326,6 @@ MOBILE
     }
 
     .project-banner {
-        height: 130px; /* even smaller on mobile */
+        height: 120px; /* 🔥 even cleaner mobile */
     }
 }
