@@ -8,14 +8,10 @@ RESET
     box-sizing: border-box;
 }
 
-html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 html, body {
     width: 100%;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* =========================
@@ -29,9 +25,6 @@ body {
 
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-
-    min-height: 100vh;
 }
 
 /* =========================
@@ -42,9 +35,7 @@ CONTAINER
     width: 100%;
     max-width: 1000px;
 
-    padding: 30px 15px;
-    margin: 0 auto;
-
+    padding: 30px 16px;
     text-align: center;
 }
 
@@ -55,12 +46,10 @@ AVATAR
 .avatar img {
     width: 140px;
     height: 140px;
-
     border-radius: 50%;
     object-fit: cover;
-
-    display: block;
     margin: 0 auto 10px;
+    display: block;
 }
 
 /* =========================
@@ -68,7 +57,7 @@ HEADER
 ========================= */
 
 .header h2 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
 }
 
 .bio {
@@ -87,28 +76,25 @@ PROJECT GRID
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
     margin-top: 40px;
 }
 
 /* =========================
-PROJECT CARD (IMPORTANT FIX HERE)
+PROJECT CARD (FIXED STRUCTURE)
 ========================= */
 
 .project {
     background: #181818;
     border-radius: 18px;
-
     overflow: hidden;
-
     border: 1px solid rgba(255,255,255,0.05);
 
-    transition: 0.25s ease;
-
     display: flex;
-    flex-direction: column; /* 🔥 FIX STRUCTURE */
+    flex-direction: column;
+
+    transition: 0.25s ease;
 }
 
 .project:hover {
@@ -117,12 +103,12 @@ PROJECT CARD (IMPORTANT FIX HERE)
 }
 
 /* =========================
-BANNERS
+BANNER (FIXED RATIO — NO MORE BIG LOOK)
 ========================= */
 
 .project-banner {
     width: 100%;
-    height: 125px;
+    height: 110px;
     object-fit: cover;
     display: block;
 }
@@ -132,80 +118,55 @@ LOGO
 ========================= */
 
 .project-logo {
-    width: 72px;
-    height: 72px;
-
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
 
+    margin: -35px auto 10px;
     display: block;
-    margin: -36px auto 12px auto;
 
     border: 4px solid #181818;
 }
 
 /* =========================
-TEXT AREA (THIS FIXES “TOO CLOSE DESC”)
-========================= */
-
-.project-content {
-    padding: 0 18px 18px 18px; /* 🔥 REAL FIX FOR CRAMPED TEXT */
-}
-
-/* if HTML has no wrapper, still works via fallback */
-.project-name,
-.project-position,
-.project-bio {
-    margin-left: 12px;
-    margin-right: 12px;
-}
-
-/* =========================
-TEXT
+TEXT AREA (REAL FIX FOR CRAMPED LOOK)
 ========================= */
 
 .project-name a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 600;
-
     display: block;
-    margin-top: 5px;
+    margin-top: 6px;
 }
 
 .project-position {
     color: #aaa;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     margin-top: 6px;
 }
 
 .project-bio {
     color: #bbb;
     font-size: 0.9rem;
-    margin-top: 10px;
+    margin: 10px 14px 16px;
     line-height: 1.5;
 }
 
 /* =========================
-SOCIAL MEDIA (REAL FIX - NO LINE BUG)
+SOCIAL MEDIA (REBUILT — NO LINE BUG)
 ========================= */
 
 .social-media {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 52px);
     justify-content: center;
-    align-items: center;
-
-    flex-wrap: wrap;
 
     gap: 14px;
 
     margin-top: 40px;
-
-    line-height: 0;
-    font-size: 0;
-
-    padding-bottom: 10px;
 }
 
 /* ICON */
@@ -224,16 +185,12 @@ SOCIAL MEDIA (REAL FIX - NO LINE BUG)
 
     position: relative;
 
-    line-height: 1;
-    font-size: 0;
-
     transition: 0.25s ease;
 }
 
-/* IMPORTANT: FIX FONT AWESOME RENDER GLITCH */
+/* ICON FIX */
 .social-icon i {
     font-size: 1.35rem;
-    line-height: 1;
 }
 
 /* hover glow */
@@ -241,11 +198,9 @@ SOCIAL MEDIA (REAL FIX - NO LINE BUG)
     content: "";
     position: absolute;
     inset: 0;
-
     border-radius: 14px;
 
     background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
-
     opacity: 0;
     transition: 0.25s ease;
 }
@@ -304,6 +259,6 @@ MOBILE
     }
 
     .project-banner {
-        height: 110px;
+        height: 100px;
     }
 }
