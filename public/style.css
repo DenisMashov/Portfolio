@@ -1,48 +1,85 @@
 /* =========================
 RESET
 ========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* =========================
-BODY (SAFE)
+BODY
 ========================= */
+
 body {
     font-family: "Source Sans 3", sans-serif;
     background: #0f0f0f;
     color: #fff;
 
+    margin: 0;
+    padding: 0;
+
     display: flex;
     justify-content: center;
+    align-items: flex-start;
 
     min-height: 100vh;
-    padding: 30px 15px;
 }
 
 /* =========================
-CONTAINER (RESTORED SAFE)
+ERROR MESSAGE FIX
 ========================= */
+
+.error-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #e74c3c;
+    color: #fff;
+
+    padding: 12px 18px;
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    display: none;
+    z-index: 9999;
+}
+
+/* =========================
+CONTAINER
+========================= */
+
 .container {
     width: 100%;
     max-width: 1000px;
+
     text-align: center;
+
+    padding: 30px 15px;
+    margin: 0 auto;
 }
 
 /* =========================
 AVATAR
 ========================= */
+
 .avatar img {
     width: 140px;
     height: 140px;
+
     border-radius: 50%;
     object-fit: cover;
+
     display: block;
     margin: 0 auto 10px;
 }
@@ -50,13 +87,15 @@ AVATAR
 /* =========================
 HEADER
 ========================= */
+
 .header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
+    font-size: 2.6rem;
+    margin-top: 10px;
 }
 
 .bio {
     color: #aaa;
+    margin-top: 5px;
 }
 
 .location {
@@ -65,54 +104,65 @@ HEADER
 }
 
 /* =========================
-PROJECTS GRID (SAFE FIX)
+PROJECT GRID
 ========================= */
+
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+
     margin-top: 40px;
 }
 
 /* =========================
-PROJECT CARD (FIXED)
+PROJECT CARD
 ========================= */
+
 .project {
     background: #181818;
     border-radius: 18px;
+
     overflow: hidden;
 
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.05);
 
     transition: 0.25s ease;
 }
 
 .project:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    border-color: rgba(255,255,255,0.12);
 }
 
 /* =========================
 BANNER FIX (NO GRAY OVERLAY)
 ========================= */
+
 .project-banner {
     width: 100%;
-    height: 180px;
+    height: 190px;
     object-fit: cover;
 
     display: block;
 
     opacity: 1 !important;
     filter: none !important;
+    mix-blend-mode: normal !important;
 }
 
 /* =========================
-CONTENT (SAFE)
+CONTENT
 ========================= */
+
 .project-content {
     padding: 15px;
 }
 
-/* LOGO FIX */
+/* =========================
+LOGO FIX (CENTER PERFECT)
+========================= */
+
 .project-logo {
     width: 70px;
     height: 70px;
@@ -121,16 +171,25 @@ CONTENT (SAFE)
     object-fit: cover;
 
     margin-top: -35px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
 
     border: 4px solid #181818;
     background: #181818;
 }
 
-/* TEXT */
+/* =========================
+TEXT
+========================= */
+
 .project-name a {
     color: #fff;
     text-decoration: none;
+
     font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .project-position {
@@ -143,22 +202,32 @@ CONTENT (SAFE)
     color: #bbb;
     font-size: 0.9rem;
     margin-top: 8px;
+    line-height: 1.5;
 }
 
 /* =========================
-SOCIALS (SAFE)
+SOCIALS
 ========================= */
+
 .social-media {
     display: flex;
     justify-content: center;
     gap: 12px;
+
     margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .social-icon {
     font-size: 1.6rem;
     padding: 10px;
+
     color: #fff;
+    transition: 0.2s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
 }
 
 /* COLORS */
@@ -169,14 +238,18 @@ SOCIALS (SAFE)
 .spotify { color: #1db954; }
 
 /* =========================
-SPOTIFY (UNCHANGED SAFE)
+SPOTIFY WIDGET
 ========================= */
+
 #spotify-widget {
     display: flex;
     align-items: center;
+
     max-width: 350px;
     margin: 15px auto;
+
     padding: 10px;
+
     border-radius: 12px;
 
     border: 2px solid transparent;
@@ -192,6 +265,7 @@ SPOTIFY (UNCHANGED SAFE)
 #album-art {
     width: 64px;
     height: 64px;
+
     border-radius: 8px;
     margin-right: 10px;
 }
@@ -200,15 +274,45 @@ SPOTIFY (UNCHANGED SAFE)
     flex: 1;
 }
 
-#progress-bar {
-    height: 4px;
-    background: #1db954;
-    width: 0%;
+#song-name {
+    font-weight: 600;
 }
 
-/* MOBILE */
+#artist-name {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.progress-container {
+    height: 4px;
+    background: #333;
+    border-radius: 10px;
+
+    margin-top: 6px;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #1db954;
+}
+
+#time-display {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* =========================
+MOBILE
+========================= */
+
 @media (max-width: 768px) {
     .projects {
         grid-template-columns: 1fr;
+    }
+
+    .header h2 {
+        font-size: 2rem;
     }
 }
