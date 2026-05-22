@@ -146,7 +146,6 @@ body {
 .location i {
     color: #e74c3c;
 }
-
 /* =========================
    PROJECT GRID
 ========================= */
@@ -154,20 +153,20 @@ body {
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 18px;
+    gap: 14px;
 
-    margin: 28px 0;
+    margin: 20px 0;
 }
 
 /* =========================
-   PROJECT CARD (CLEAN GLASS MINIMAL)
+   PROJECT CARD (COMPACT)
 ========================= */
 
 .project {
     background: rgba(255,255,255,0.03);
 
-    border-radius: 16px;
-    padding: 14px;
+    border-radius: 14px;
+    padding: 10px;
 
     text-align: center;
 
@@ -176,31 +175,27 @@ body {
 
     border: none;
 
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .project:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     background: rgba(255,255,255,0.05);
 }
 
-/* soft ambient light (no borders) */
+/* subtle light */
 .project::before {
     content: "";
     position: absolute;
     inset: 0;
 
-    pointer-events: none;
-
     background: radial-gradient(
         circle at 30% 20%,
-        rgba(255,255,255,0.06),
+        rgba(255,255,255,0.05),
         transparent 60%
     );
 
-    opacity: 0.5;
+    pointer-events: none;
 }
 
 /* =========================
@@ -209,90 +204,57 @@ body {
 
 .project-banner {
     width: 100%;
-    max-height: 220px;
+    max-height: 200px;
 
-    border-radius: 12px;
+    border-radius: 10px;
     object-fit: cover;
 }
 
 .project-logo {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
 
-    margin-top: -26px;
+    margin-top: -24px;
 
     border-radius: 50%;
-
-    border: none;
 }
 
 /* =========================
-   NAME
+   NAME (LESS GAP)
 ========================= */
 
 .project-name a {
     color: #fff;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
 
     text-decoration: none;
 
     display: block;
-    margin: 12px 0;
 
-    transition: opacity 0.2s ease;
-}
-
-.project-name a:hover {
-    opacity: 0.75;
+    margin: 6px 0;
 }
 
 /* =========================
-   ROLE (MODERN PILL SYSTEM)
+   ROLE (TIGHT)
 ========================= */
 
 .project-position {
     display: inline-flex;
-    align-items: center;
 
-    font-size: 0.85rem;
-    color: #e6e6e6;
+    font-size: 0.8rem;
+    color: #ddd;
 
-    padding: 6px 12px;
+    padding: 4px 10px;
 
     border-radius: 999px;
 
-    background: rgba(255,255,255,0.06);
-
-    backdrop-filter: blur(10px);
-
-    border: none;
+    background: rgba(255,255,255,0.05);
 
     max-width: 90%;
 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
-    position: relative;
-}
-
-/* subtle moving highlight (no harsh border) */
-.project-position::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -60%;
-    width: 50%;
-    height: 100%;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,0.08),
-        transparent
-    );
-
-    animation: shine 6s infinite;
 }
 
 /* =========================
@@ -302,32 +264,27 @@ body {
 .project-icons {
     display: flex;
     justify-content: center;
-    margin-top: 8px;
+
+    margin-top: 4px;
 }
 
 .project-icons i {
-    font-size: 1.1rem;
-    margin: 5px;
+    font-size: 1rem;
+    margin: 4px;
 
-    color: #dcdcdc;
-
-    transition: opacity 0.2s ease;
-}
-
-.project-icons i:hover {
-    opacity: 0.7;
+    color: #ddd;
 }
 
 /* =========================
-   BIO
+   BIO (MAIN FIX HERE)
 ========================= */
 
 .project-bio {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #b8b8b8;
 
-    margin-top: 10px;
-    line-height: 1.6;
+    margin-top: 6px;
+    line-height: 1.45;
 }
 
 /* ===== SOCIAL MEDIA ===== */
