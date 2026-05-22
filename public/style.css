@@ -22,9 +22,6 @@ body {
     background: #0f0f0f;
     color: #fff;
 
-    margin: 0;
-    padding: 0;
-
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -57,8 +54,8 @@ AVATAR
     border-radius: 50%;
     object-fit: cover;
 
-    display: block;
     margin: 0 auto 10px;
+    display: block;
 }
 
 /* =========================
@@ -80,7 +77,7 @@ HEADER
 }
 
 /* =========================
-PROJECT GRID
+PROJECTS
 ========================= */
 
 .projects {
@@ -88,57 +85,36 @@ PROJECT GRID
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
 
-    margin-top: 45px;
+    margin-top: 40px;
 }
-
-/* =========================
-PROJECT CARD (FIXED SPACING)
-========================= */
 
 .project {
     background: #181818;
     border-radius: 18px;
-
     overflow: hidden;
 
     border: 1px solid rgba(255,255,255,0.05);
 
     transition: 0.25s ease;
-
-    padding-bottom: 12px; /* 🔥 IMPORTANT spacing fix */
 }
 
 .project:hover {
     transform: translateY(-6px);
-    border-color: rgba(255,255,255,0.12);
 }
 
 /* =========================
-BANNERS
+BANNERS (FIXED PROPER SIZE)
 ========================= */
 
 .project-banner {
     width: 100%;
-    height: 120px;   /* slightly smaller = cleaner */
-
+    height: 120px;
     object-fit: cover;
-
     display: block;
-
-    opacity: 1 !important;
-    filter: none !important;
 }
 
 /* =========================
-CONTENT (FIXED BORDERS / SPACING ISSUE)
-========================= */
-
-.project-content {
-    padding: 18px 16px 20px 16px;  /* 🔥 MORE SPACE LEFT/RIGHT */
-}
-
-/* =========================
-LOGO (CENTER + BREATHING ROOM)
+LOGO
 ========================= */
 
 .project-logo {
@@ -152,7 +128,6 @@ LOGO (CENTER + BREATHING ROOM)
     margin: -36px auto 10px auto;
 
     border: 4px solid #181818;
-    background: #181818;
 }
 
 /* =========================
@@ -162,28 +137,22 @@ TEXT
 .project-name a {
     color: #fff;
     text-decoration: none;
-
     font-size: 1.2rem;
-    font-weight: 600;
 }
 
 .project-position {
     color: #aaa;
     font-size: 0.9rem;
-
-    margin-top: 6px;
 }
 
 .project-bio {
     color: #bbb;
     font-size: 0.9rem;
-
-    margin-top: 10px;
-    line-height: 1.5;
+    margin-top: 8px;
 }
 
 /* =========================
-SOCIAL MEDIA (FIXED LINE ISSUE COMPLETELY)
+SOCIAL MEDIA (FIXED LINE BUG COMPLETELY)
 ========================= */
 
 .social-media {
@@ -196,11 +165,12 @@ SOCIAL MEDIA (FIXED LINE ISSUE COMPLETELY)
     gap: 14px;
 
     margin-top: 40px;
-    margin-bottom: 20px;
 
-    line-height: 0; /* 🔥 removes “weird text line” issue */
+    line-height: 0;         /* 🔥 REMOVES THE “LINE” BUG */
+    font-size: 0;           /* 🔥 kills inline spacing glitch */
 }
 
+/* ICON BOX */
 .social-icon {
     width: 52px;
     height: 52px;
@@ -211,15 +181,17 @@ SOCIAL MEDIA (FIXED LINE ISSUE COMPLETELY)
 
     border-radius: 14px;
 
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
 
     font-size: 1.5rem;
 
-    transition: all 0.25s ease;
+    transition: 0.25s ease;
 
     position: relative;
     overflow: hidden;
+
+    line-height: 1; /* important fix */
 }
 
 /* hover glow */
@@ -229,8 +201,8 @@ SOCIAL MEDIA (FIXED LINE ISSUE COMPLETELY)
 
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
 
+    background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
     opacity: 0;
     transition: 0.3s ease;
 }
@@ -252,24 +224,30 @@ SOCIAL MEDIA (FIXED LINE ISSUE COMPLETELY)
 .letterboxd { color: #ff8000; }
 
 /* =========================
-SPOTIFY
+SPOTIFY (UNCHANGED BUT SAFE)
 ========================= */
 
 #spotify-widget {
     display: flex;
     align-items: center;
 
-    max-width: 350px;
+    max-width: 360px;
     margin: 15px auto;
 
-    padding: 10px;
+    padding: 10px 12px;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
     border: 2px solid transparent;
     background:
         linear-gradient(#1a1a1a, #1a1a1a) padding-box,
         linear-gradient(to left, #0f4022, #1db954) border-box;
+}
+
+#album-art {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
 }
 
 /* =========================
