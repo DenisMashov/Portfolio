@@ -1,3 +1,4 @@
+
 /* =========================
 RESET
 ========================= */
@@ -13,15 +14,6 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
-    width: 100%;
-    overflow-x: hidden;
-}
-
-/* =========================
-BODY
-========================= */
-
 body {
     font-family: "Source Sans 3", sans-serif;
     background: #0f0f0f;
@@ -29,9 +21,10 @@ body {
 
     display: flex;
     justify-content: center;
-    align-items: flex-start;
 
     min-height: 100vh;
+
+    overflow-x: hidden;
 }
 
 /* =========================
@@ -80,7 +73,7 @@ HEADER
 }
 
 /* =========================
-PROJECT GRID
+PROJECTS GRID
 ========================= */
 
 .projects {
@@ -92,7 +85,7 @@ PROJECT GRID
 }
 
 /* =========================
-PROJECT CARD
+PROJECT CARD (FIXED STRUCTURE)
 ========================= */
 
 .project {
@@ -103,6 +96,9 @@ PROJECT CARD
 
     border: 1px solid rgba(255,255,255,0.05);
 
+    display: flex;
+    flex-direction: column;
+
     transition: 0.25s ease;
 }
 
@@ -112,12 +108,13 @@ PROJECT CARD
 }
 
 /* =========================
-BANNERS
+BANNER (FIXED SIZE)
 ========================= */
 
 .project-banner {
     width: 100%;
     height: 120px;
+
     object-fit: cover;
     display: block;
 }
@@ -134,7 +131,7 @@ LOGO
     object-fit: cover;
 
     display: block;
-    margin: -36px auto 10px auto;
+    margin: -36px auto 10px;
 
     border: 4px solid #181818;
 }
@@ -146,6 +143,7 @@ TEXT
 .project-name a {
     color: #fff;
     text-decoration: none;
+
     font-size: 1.2rem;
     font-weight: 600;
 }
@@ -153,38 +151,44 @@ TEXT
 .project-position {
     color: #aaa;
     font-size: 0.9rem;
+
     margin-top: 6px;
 }
 
 .project-bio {
     color: #bbb;
     font-size: 0.9rem;
-    margin: 10px 14px 16px;
+
+    margin: 10px 16px 16px;
     line-height: 1.5;
 }
 
 /* =========================================================
-SOCIAL MEDIA — NEW STYLE (NO LINES, SAME COLORS, NEW LOOK)
+SOCIAL MEDIA — FINAL FIX (NO LINES EVER)
 ========================================================= */
 
 .social-media {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 60px);
+    display: flex;
     justify-content: center;
+    align-items: center;
 
-    gap: 16px;
+    flex-wrap: wrap;
+    gap: 14px;
 
     margin-top: 40px;
+
+    font-size: 0;
+    line-height: 0;
 }
 
-/* ICON BOX (NEW CLEAN STYLE) */
+/* ICON BOX */
 .social-icon {
     width: 56px;
     height: 56px;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     border-radius: 16px;
 
@@ -193,18 +197,21 @@ SOCIAL MEDIA — NEW STYLE (NO LINES, SAME COLORS, NEW LOOK)
 
     position: relative;
 
+    overflow: hidden;
+
     transition: 0.25s ease;
 
-    overflow: hidden;
-}
-
-/* ICON INSIDE */
-.social-icon i {
-    font-size: 1.35rem;
     line-height: 1;
 }
 
-/* hover glow */
+/* ICON FIX */
+.social-icon i {
+    font-size: 1.35rem;
+    line-height: 1;
+    display: block;
+}
+
+/* glow effect */
 .social-icon::after {
     content: "";
     position: absolute;
@@ -225,7 +232,7 @@ SOCIAL MEDIA — NEW STYLE (NO LINES, SAME COLORS, NEW LOOK)
 }
 
 /* =========================
-COLORS (UNCHANGED AS REQUESTED)
+COLORS (UNCHANGED)
 ========================= */
 
 .discord { color: #7289da; }
@@ -236,7 +243,7 @@ COLORS (UNCHANGED AS REQUESTED)
 .letterboxd { color: #ff8000; }
 
 /* =========================
-SPOTIFY
+SPOTIFY (SAFE)
 ========================= */
 
 #spotify-widget {
