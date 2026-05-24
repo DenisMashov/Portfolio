@@ -74,7 +74,7 @@ body {
    PROJECT GRID
 ========================= */
 
-.projects {
+.discords {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 18px;
@@ -85,7 +85,7 @@ body {
    PROJECT CARD
 ========================= */
 
-.project {
+.discord {
     background: rgba(255,255,255,0.03);
     border-radius: 14px;
     padding: 14px;
@@ -96,12 +96,12 @@ body {
     transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.project:hover {
+.discord:hover {
     transform: translateY(-4px);
     background: rgba(255,255,255,0.05);
 }
 
-.project::before {
+.discord::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -117,14 +117,14 @@ body {
    BANNER / LOGO
 ========================= */
 
-.project-banner {
+.discord-banner {
     width: 100%;
     max-height: 200px;
     border-radius: 10px;
     object-fit: cover;
 }
 
-.project-logo {
+.discord-logo {
     width: 48px;
     height: 48px;
     margin-top: -24px;
@@ -138,7 +138,7 @@ body {
    PROJECT NAME
 ========================= */
 
-.project-name a {
+.discord-name a {
     color: #fff;
     font-size: 1.1rem;
     font-weight: 600;
@@ -148,7 +148,7 @@ body {
     transition: color 0.2s ease;
 }
 
-.project-name a:hover {
+.discord-name a:hover {
     color: #d1d1d1;
 }
 
@@ -156,7 +156,7 @@ body {
    ROLE
 ========================= */
 
-.project-position {
+.discord-position {
     display: inline-flex;
     font-size: 0.8rem;
     color: #ddd;
@@ -173,20 +173,20 @@ body {
    ICONS
 ========================= */
 
-.project-icons {
+.discord-icons {
     display: flex;
     justify-content: center;
     margin-top: 6px;
 }
 
-.project-icons i {
+.discord-icons i {
     font-size: 1rem;
     margin: 4px;
     color: #ddd;
     transition: color 0.2s ease;
 }
 
-.project-icons i:hover {
+.discord-icons i:hover {
     color: #fff;
 }
 
@@ -194,7 +194,7 @@ body {
    PROJECT BIO
 ========================= */
 
-.project-bio {
+.discord-bio {
     font-size: 0.85rem;
     color: #b8b8b8;
     margin-top: 8px;
