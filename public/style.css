@@ -81,6 +81,24 @@ body {
     margin: 20px 0;
 }
 
+.discords > *:nth-last-child(1):nth-child(3n + 1) {
+    grid-column: 2;
+}
+@media (max-width: 768px) {
+    .discords {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .discord {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .discords > *:nth-last-child(1):nth-child(3n + 1) {
+        grid-column: auto;
+    }
+}
 /* =========================
    PROJECT CARD
 ========================= */
