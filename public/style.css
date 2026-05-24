@@ -74,7 +74,7 @@ body {
    PROJECT GRID
 ========================= */
 
-.discords {
+.projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 18px;
@@ -85,7 +85,7 @@ body {
    PROJECT CARD
 ========================= */
 
-.discord {
+.project {
     background: rgba(255,255,255,0.03);
     border-radius: 14px;
     padding: 14px;
@@ -96,12 +96,12 @@ body {
     transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.discord:hover {
+.project:hover {
     transform: translateY(-4px);
     background: rgba(255,255,255,0.05);
 }
 
-.discord::before {
+.project::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -117,14 +117,14 @@ body {
    BANNER / LOGO
 ========================= */
 
-.discord-banner {
+.project-banner {
     width: 100%;
     max-height: 200px;
     border-radius: 10px;
     object-fit: cover;
 }
 
-.discord-logo {
+.project-logo {
     width: 48px;
     height: 48px;
     margin-top: -24px;
@@ -138,7 +138,7 @@ body {
    PROJECT NAME
 ========================= */
 
-.discord-name a {
+.project-name a {
     color: #fff;
     font-size: 1.1rem;
     font-weight: 600;
@@ -148,7 +148,7 @@ body {
     transition: color 0.2s ease;
 }
 
-.discord-name a:hover {
+.project-name a:hover {
     color: #d1d1d1;
 }
 
@@ -156,7 +156,7 @@ body {
    ROLE
 ========================= */
 
-.discord-position {
+.project-position {
     display: inline-flex;
     font-size: 0.8rem;
     color: #ddd;
@@ -173,20 +173,20 @@ body {
    ICONS
 ========================= */
 
-.discord-icons {
+.project-icons {
     display: flex;
     justify-content: center;
     margin-top: 6px;
 }
 
-.discord-icons i {
+.project-icons i {
     font-size: 1rem;
     margin: 4px;
     color: #ddd;
     transition: color 0.2s ease;
 }
 
-.discord-icons i:hover {
+.project-icons i:hover {
     color: #fff;
 }
 
@@ -194,24 +194,13 @@ body {
    PROJECT BIO
 ========================= */
 
-.discord-bio {
+.project-bio {
     font-size: 0.85rem;
     color: #b8b8b8;
     margin-top: 8px;
     line-height: 1.45;
 }
 
-/* =========================
-   LUX CENTER
-========================= */
-
-.discords .discord:last-of-type {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: 320px;
-}
-
-/*
 /* =========================
    SOCIAL MEDIA
 ========================= */
@@ -508,21 +497,10 @@ body.light-mode .mode-toggle {
 }
 
 /* =========================
-   RESPONSIVE FIX
+   RESPONSIVE
 ========================= */
 
 @media (max-width: 768px) {
-
-    .discords {
-        grid-template-columns: 1fr;
-    }
-
-    .discords .discord:last-of-type {
-        grid-column: auto;
-        width: 100%;
-        max-width: 320px;
-        justify-self: center;
-    }
 
     .header h1 {
         font-size: 2rem;
@@ -531,5 +509,14 @@ body.light-mode .mode-toggle {
     .bio,
     .location {
         font-size: 1rem;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .social-icon {
+        font-size: 1.5rem;
+        margin: 10px 5px;
     }
 }
