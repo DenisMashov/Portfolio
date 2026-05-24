@@ -71,7 +71,7 @@ body {
 }
 
 /* =========================
-   PROJECT GRID
+   DISCORD GRID
 ========================= */
 
 .discords {
@@ -100,7 +100,7 @@ body {
     }
 }
 /* =========================
-   PROJECT CARD
+   DISCORD CARD
 ========================= */
 
 .discord {
@@ -153,7 +153,7 @@ body {
 }
 
 /* =========================
-   PROJECT NAME
+   DISCORD NAME
 ========================= */
 
 .discord-name a {
@@ -209,7 +209,7 @@ body {
 }
 
 /* =========================
-   PROJECT BIO
+   DISCORD BIO
 ========================= */
 
 .discord-bio {
@@ -316,15 +316,15 @@ body.light-mode {
     background-color: #fff;
 }
 
-.project.light-mode {
+.discord.light-mode {
     background-color: #f9f9f9;
 }
 
-.project-name a.light-mode {
+.discord-name a.light-mode {
     color: #333;
 }
 
-.project-icons i.light-mode {
+.discord-icons i.light-mode {
     color: #333;
 }
 
@@ -332,8 +332,8 @@ body.light-mode {
     color: #333;
 }
 
-.project-name a:hover.light-mode,
-.project-icons i:hover.light-mode,
+.discord-name a:hover.light-mode,
+.discord-icons i:hover.light-mode,
 .social-icon:hover.light-mode {
     color: #b1b0b1;
 }
@@ -506,7 +506,7 @@ body.light-mode .mode-toggle {
         font-size: 1rem;
     }
 
-    .projects {
+    .discords {
         grid-template-columns: 1fr;
     }
 
