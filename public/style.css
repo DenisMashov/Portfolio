@@ -202,6 +202,17 @@ body {
 }
 
 /* =========================
+   LUX CENTER
+========================= */
+
+.discords .discord:last-of-type {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 320px;
+}
+
+/*
+/* =========================
    SOCIAL MEDIA
 ========================= */
 
