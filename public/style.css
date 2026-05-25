@@ -35,13 +35,13 @@ body {
 
 .header h2 {
     font-size: 1.8rem;
-    margin: 15px 0;
+    margin: 5px 0;
     color: #fff;
 }
 
 .bio {
     font-size: 1.2rem;
-    margin: 5px 0;
+    margin: -1px 0;
     color: #bbb;
     display: flex;
     justify-content: center;
