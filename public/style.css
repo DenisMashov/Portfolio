@@ -628,7 +628,7 @@ body.light-mode .mode-toggle {
 
     .archive-btn{
         width: 100%;
-        max-width: 260px;
+        max-width: 130px;
         justify-content: center;
     }
 }
