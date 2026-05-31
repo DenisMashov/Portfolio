@@ -1,10 +1,5 @@
 // ===============================
-// DENIS PORTFOLIO SCRIPT.JS
-// ===============================
-
-
-// ===============================
-// LIGHT MODE TOGGLE (your original behavior)
+// LIGHT MODE TOGGLE 
 // ===============================
 function toggleMode() {
     const errorBox = document.getElementById("error-message");
@@ -12,7 +7,7 @@ function toggleMode() {
     // show message
     errorBox.style.display = "block";
 
-    // redirect after delay (your original prank behavior)
+    // redirect after delay (prank)
     setTimeout(() => {
         window.location.href = "https://youtu.be/iuy9HX7FIoI";
     }, 1500);
