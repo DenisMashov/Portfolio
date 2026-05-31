@@ -58,7 +58,7 @@ function connect() {
                 lastUpdateTime = Date.now();
                 updateProgress();
             } else {
-                hideWidget("Spotify Status");
+                hideWidget("spotify status is offline");
             }
         }
     });
