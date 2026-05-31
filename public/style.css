@@ -490,27 +490,36 @@ body.light-mode .mode-toggle {
 }
 
 /* =========================
-   ARCHIVED WORK (SITE-FIT)
+   ARCHIVED WORK 
 ========================= */
 
 .archive-component{
     margin: 35px auto 10px auto;
     max-width: 520px;
+    width: 100%;
     text-align: center;
     font-family: "League Spartan", sans-serif;
 }
 
-/* button */
+/* =========================
+   BUTTON
+========================= */
+
 .archive-btn{
     display:inline-flex;
     align-items:center;
     gap:8px;
-    padding:7px 14px;
+
+    padding:8px 16px;
     font-size:13px;
+    font-weight:500;
+
     color:#fff;
     background:#1f1f1f;
+
     border:1px solid rgba(255,255,255,0.06);
     border-radius:999px;
+
     cursor:pointer;
     transition:.25s ease;
     user-select:none;
@@ -521,9 +530,11 @@ body.light-mode .mode-toggle {
     transform:translateY(-2px);
 }
 
+/* arrow */
 .arrow{
     font-size:11px;
-    transition:.3s ease;
+    transition:transform .3s ease;
+    opacity:0.8;
 }
 
 #archive-toggle{
@@ -532,52 +543,100 @@ body.light-mode .mode-toggle {
 
 #archive-toggle:checked + .archive-btn .arrow{
     transform:rotate(180deg);
+    opacity:1;
 }
 
-/* box */
+/* =========================
+   BOX
+========================= */
+
 .archive-box{
     max-height:0;
     overflow:hidden;
     opacity:0;
+
     transition:max-height .45s ease, opacity .3s ease;
 }
 
 #archive-toggle:checked ~ .archive-box{
-    max-height:500px;
+    max-height:600px;
     opacity:1;
     margin-top:12px;
 }
 
-/* items */
+/* =========================
+   ITEMS 
+========================= */
+
 .archive-item{
     display:flex;
     justify-content:space-between;
-    align-items:center;
+    align-items:flex-start; /* FIX:   */
+
     padding:12px 0;
     border-bottom:1px solid rgba(255,255,255,0.06);
-    transition:.2s ease;
 }
 
-.archive-item:hover{
-    transform:translateX(4px);
-    border-bottom-color:rgba(255,255,255,0.15);
+/* LEFT SIDE */
+.archive-item .left{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    flex:1;
+    text-align:left;
 }
 
 .archive-item h4{
     margin:0;
     font-size:14px;
     color:#fff;
+    line-height:1.2;
 }
 
 .archive-item p{
-    margin:4px 0 0;
+    margin:0;
     font-size:12px;
     color:#9a9a9a;
+    line-height:1.2;
 }
 
+/* RIGHT SIDE (DATE) */
 .archive-item span{
     font-size:12px;
     color:#777;
+    white-space:nowrap;
+    flex-shrink:0;
+}
+
+/* hover */
+.archive-item:hover{
+    transform:translateX(3px);
+    transition:.2s ease;
+    border-bottom-color:rgba(255,255,255,0.15);
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+
+@media (max-width:600px){
+
+    .archive-item{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+    }
+
+    .archive-item span{
+        align-self:flex-end;
+        font-size:11px;
+    }
+
+    .archive-btn{
+        width:100%;
+        max-width:260px;
+        justify-content:center;
+    }
 }
 
 /* =========================
