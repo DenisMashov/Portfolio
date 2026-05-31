@@ -490,6 +490,97 @@ body.light-mode .mode-toggle {
 }
 
 /* =========================
+   ARCHIVED WORK (SITE-FIT)
+========================= */
+
+.archive-component{
+    margin: 35px auto 10px auto;
+    max-width: 520px;
+    text-align: center;
+    font-family: "League Spartan", sans-serif;
+}
+
+/* button */
+.archive-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 14px;
+    font-size:13px;
+    color:#fff;
+    background:#1f1f1f;
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:999px;
+    cursor:pointer;
+    transition:.25s ease;
+    user-select:none;
+}
+
+.archive-btn:hover{
+    background:#262626;
+    transform:translateY(-2px);
+}
+
+.arrow{
+    font-size:11px;
+    transition:.3s ease;
+}
+
+#archive-toggle{
+    display:none;
+}
+
+#archive-toggle:checked + .archive-btn .arrow{
+    transform:rotate(180deg);
+}
+
+/* box */
+.archive-box{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:max-height .45s ease, opacity .3s ease;
+}
+
+#archive-toggle:checked ~ .archive-box{
+    max-height:500px;
+    opacity:1;
+    margin-top:12px;
+}
+
+/* items */
+.archive-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    transition:.2s ease;
+}
+
+.archive-item:hover{
+    transform:translateX(4px);
+    border-bottom-color:rgba(255,255,255,0.15);
+}
+
+.archive-item h4{
+    margin:0;
+    font-size:14px;
+    color:#fff;
+}
+
+.archive-item p{
+    margin:4px 0 0;
+    font-size:12px;
+    color:#9a9a9a;
+}
+
+.archive-item span{
+    font-size:12px;
+    color:#777;
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 
