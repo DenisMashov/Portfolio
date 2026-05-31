@@ -610,30 +610,6 @@ body.light-mode .mode-toggle {
 }
 
 /* =========================
-   MOBILE FIX
-========================= */
-
-@media (max-width:600px){
-
-    .archive-item{
-        flex-direction: column;
-        align-items: flex-start;
-        gap:6px;
-    }
-
-    .archive-item span{
-        align-self: flex-end;
-        font-size: 11px;
-    }
-
-    .archive-btn{
-        width: 100%;
-        max-width: 130px;
-        justify-content: center;
-    }
-}
-
-/* =========================
    RESPONSIVE
 ========================= */
 
