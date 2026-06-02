@@ -38,7 +38,6 @@ body {
     display: inline-block;
 }
 
-/* STATUS */
 .status {
     position: absolute;
     bottom: 10px;
@@ -53,7 +52,6 @@ body {
     padding: 6px 8px;
     width: 34px;
     overflow: hidden;
-
     transition: width 0.3s ease, padding 0.3s ease;
 }
 
