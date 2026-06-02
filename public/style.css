@@ -38,6 +38,7 @@ body {
     display: inline-block;
 }
 
+/* STATUS */
 .status {
     position: absolute;
     bottom: 10px;
@@ -48,11 +49,12 @@ body {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(8px);
-    padding: 6px 8px;
     border-radius: 999px;
+    padding: 6px 8px;
+    width: 34px;
     overflow: hidden;
-    max-width: 34px; /* sadece emoji görünsün */
-    transition: max-width 0.3s ease, padding 0.3s ease;
+
+    transition: width 0.3s ease, padding 0.3s ease;
 }
 
 .status-emoji {
@@ -65,12 +67,12 @@ body {
     color: #ddd;
     white-space: nowrap;
     opacity: 0;
-    transform: translateX(-8px);
+    transform: translateX(8px); 
     transition: 0.25s ease;
 }
 
 .avatar:hover .status {
-    max-width: 220px;
+    width: 210px;  
     padding: 6px 10px;
 }
 
@@ -78,6 +80,7 @@ body {
     opacity: 1;
     transform: translateX(0);
 }
+
 .header h2 {
     font-size: 1.8rem;
     margin: 5px 0;
