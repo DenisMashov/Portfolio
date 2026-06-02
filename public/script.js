@@ -137,7 +137,14 @@ connect();
 // ===============================
 // CURSOR
 // ===============================
+// ===============================
+// CURSOR
+// ===============================
 document.addEventListener("DOMContentLoaded", () => {
+
+    // disable on mobile / touch devices
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+
     const dot = document.createElement("div");
     const ring = document.createElement("div");
 
@@ -190,9 +197,18 @@ document.addEventListener("DOMContentLoaded", () => {
     let x = 0, y = 0;
     let mx = 0, my = 0;
 
+    let hasMoved = false;
+
     document.addEventListener("mousemove", (e) => {
         mx = e.clientX;
         my = e.clientY;
+
+        //  start cursor at real mouse position 
+        if (!hasMoved) {
+            x = mx;
+            y = my;
+            hasMoved = true;
+        }
     });
 
     function animate(){
@@ -250,7 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.head.appendChild(style);
 
-    // Select ONLY important elements (not everything)
+    // Select ONLY important elements 
     const elements = document.querySelectorAll(
         "section, .project, .card"
     );
