@@ -57,7 +57,7 @@ body {
 }
 
 .status-emoji {
-    font-size: 14px;
+    font-size: auto;
     flex-shrink: 0;
 }
 
