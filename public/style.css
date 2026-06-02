@@ -38,7 +38,7 @@ body {
     display: inline-block;
 }
 
-/* STATUS */
+/* STATUS CONTAINER */
 .status {
     position: absolute;
     bottom: 10px;
@@ -49,11 +49,11 @@ body {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(8px);
-    border-radius: 999px;
     padding: 6px 8px;
-    width: 34px;
+    border-radius: 999px;
     overflow: hidden;
-    transition: width 0.3s ease, padding 0.3s ease;
+    max-width: 34px; 
+    transition: max-width 0.3s ease, padding 0.3s ease;
 }
 
 .status-emoji {
@@ -66,12 +66,12 @@ body {
     color: #ddd;
     white-space: nowrap;
     opacity: 0;
-    transform: translateX(8px); 
+    transform: translateX(-8px);
     transition: 0.25s ease;
 }
 
 .avatar:hover .status {
-    width: 210px;  
+    max-width: 220px;
     padding: 6px 10px;
 }
 
