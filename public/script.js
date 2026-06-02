@@ -136,8 +136,7 @@ connect();
 // ===============================
 // CURSOR
 // ===============================
-<script>
-(() => {
+document.addEventListener("DOMContentLoaded", () => {
     const cursor = document.createElement("div");
     cursor.id = "cursor";
     document.body.appendChild(cursor);
@@ -149,14 +148,14 @@ connect();
             width:14px;
             height:14px;
             border-radius:50%;
-            background:#7c3aed; /* purple core */
+            background:#7c3aed;
             pointer-events:none;
             z-index:999999;
             transform:translate(-50%,-50%);
             transition: width .15s ease, height .15s ease;
             box-shadow:
                 0 0 10px #7c3aed,
-                0 0 25px #06b6d4; /* cyan glow */
+                0 0 25px #06b6d4;
         }
 
         #cursor::after{
@@ -180,7 +179,7 @@ connect();
     let x = 0, y = 0;
     let mx = 0, my = 0;
 
-    document.addEventListener("mousemove", e => {
+    document.addEventListener("mousemove", (e) => {
         mx = e.clientX;
         my = e.clientY;
     });
@@ -217,5 +216,4 @@ connect();
             cursor.style.height = "14px";
         });
     });
-})();
-</script>
+});
