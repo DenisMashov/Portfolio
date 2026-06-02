@@ -132,3 +132,90 @@ function updateProgress() {
 // START CONNECTION
 // ===============================
 connect();
+
+// ===============================
+// CURSOR
+// ===============================
+<script>
+(() => {
+    const cursor = document.createElement("div");
+    cursor.id = "cursor";
+    document.body.appendChild(cursor);
+
+    const style = document.createElement("style");
+    style.textContent = `
+        #cursor{
+            position:fixed;
+            width:14px;
+            height:14px;
+            border-radius:50%;
+            background:#7c3aed; /* purple core */
+            pointer-events:none;
+            z-index:999999;
+            transform:translate(-50%,-50%);
+            transition: width .15s ease, height .15s ease;
+            box-shadow:
+                0 0 10px #7c3aed,
+                0 0 25px #06b6d4; /* cyan glow */
+        }
+
+        #cursor::after{
+            content:"";
+            position:absolute;
+            top:50%;
+            left:50%;
+            width:45px;
+            height:45px;
+            transform:translate(-50%,-50%);
+            border-radius:50%;
+            background:rgba(124,58,237,0.12);
+            border:1px solid rgba(6,182,212,0.25);
+            filter:blur(1px);
+        }
+    `;
+    document.head.appendChild(style);
+
+    document.documentElement.style.cursor = "none";
+
+    let x = 0, y = 0;
+    let mx = 0, my = 0;
+
+    document.addEventListener("mousemove", e => {
+        mx = e.clientX;
+        my = e.clientY;
+    });
+
+    function animate(){
+        x += (mx - x) * 0.18;
+        y += (my - y) * 0.18;
+
+        cursor.style.left = x + "px";
+        cursor.style.top = y + "px";
+
+        requestAnimationFrame(animate);
+    }
+    animate();
+
+    document.addEventListener("mousedown", () => {
+        cursor.style.width = "10px";
+        cursor.style.height = "10px";
+    });
+
+    document.addEventListener("mouseup", () => {
+        cursor.style.width = "14px";
+        cursor.style.height = "14px";
+    });
+
+    document.querySelectorAll("a, button").forEach(el => {
+        el.addEventListener("mouseenter", () => {
+            cursor.style.width = "28px";
+            cursor.style.height = "28px";
+        });
+
+        el.addEventListener("mouseleave", () => {
+            cursor.style.width = "14px";
+            cursor.style.height = "14px";
+        });
+    });
+})();
+</script>
