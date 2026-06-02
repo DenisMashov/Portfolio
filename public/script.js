@@ -133,6 +133,7 @@ function updateProgress() {
 // ===============================
 connect();
 
+
 // ===============================
 // CURSOR
 // ===============================
@@ -219,4 +220,62 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.remove("cursor-hover");
         });
     });
+});
+
+
+// ===============================
+// ANIMATION
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Only add animation styles once
+    const style = document.createElement("style");
+    style.textContent = `
+        .reveal{
+            opacity:1; /* fallback = SEO + no JS safety */
+            transform:none;
+        }
+
+        .reveal-anim{
+            opacity:0;
+            transform:translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            will-change: opacity, transform;
+        }
+
+        .reveal-anim.active{
+            opacity:1;
+            transform:translateY(0);
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Select ONLY important elements (not everything)
+    const elements = document.querySelectorAll(
+        "section, .project, .card"
+    );
+
+    elements.forEach(el => {
+        el.classList.add("reveal-anim");
+    });
+
+    // If browser doesn't support IntersectionObserver → show everything
+    if (!("IntersectionObserver" in window)) {
+        elements.forEach(el => el.classList.add("active"));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                obs.unobserve(entry.target); // important: runs once only
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    elements.forEach(el => observer.observe(el));
 });
