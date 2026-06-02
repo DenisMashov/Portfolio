@@ -137,7 +137,6 @@ connect();
 // CURSOR
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
-    // Cursor elements
     const dot = document.createElement("div");
     const ring = document.createElement("div");
 
@@ -147,46 +146,48 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(ring);
     document.body.appendChild(dot);
 
-    // Styles
     const style = document.createElement("style");
     style.textContent = `
         * {
             cursor: none !important;
         }
 
+        /* slightly bigger dot */
         #cursor-dot{
             position:fixed;
-            width:6px;
-            height:6px;
+            width:7px;
+            height:7px;
             background:#6366f1;
             border-radius:50%;
             pointer-events:none;
             z-index:999999;
             transform:translate(-50%,-50%);
+            box-shadow:0 0 8px rgba(99,102,241,0.8);
         }
 
+        /* slightly bigger ring */
         #cursor-ring{
             position:fixed;
-            width:28px;
-            height:28px;
-            border:1px solid rgba(99,102,241,0.5);
+            width:31px;
+            height:31px;
+            border:1.5px solid rgba(99,102,241,0.55);
             border-radius:50%;
             pointer-events:none;
             z-index:999998;
             transform:translate(-50%,-50%);
-            transition: width .15s ease, height .15s ease, border-color .15s ease;
+            transition: width .12s ease, height .12s ease, border-color .12s ease, background .12s ease;
         }
 
-        /* Hover state (links/buttons) */
+        /* hover state (still minimal) */
         .cursor-hover #cursor-ring{
-            width:40px;
-            height:40px;
+            width:38px;
+            height:38px;
             border-color:rgba(99,102,241,0.9);
+            background:rgba(99,102,241,0.06);
         }
     `;
     document.head.appendChild(style);
 
-    // Position
     let x = 0, y = 0;
     let mx = 0, my = 0;
 
@@ -209,10 +210,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     animate();
 
-    // Hover detection (links, buttons, inputs)
-    const hoverTargets = document.querySelectorAll("a, button, input, textarea");
+    const targets = document.querySelectorAll("a, button, input, textarea");
 
-    hoverTargets.forEach(el => {
+    targets.forEach(el => {
         el.addEventListener("mouseenter", () => {
             document.body.classList.add("cursor-hover");
         });
