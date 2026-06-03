@@ -6,10 +6,10 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "axios": "^0.21.1",
     "dotenv": "^10.0.0"
   },
-  "devDependencies": {},
   "engines": {
     "node": "22.x"
   }
