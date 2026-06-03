@@ -1,7 +1,32 @@
 // ===============================
 //  ANALYTICS
 // ===============================
+// Load Vercel Analytics
+(function () {
+  const script = document.createElement("script");
+  script.src = "https://va.vercel-scripts.com/v1/script.js";
+  script.defer = true;
+  document.head.appendChild(script);
+})();
 
+// Setup event tracking queue
+window.va = window.va || function () {
+  (window.vaq = window.vaq || []).push(arguments);
+};
+
+// Example event
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector("#signupBtn");
+
+  if (btn) {
+    btn.addEventListener("click", () => {
+      va("event", {
+        name: "signup_click",
+        data: { source: "homepage" }
+      });
+    });
+  }
+});
     
 // ===============================
 // LIGHT MODE TOGGLE 
