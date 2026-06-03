@@ -238,28 +238,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ===============================
-// REVEAL ANIMATION (Optimized)
+// SCROLL REVEAL ANIMATION
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Static CSS for better SEO / render
+    // Insert CSS for animation
     const style = document.createElement("style");
     style.textContent = `
-        .reveal-anim{
+        /* SEO fallback: elements visible if JS disabled */
+        .reveal { opacity:1; transform:none; }
+
+        /* animated state */
+        .reveal-anim {
             opacity:0;
-            transform:translateY(20px);
+            transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
             will-change: opacity, transform;
         }
-        .reveal-anim.active{
+
+        /* when active */
+        .reveal-anim.active {
             opacity:1;
-            transform:translateY(0);
+            transform: translateY(0);
         }
     `;
     document.head.appendChild(style);
 
-    // Target only elements that need animation
-    const elements = document.querySelectorAll(".reveal-anim");
+    // Select only important elements
+    const elements = document.querySelectorAll("section, .project, .card");
+
+    // Apply reveal-anim class to all selected elements
+    elements.forEach(el => {
+        el.classList.add("reveal-anim");
+    });
 
     // If IntersectionObserver not supported → show everything
     if (!("IntersectionObserver" in window)) {
@@ -267,18 +278,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // Create ONE observer for all elements (more efficient)
+    // Create one observer for all elements
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("active");
-                obs.unobserve(entry.target);
+                obs.unobserve(entry.target); // stop observing for better performance
             }
         });
     }, {
-        threshold: 0.2,         // Slightly higher threshold for smoother UX
+        threshold: 0.15,           // element is 15% visible before triggering
         rootMargin: "0px 0px -50px 0px"
     });
 
+    // Observe all elements
     elements.forEach(el => observer.observe(el));
 });
