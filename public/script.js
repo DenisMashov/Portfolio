@@ -136,93 +136,121 @@ connect();
 
 
 // ===============================
-//  MINIMAL CURSOR
-// ===============================
-const cursor = document.createElement("div");
-cursor.id = "cursor";
-
-document.body.appendChild(cursor);
-
-const style = document.createElement("style");
-style.textContent = `
-    *{
-        cursor:none !important;
-    }
-
-    #cursor{
-        position:fixed;
-        width:24px;
-        height:24px;
-        pointer-events:none;
-        z-index:999999;
-        transform:translate(-2px,-2px);
-        transition:transform .08s ease;
-        filter:
-            drop-shadow(0 2px 4px rgba(0,0,0,.18))
-            drop-shadow(0 0 1px rgba(255,255,255,.4));
-    }
-
-    #cursor svg{
-        width:100%;
-        height:100%;
-        display:block;
-    }
-
-    .cursor-hover #cursor{
-        transform:translate(-2px,-2px) scale(1.08);
-    }
-`;
-document.head.appendChild(style);
-
-cursor.innerHTML = `
-<svg viewBox="0 0 24 24" fill="none">
-    <path
-        d="M4 2L18 14L11.5 15.5L14.5 22L11.5 23L8.5 16.5L4 20V2Z"
-        fill="white"
-        stroke="#111827"
-        stroke-width="1.2"
-        stroke-linejoin="round"
-    />
-</svg>
-`;
-
-document.addEventListener("mousemove", e => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-});
-
-document
-    .querySelectorAll("a,button,input,textarea")
-    .forEach(el => {
-        el.addEventListener("mouseenter", () =>
-            document.body.classList.add("cursor-hover")
-        );
-
-        el.addEventListener("mouseleave", () =>
-            document.body.classList.remove("cursor-hover")
-        );
-    });
-
-// ===============================
-// ANIMATION
+// MINIMAL PREMIUM CURSOR
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Only add animation styles once
+    // disable on mobile / touch devices
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+
+    // Create cursor elements
+    const dot = document.createElement("div");
+    const ring = document.createElement("div");
+
+    dot.id = "cursor-dot";
+    ring.id = "cursor-ring";
+
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+
+    // Insert optimized CSS
     const style = document.createElement("style");
     style.textContent = `
-        .reveal{
-            opacity:1; /* fallback = SEO + no JS safety */
-            transform:none;
+        * {
+            cursor: none !important;
         }
 
+        #cursor-dot {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 999999;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            transition: background 0.15s ease;
+        }
+
+        #cursor-ring {
+            position: fixed;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 999998;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(59,130,246,0.6);
+            transition: width 0.12s ease, height 0.12s ease, border-color 0.12s ease;
+        }
+
+        .cursor-hover #cursor-ring {
+            width: 34px;
+            height: 34px;
+            border-color: rgba(6,182,212,0.8);
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Cursor positions
+    let mx = 0, my = 0; // real mouse
+    let x = 0, y = 0;   // ring smooth position
+
+    let hasMoved = false;
+
+    // Mouse move listener
+    document.addEventListener("mousemove", (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+
+        if (!hasMoved) {
+            x = mx;
+            y = my;
+            hasMoved = true;
+        }
+    });
+
+    // Animation loop
+    function animate() {
+        // smooth interpolation
+        x += (mx - x) * 0.22;
+        y += (my - y) * 0.22;
+
+        dot.style.left = x + "px";
+        dot.style.top = y + "px";
+
+        ring.style.left = x + "px";
+        ring.style.top = y + "px";
+
+        requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Add hover effect only to interactive elements
+    const hoverTargets = document.querySelectorAll("a, button, input, textarea");
+
+    hoverTargets.forEach(el => {
+        el.addEventListener("mouseenter", () => document.body.classList.add("cursor-hover"));
+        el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-hover"));
+    });
+});
+
+
+
+// ===============================
+// REVEAL ANIMATION (Optimized)
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Static CSS for better SEO / render
+    const style = document.createElement("style");
+    style.textContent = `
         .reveal-anim{
             opacity:0;
             transform:translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
             will-change: opacity, transform;
         }
-
         .reveal-anim.active{
             opacity:1;
             transform:translateY(0);
@@ -230,30 +258,25 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.head.appendChild(style);
 
-    // Select ONLY important elements 
-    const elements = document.querySelectorAll(
-        "section, .project, .card"
-    );
+    // Target only elements that need animation
+    const elements = document.querySelectorAll(".reveal-anim");
 
-    elements.forEach(el => {
-        el.classList.add("reveal-anim");
-    });
-
-    // If browser doesn't support IntersectionObserver → show everything
+    // If IntersectionObserver not supported → show everything
     if (!("IntersectionObserver" in window)) {
         elements.forEach(el => el.classList.add("active"));
         return;
     }
 
+    // Create ONE observer for all elements (more efficient)
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("active");
-                obs.unobserve(entry.target); // important: runs once only
+                obs.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.15,
+        threshold: 0.2,         // Slightly higher threshold for smoother UX
         rootMargin: "0px 0px -50px 0px"
     });
 
