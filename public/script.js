@@ -138,106 +138,70 @@ connect();
 // ===============================
 //  MINIMAL CURSOR
 // ===============================
-document.addEventListener("DOMContentLoaded", () => {
+const cursor = document.createElement("div");
+cursor.id = "cursor";
 
-    // disable on mobile / touch devices
-    if (!window.matchMedia("(pointer: fine)").matches) return;
+document.body.appendChild(cursor);
 
-    const dot = document.createElement("div");
-    const ring = document.createElement("div");
-
-    dot.id = "cursor-dot";
-    ring.id = "cursor-ring";
-
-    document.body.appendChild(ring);
-    document.body.appendChild(dot);
-
-    const style = document.createElement("style");
-    style.textContent = `
-        * {
-            cursor: none !important;
-        }
-
-        /* minimal dot with soft glow */
-        #cursor-dot {
-            position: fixed;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 999999;
-            transform: translate(-50%, -50%);
-            background: #0ea5e9; /* Windows 11 accent blue */
-            box-shadow: 0 0 8px rgba(14, 165, 233, 0.6), 0 0 16px rgba(14, 165, 233, 0.3);
-            transition: background .2s ease, box-shadow .2s ease;
-        }
-
-        /* sleek ring with subtle shadow */
-        #cursor-ring {
-            position: fixed;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 999998;
-            transform: translate(-50%, -50%);
-            border: 1.5px solid rgba(14,165,233,0.5);
-            box-shadow: 0 0 8px rgba(14,165,233,0.2);
-            transition: width .15s ease, height .15s ease, border-color .15s ease, box-shadow .15s ease;
-        }
-
-        /* hover effect for interactive elements */
-        .cursor-hover #cursor-ring {
-            width: 40px;
-            height: 40px;
-            border-color: rgba(14,165,233,0.9);
-            box-shadow: 0 0 12px rgba(14,165,233,0.4);
-        }
-    `;
-    document.head.appendChild(style);
-
-    let x = 0, y = 0;
-    let mx = 0, my = 0;
-
-    let hasMoved = false;
-
-    document.addEventListener("mousemove", (e) => {
-        mx = e.clientX;
-        my = e.clientY;
-
-        if (!hasMoved) {
-            x = mx;
-            y = my;
-            hasMoved = true;
-        }
-    });
-
-    function animate() {
-        x += (mx - x) * 0.2;
-        y += (my - y) * 0.2;
-
-        dot.style.left = mx + "px";
-        dot.style.top = my + "px";
-
-        ring.style.left = x + "px";
-        ring.style.top = y + "px";
-
-        requestAnimationFrame(animate);
+const style = document.createElement("style");
+style.textContent = `
+    *{
+        cursor:none !important;
     }
-    animate();
 
-    const targets = document.querySelectorAll("a, button, input, textarea");
+    #cursor{
+        position:fixed;
+        width:24px;
+        height:24px;
+        pointer-events:none;
+        z-index:999999;
+        transform:translate(-2px,-2px);
+        transition:transform .08s ease;
+        filter:
+            drop-shadow(0 2px 4px rgba(0,0,0,.18))
+            drop-shadow(0 0 1px rgba(255,255,255,.4));
+    }
 
-    targets.forEach(el => {
-        el.addEventListener("mouseenter", () => {
-            document.body.classList.add("cursor-hover");
-        });
+    #cursor svg{
+        width:100%;
+        height:100%;
+        display:block;
+    }
 
-        el.addEventListener("mouseleave", () => {
-            document.body.classList.remove("cursor-hover");
-        });
-    });
+    .cursor-hover #cursor{
+        transform:translate(-2px,-2px) scale(1.08);
+    }
+`;
+document.head.appendChild(style);
+
+cursor.innerHTML = `
+<svg viewBox="0 0 24 24" fill="none">
+    <path
+        d="M4 2L18 14L11.5 15.5L14.5 22L11.5 23L8.5 16.5L4 20V2Z"
+        fill="white"
+        stroke="#111827"
+        stroke-width="1.2"
+        stroke-linejoin="round"
+    />
+</svg>
+`;
+
+document.addEventListener("mousemove", e => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
 });
+
+document
+    .querySelectorAll("a,button,input,textarea")
+    .forEach(el => {
+        el.addEventListener("mouseenter", () =>
+            document.body.classList.add("cursor-hover")
+        );
+
+        el.addEventListener("mouseleave", () =>
+            document.body.classList.remove("cursor-hover")
+        );
+    });
 
 // ===============================
 // ANIMATION
