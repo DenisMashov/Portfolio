@@ -326,38 +326,43 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // --- Create loader ---
-const loader = Object.assign(document.createElement('div'), {
-  id: 'loader',
-  innerHTML: `<div style="
-      width:60px;height:60px;
-      border:6px solid rgba(255,255,255,0.2);
-      border-top:6px solid #38bdf8;
-      border-radius:50%;
-      animation:spin 1s linear infinite;
-    "></div>
-    <div style="margin-top:15px;font-family:Arial,sans-serif;font-size:18px;">Loading...</div>`
-});
+// Wait for DOM to be ready
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Create loader ---
+  const loader = Object.assign(document.createElement('div'), {
+    id: 'loader',
+    innerHTML: `
+      <div style="
+        width:60px;height:60px;
+        border:6px solid rgba(255,255,255,0.2);
+        border-top:6px solid #38bdf8;
+        border-radius:50%;
+        animation:spin 1s linear infinite;
+      "></div>
+      <div style="margin-top:15px;font-family:Arial,sans-serif;font-size:18px;">
+        Loading...
+      </div>`
+  });
 
-Object.assign(loader.style, {
-  position: 'fixed',
-  inset: '0',
-  backgroundColor: '#0f172a',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexDirection: 'column',
-  zIndex: '9999',
-  color: 'white'
-});
+  Object.assign(loader.style, {
+    position: 'fixed',
+    inset: '0',
+    backgroundColor: '#0f172a',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    zIndex: '9999',
+    color: 'white'
+  });
 
-document.body.appendChild(loader);
+  document.body.appendChild(loader);
 
-// Spinner keyframes
-const style = document.createElement('style');
-style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
-document.head.appendChild(style);
+  // Spinner animation
+  const style = document.createElement('style');
+  style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+  document.head.appendChild(style);
 
-// --- Remove loader after 4 seconds ---
-window.addEventListener('DOMContentLoaded', () => {
+  // --- Remove loader after 4 seconds ---
   setTimeout(() => loader.remove(), 4000);
 });
