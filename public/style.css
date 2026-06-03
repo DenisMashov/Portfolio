@@ -38,46 +38,42 @@ body {
     display: inline-block;
 }
 
-/* STATUS CONTAINER */
-.status {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(8px);
-    padding: 6px 8px;
-    border-radius: 999px;
-    overflow: hidden;
-    max-width: 34px; 
-    transition: max-width 0.3s ease, padding 0.3s ease;
-}
-
 .status-emoji {
-    font-size: auto;
-    flex-shrink: 0;
+    position: absolute;
+    bottom: 15px;
+    right: 5px;
+    font-size: 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    padding: 4px 8px;
+    border-radius: 999px;
+    z-index: 32;
+    cursor: pointer;
 }
 
 .status-text {
-    font-size: 12px;
+    position: absolute;
+    bottom: 10px;
+    left: 100%;
+    margin-left: 5px;
+    font-size: 14px;
     color: #ddd;
     white-space: nowrap;
+    background: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    padding: 12px 12px;
+    border-radius: 999px;
     opacity: 0;
-    transform: translateX(-8px);
+    transform: translateX(-8px) scale(0.98);
     transition: 0.25s ease;
+    pointer-events: none;
 }
 
-.avatar:hover .status {
-    max-width: 220px;
-    padding: 6px 10px;
-}
-
-.avatar:hover .status-text {
+.status-emoji:hover + .status-text {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
 }
 
 .header h2 {
@@ -661,7 +657,6 @@ body.light-mode .mode-toggle {
 ========================= */
 
 @media (max-width: 768px) {
-
     .header h1 {
         font-size: 2rem;
     }
@@ -678,5 +673,17 @@ body.light-mode .mode-toggle {
     .social-icon {
         font-size: 1.5rem;
         margin: 10px 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .status-text {
+        left: 50%;
+        bottom: -45px;
+        transform: translateX(-50%) scale(0.98);
+    }
+
+    .avatar.active .status-text {
+        transform: translateX(-50%) scale(1);
     }
 }
