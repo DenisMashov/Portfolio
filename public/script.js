@@ -14,7 +14,7 @@ window.va = window.va || function () {
   (window.vaq = window.vaq || []).push(arguments);
 };
 
-// Example event
+//  event
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector("#signupBtn");
 
