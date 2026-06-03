@@ -140,8 +140,8 @@ connect();
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
 
-    // disable on mobile / touch devices
-    if (!window.matchMedia("(pointer: fine)").matches) return;
+    // Disable on touch devices / mobile
+    if (window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 992) return;
 
     // Create cursor elements
     const dot = document.createElement("div");
@@ -153,13 +153,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(dot);
     document.body.appendChild(ring);
 
-    // Insert optimized CSS
+    // CSS for the cursor
     const style = document.createElement("style");
     style.textContent = `
-        * {
-            cursor: none !important;
-        }
+        * { cursor: none !important; }
 
+        /* dot */
         #cursor-dot {
             position: fixed;
             width: 6px;
@@ -170,8 +169,10 @@ document.addEventListener("DOMContentLoaded", () => {
             transform: translate(-50%, -50%);
             background: linear-gradient(135deg, #3b82f6, #06b6d4);
             transition: background 0.15s ease;
+            will-change: transform;
         }
 
+        /* ring */
         #cursor-ring {
             position: fixed;
             width: 28px;
@@ -182,8 +183,10 @@ document.addEventListener("DOMContentLoaded", () => {
             transform: translate(-50%, -50%);
             border: 1px solid rgba(59,130,246,0.6);
             transition: width 0.12s ease, height 0.12s ease, border-color 0.12s ease;
+            will-change: transform;
         }
 
+        /* hover effect */
         .cursor-hover #cursor-ring {
             width: 34px;
             height: 34px;
@@ -195,11 +198,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Cursor positions
     let mx = 0, my = 0; // real mouse
     let x = 0, y = 0;   // ring smooth position
-
     let hasMoved = false;
 
     // Mouse move listener
-    document.addEventListener("mousemove", (e) => {
+    document.addEventListener("mousemove", e => {
         mx = e.clientX;
         my = e.clientY;
 
@@ -212,27 +214,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Animation loop
     function animate() {
-        // smooth interpolation
-        x += (mx - x) * 0.22;
-        y += (my - y) * 0.22;
+        // Smooth ring following
+        x += (mx - x) * 0.18;
+        y += (my - y) * 0.18;
 
-        dot.style.left = x + "px";
-        dot.style.top = y + "px";
-
-        ring.style.left = x + "px";
-        ring.style.top = y + "px";
+        // Dot follows mouse instantly
+        dot.style.transform = `translate(${mx}px, ${my}px)`;
+        ring.style.transform = `translate(${x}px, ${y}px)`;
 
         requestAnimationFrame(animate);
     }
     animate();
 
-    // Add hover effect only to interactive elements
+    // Hover effect for interactive elements
     const hoverTargets = document.querySelectorAll("a, button, input, textarea");
 
     hoverTargets.forEach(el => {
         el.addEventListener("mouseenter", () => document.body.classList.add("cursor-hover"));
         el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-hover"));
     });
+
 });
 
 
@@ -242,55 +243,72 @@ document.addEventListener("DOMContentLoaded", () => {
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Insert CSS for animation
     const style = document.createElement("style");
     style.textContent = `
-        /* SEO fallback: elements visible if JS disabled */
-        .reveal { opacity:1; transform:none; }
-
-        /* animated state */
-        .reveal-anim {
+        .reveal-anim{
             opacity:0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-            will-change: opacity, transform;
+            transform:translate3d(0,20px,0);
+            transition:
+                opacity .55s cubic-bezier(.16,1,.3,1),
+                transform .55s cubic-bezier(.16,1,.3,1);
         }
 
-        /* when active */
-        .reveal-anim.active {
+        .reveal-anim.active{
             opacity:1;
-            transform: translateY(0);
+            transform:translate3d(0,0,0);
+        }
+
+        @media (pointer: coarse) {
+            .reveal-anim{
+                opacity:1 !important;
+                transform:none !important;
+                transition:none !important;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce){
+            .reveal-anim{
+                opacity:1 !important;
+                transform:none !important;
+                transition:none !important;
+            }
         }
     `;
     document.head.appendChild(style);
 
-    // Select only important elements
-    const elements = document.querySelectorAll("section, .project, .card");
+    const elements = document.querySelectorAll(
+        "section, .project, .card"
+    );
 
-    // Apply reveal-anim class to all selected elements
+    const isMobile = window.matchMedia("(pointer: coarse)").matches;
+
     elements.forEach(el => {
         el.classList.add("reveal-anim");
     });
 
-    // If IntersectionObserver not supported → show everything
+    // Mobile = no animation
+    if (isMobile) {
+        elements.forEach(el => el.classList.add("active"));
+        return;
+    }
+
+    // Fallback
     if (!("IntersectionObserver" in window)) {
         elements.forEach(el => el.classList.add("active"));
         return;
     }
 
-    // Create one observer for all elements
     const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-                obs.unobserve(entry.target); // stop observing for better performance
-            }
-        });
+        for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+
+            entry.target.classList.add("active");
+            obs.unobserve(entry.target);
+        }
     }, {
-        threshold: 0.15,           // element is 15% visible before triggering
-        rootMargin: "0px 0px -50px 0px"
+        threshold: 0.1,
+        rootMargin: "0px 0px -40px 0px"
     });
 
-    // Observe all elements
     elements.forEach(el => observer.observe(el));
 });
