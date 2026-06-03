@@ -134,11 +134,9 @@ function updateProgress() {
 connect();
 
 
+
 // ===============================
-// CURSOR
-// ===============================
-// ===============================
-// CURSOR
+//  MINIMAL CURSOR
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -160,36 +158,40 @@ document.addEventListener("DOMContentLoaded", () => {
             cursor: none !important;
         }
 
-        /* minimal dot */
-        #cursor-dot{
-            position:fixed;
-            width:6px;
-            height:6px;
-            border-radius:50%;
-            pointer-events:none;
-            z-index:999999;
-            transform:translate(-50%,-50%);
-            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+        /* minimal dot with soft glow */
+        #cursor-dot {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 999999;
+            transform: translate(-50%, -50%);
+            background: #0ea5e9; /* Windows 11 accent blue */
+            box-shadow: 0 0 8px rgba(14, 165, 233, 0.6), 0 0 16px rgba(14, 165, 233, 0.3);
+            transition: background .2s ease, box-shadow .2s ease;
         }
 
-        /* thin simple ring */
-        #cursor-ring{
-            position:fixed;
-            width:28px;
-            height:28px;
-            border-radius:50%;
-            pointer-events:none;
-            z-index:999998;
-            transform:translate(-50%,-50%);
-            border:1px solid rgba(59,130,246,0.6);
-            transition: width .12s ease, height .12s ease, border-color .12s ease;
+        /* sleek ring with subtle shadow */
+        #cursor-ring {
+            position: fixed;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 999998;
+            transform: translate(-50%, -50%);
+            border: 1.5px solid rgba(14,165,233,0.5);
+            box-shadow: 0 0 8px rgba(14,165,233,0.2);
+            transition: width .15s ease, height .15s ease, border-color .15s ease, box-shadow .15s ease;
         }
 
-        /* subtle hover */
-        .cursor-hover #cursor-ring{
-            width:34px;
-            height:34px;
-            border-color:rgba(6,182,212,0.8);
+        /* hover effect for interactive elements */
+        .cursor-hover #cursor-ring {
+            width: 40px;
+            height: 40px;
+            border-color: rgba(14,165,233,0.9);
+            box-shadow: 0 0 12px rgba(14,165,233,0.4);
         }
     `;
     document.head.appendChild(style);
@@ -203,7 +205,6 @@ document.addEventListener("DOMContentLoaded", () => {
         mx = e.clientX;
         my = e.clientY;
 
-        //  start cursor at real mouse position 
         if (!hasMoved) {
             x = mx;
             y = my;
@@ -211,9 +212,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    function animate(){
-        x += (mx - x) * 0.22;
-        y += (my - y) * 0.22;
+    function animate() {
+        x += (mx - x) * 0.2;
+        y += (my - y) * 0.2;
 
         dot.style.left = mx + "px";
         dot.style.top = my + "px";
@@ -237,7 +238,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
 
 // ===============================
 // ANIMATION
