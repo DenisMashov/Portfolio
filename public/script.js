@@ -1,20 +1,6 @@
 // ===============================
 // GOOGLE ANALYTICS
 // ===============================
-(function() {
-    // Load GA script asynchronously
-    const gaScript = document.createElement('script');
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-EHS2GQWVJG";
-    gaScript.async = true;
-    document.head.appendChild(gaScript);
-
-    // Initialize GA after script is loaded
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-EHS2GQWVJG');
-})();
-
 
 // ===============================
 // LIGHT MODE TOGGLE 
