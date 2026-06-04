@@ -83,19 +83,12 @@ body {
 }
 
 .bio {
-    font-size: 1rem;
-    margin: 8px 0;
+    font-size: 1.2rem;
+    margin: -1px 0;
     color: #bbb;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.bio strong {
-    color: #1DB954;
-    font-weight: 600;
 }
 
 .bio i,
@@ -118,164 +111,6 @@ body {
 
 .location i {
     color: #e74c3c;
-}
-
-/* =========================
-   SECTION TITLE
-========================= */
-
-.section-title {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin: 40px 0 25px 0;
-    color: #fff;
-    letter-spacing: 0.5px;
-}
-
-/* =========================
-   SKILLS SECTION
-========================= */
-
-.skills-section {
-    margin: 30px 0;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-    margin-top: 20px;
-}
-
-.skill-card {
-    background: rgba(29, 185, 84, 0.08);
-    border: 1px solid rgba(29, 185, 84, 0.2);
-    border-radius: 12px;
-    padding: 20px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.skill-card:hover {
-    background: rgba(29, 185, 84, 0.15);
-    border-color: rgba(29, 185, 84, 0.4);
-    transform: translateY(-3px);
-}
-
-.skill-card i {
-    font-size: 2rem;
-    color: #1DB954;
-    margin-bottom: 12px;
-}
-
-.skill-card h4 {
-    font-size: 1.1rem;
-    color: #fff;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.skill-card p {
-    font-size: 0.85rem;
-    color: #b8b8b8;
-    line-height: 1.4;
-}
-
-/* =========================
-   SERVICES SECTION
-========================= */
-
-.services-section {
-    margin: 30px 0;
-}
-
-.services-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-top: 20px;
-}
-
-.service-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 10px;
-    padding: 16px;
-    transition: all 0.3s ease;
-}
-
-.service-item:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(29, 185, 84, 0.3);
-    transform: translateX(4px);
-}
-
-.service-icon {
-    font-size: 1.8rem;
-    flex-shrink: 0;
-}
-
-.service-content {
-    text-align: left;
-}
-
-.service-content h4 {
-    font-size: 1rem;
-    color: #fff;
-    margin-bottom: 6px;
-    font-weight: 600;
-}
-
-.service-content p {
-    font-size: 0.85rem;
-    color: #b8b8b8;
-    line-height: 1.4;
-}
-
-/* =========================
-   BOTS SECTION
-========================= */
-
-.bots-section {
-    margin: 30px 0;
-}
-
-.bots-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.bot-item {
-    background: rgba(114, 137, 218, 0.08);
-    border: 1px solid rgba(114, 137, 218, 0.2);
-    border-radius: 10px;
-    padding: 16px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.bot-item:hover {
-    background: rgba(114, 137, 218, 0.15);
-    border-color: rgba(114, 137, 218, 0.4);
-    transform: translateY(-3px);
-}
-
-.bot-item h4 {
-    font-size: 1rem;
-    color: #fff;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.bot-item p {
-    font-size: 0.8rem;
-    color: #b8b8b8;
-    line-height: 1.4;
 }
 
 /* =========================
@@ -774,7 +609,7 @@ body.light-mode .mode-toggle {
 .archive-item{
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-start; /* FIX:   */
     padding: 12px 0;
     border-bottom: 1px solid rgba(255,255,255,0.06);
 }
@@ -839,21 +674,6 @@ body.light-mode .mode-toggle {
         font-size: 1.5rem;
         margin: 10px 5px;
     }
-
-    .skills-grid,
-    .bots-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-item {
-        gap: 12px;
-        padding: 12px;
-    }
-
-    .section-title {
-        font-size: 1.4rem;
-        margin: 30px 0 20px 0;
-    }
 }
 
 @media (max-width: 600px) {
@@ -865,15 +685,5 @@ body.light-mode .mode-toggle {
 
     .avatar.active .status-text {
         transform: translateX(-50%) scale(1);
-    }
-
-    .skill-card,
-    .bot-item {
-        padding: 14px;
-    }
-
-    .skill-card i,
-    .bot-item i {
-        font-size: 1.6rem;
     }
 }
