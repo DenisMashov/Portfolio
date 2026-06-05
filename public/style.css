@@ -533,6 +533,18 @@ body.light-mode .mode-toggle {
 }
 
 /* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 40px 0 25px 0;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+/* =========================
    SERVICES SECTION
 ========================= */
 
@@ -585,6 +597,7 @@ body.light-mode .mode-toggle {
     color: #b8b8b8;
     line-height: 1.4;
 }
+
 
 /* =========================
    ARCHIVED WORK 
@@ -727,6 +740,16 @@ body.light-mode .mode-toggle {
     .social-icon {
         font-size: 1.5rem;
         margin: 10px 5px;
+    }
+}
+     .service-item {
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+        margin: 30px 0 20px 0;
     }
 }
 
