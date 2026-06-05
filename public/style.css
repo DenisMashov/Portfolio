@@ -533,6 +533,60 @@ body.light-mode .mode-toggle {
 }
 
 /* =========================
+   SERVICES SECTION
+========================= */
+
+.services-section {
+    margin: 30px 0;
+}
+
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 16px;
+    transition: all 0.3s ease;
+}
+
+.service-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(29, 185, 84, 0.3);
+    transform: translateX(4px);
+}
+
+.service-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.service-content {
+    text-align: left;
+}
+
+.service-content h4 {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.service-content p {
+    font-size: 0.85rem;
+    color: #b8b8b8;
+    line-height: 1.4;
+}
+
+/* =========================
    ARCHIVED WORK 
 ========================= */
 
