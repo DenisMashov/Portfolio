@@ -91,8 +91,7 @@ body {
     align-items: center;
 }
 
-.bio i,
-.location i {
+.bio i {
     margin-right: 5px;
 }
 
@@ -241,41 +240,6 @@ body {
 }
 
 /* =========================
-   LIGHT MODE
-========================= */
-
-body.light-mode {
-    background-color: #fff;
-    color: #333;
-}
-
-.container.light-mode {
-    background-color: #fff;
-}
-
-.discord.light-mode {
-    background-color: #f9f9f9;
-}
-
-.discord-name a.light-mode {
-    color: #333;
-}
-
-.discord-icons i.light-mode {
-    color: #333;
-}
-
-.social-icon.light-mode {
-    color: #333;
-}
-
-.discord-name a:hover.light-mode,
-.discord-icons i:hover.light-mode,
-.social-icon:hover.light-mode {
-    color: #b1b0b1;
-}
-
-/* =========================
    MODE TOGGLE
 ========================= */
 
@@ -294,10 +258,6 @@ body.light-mode {
 
 .mode-toggle:hover {
     color: #b1b0b1;
-}
-
-body.light-mode .mode-toggle {
-    color: #333;
 }
 
 /* =========================
