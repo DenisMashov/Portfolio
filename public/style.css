@@ -229,21 +229,6 @@ body {
 }
 
 /* =========================
-   JOKE MESSAGE
-========================= */
-
-#joke-message {
-    text-align: center;
-    margin-top: 20px;
-}
-
-#joke-message p {
-    color: red;
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-/* =========================
    ERROR MESSAGE
 ========================= */
 
