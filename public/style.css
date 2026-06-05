@@ -100,19 +100,6 @@ body {
     color: #f39c12;
 }
 
-.location {
-    font-size: 1.2rem;
-    margin: 5px 0;
-    color: #bbb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.location i {
-    color: #e74c3c;
-}
-
 /* =========================
    DISCORD GRID
 ========================= */
@@ -222,7 +209,7 @@ body {
 }
 
 /* =========================
-   ICONS
+   DISCORD ICONS
 ========================= */
 
 .discord-icons {
@@ -716,8 +703,7 @@ body.light-mode .mode-toggle {
         font-size: 2rem;
     }
 
-    .bio,
-    .location {
+    .bio {
         font-size: 1rem;
     }
 
