@@ -508,29 +508,41 @@ body {
 }
 
 /* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: #111;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+/* =========================
    SOCIAL MEDIA
 ========================= */
 
 .social-media {
-    margin-top: 45px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
 }
 
+/* Icon style */
 .social-icon {
-    margin-bottom: -45px;
     width: 54px;
     height: 54px;
     border-radius: 16px;
     background: #1f1f1f;
     border: 1px solid rgba(255,255,255,0.06);
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 1.4rem;
     text-decoration: none;
+
     transition: all 0.3s ease;
 }
 
@@ -539,55 +551,25 @@ body {
     background: #262626;
 }
 
-/* Icon Colors */
+/* Colors */
 
-.social-icon.discord {
-    color: #7289da;
-}
+.social-icon.discord { color: #7289da; }
+.social-icon.discord:hover { color: #5a6fb8; }
 
-.social-icon.discord:hover {
-    color: #5a6fb8;
-}
+.social-icon.steam { color: #00adee; }
+.social-icon.steam:hover { color: #66c0f4; }
 
-.social-icon.steam {
-    color: #00adee;
-}
+.social-icon.instagram { color: #e4405f; }
+.social-icon.instagram:hover { color: #c13584; }
 
-.social-icon.steam:hover {
-    color: #66c0f4;
-}
+.social-icon.youtube { color: #ff0000; }
+.social-icon.youtube:hover { color: #cc0000; }
 
-.social-icon.instagram {
-    color: #e4405f;
-}
+.social-icon.spotify { color: #1DB954; }
+.social-icon.spotify:hover { color: #1ed760; }
 
-.social-icon.instagram:hover {
-    color: #c13584;
-}
-
-.social-icon.youtube {
-    color: #ff0000;
-}
-
-.social-icon.youtube:hover {
-    color: #cc0000;
-}
-
-.social-icon.spotify {
-    color: #1DB954;
-}
-
-.social-icon.spotify:hover {
-    color: #1ed760;
-}
-
-.social-icon.letterboxd {
-    color: #d5d5d5;
-}
-
-.social-icon.letterboxd:hover {
-    color: #ff8000;
-}
+.social-icon.letterboxd { color: #d5d5d5; }
+.social-icon.letterboxd:hover { color: #ff8000; }
 
 /* =========================
    RESPONSIVE
