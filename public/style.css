@@ -741,8 +741,8 @@ body.light-mode .mode-toggle {
         font-size: 1.5rem;
         margin: 10px 5px;
     }
-}
-     .service-item {
+    
+    .service-item {
         gap: 12px;
         padding: 12px;
     }
@@ -763,4 +763,3 @@ body.light-mode .mode-toggle {
     .avatar.active .status-text {
         transform: translateX(-50%) scale(1);
     }
-}
