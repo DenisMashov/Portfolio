@@ -229,24 +229,6 @@ body {
 }
 
 /* =========================
-   ERROR MESSAGE
-========================= */
-
-.error-message {
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #e74c3c;
-    padding: 15px 30px;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 1.2rem;
-    display: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-/* =========================
    SPOTIFY WIDGET
 ========================= */
 
