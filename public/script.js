@@ -43,6 +43,31 @@ function toggleMode() {
     }, 1500);
 }
 
+// ===============================
+// SKILLS MODAL
+// ===============================
+function openSkillsModal() {
+    const modal = document.getElementById("skills-modal");
+    modal.classList.add("show");
+}
+
+function closeSkillsModal() {
+    const modal = document.getElementById("skills-modal");
+    modal.classList.remove("show");
+}
+
+// Close modal when clicking outside the content
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("skills-modal");
+    
+    if (modal) {
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                closeSkillsModal();
+            }
+        });
+    }
+});
 
 // ===============================
 // SPOTIFY / LANYARD WIDGET
