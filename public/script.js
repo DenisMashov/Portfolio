@@ -27,22 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-    
-// ===============================
-// LIGHT MODE TOGGLE 
-// ===============================
-function toggleMode() {
-    const errorBox = document.getElementById("error-message");
-
-    // show message
-    errorBox.style.display = "block";
-
-    // redirect after delay (prank)
-    setTimeout(() => {
-        window.location.href = "https://youtu.be/iuy9HX7FIoI";
-    }, 1500);
-}
-
 
 // ===============================
 // SPOTIFY / LANYARD WIDGET
@@ -162,7 +146,6 @@ function updateProgress() {
 // START CONNECTION
 // ===============================
 connect();
-
 
 // ===============================
 // SCROLL REVEAL ANIMATION
