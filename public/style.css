@@ -146,15 +146,8 @@ body {
 }
 
 /* =========================
-   DISCORD BANNER / LOGO
+   DISCORD LOGO / BANNER
 ========================= */
-
-.discord-banner {
-    width: 100%;
-    max-height: 200px;
-    border-radius: 10px;
-    object-fit: cover;
-}
 
 .discord-logo {
     width: 48px;
@@ -165,7 +158,12 @@ body {
     position: relative;
     z-index: 2;
 }
-
+.discord-banner {
+    width: 100%;
+    max-height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
 /* =========================
    DISCORD NAME
 ========================= */
@@ -205,27 +203,6 @@ body {
     background: rgba(255,255,255,0.08);
     border-color: rgba(255,255,255,0.12);
     transform: translateY(-1px);
-}
-
-/* =========================
-   DISCORD ICONS
-========================= */
-
-.discord-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: 6px;
-}
-
-.discord-icons i {
-    font-size: 1rem;
-    margin: 4px;
-    color: #ddd;
-    transition: color 0.2s ease;
-}
-
-.discord-icons i:hover {
-    color: #fff;
 }
 
 /* =========================
