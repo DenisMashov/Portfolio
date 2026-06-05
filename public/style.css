@@ -510,7 +510,7 @@ body.light-mode .mode-toggle {
 ========================= */
 
 .archive-component{
-    margin: 35px auto 10px auto;
+    margin: 25px auto 0px auto;
     max-width: 520px;
     width: 100%;
     text-align: center;
@@ -530,7 +530,7 @@ body.light-mode .mode-toggle {
     font-weight: 500;
     color: #fff;
     background: #1f1f1f;
-    border:1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
     border-radius: 999px;
     cursor:pointer;
     transition: .25s ease;
@@ -638,7 +638,7 @@ body.light-mode .mode-toggle {
 }
 
 .social-icon {
-    margin-bottom: -30px;
+    margin-bottom: -20px;
     width: 54px;
     height: 54px;
     border-radius: 16px;
