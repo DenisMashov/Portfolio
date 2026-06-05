@@ -646,7 +646,3 @@ body {
         bottom: 47px;
         transform: translateX(-50%) scale(0.98);
     }
-
-    .avatar.active .status-text {
-        transform: translateX(-50%) scale(1);
-    }
