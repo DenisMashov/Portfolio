@@ -512,11 +512,11 @@ body {
 ========================= */
 
 .footer {
-    background: #111;
     padding: 40px 20px;
     display: flex;
     justify-content: center;
 }
+
 /* =========================
    SOCIAL MEDIA
 ========================= */
