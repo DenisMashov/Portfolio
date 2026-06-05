@@ -513,7 +513,6 @@ body {
 
 .social-media {
     margin-top: 45px;
-    margin-bottom: -45px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -521,6 +520,7 @@ body {
 }
 
 .social-icon {
+    margin-bottom: -45px;
     width: 54px;
     height: 54px;
     border-radius: 16px;
