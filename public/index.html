@@ -44,10 +44,13 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://denisweb.vercel.app">
 
-<!-- Fonts -->
+<!-- Preload avatar for LCP -->
+<link rel="preload" as="image" href="img/avatar.webp">
+
+<!-- Fonts with font-display=swap -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap&font-display=swap" rel="stylesheet">
 
 <!-- Sitemap -->
 <link rel="sitemap" type="xml" href="https://denisweb.vercel.app/sitemap.xml">
@@ -55,8 +58,11 @@
 <!-- Favicon -->
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 
+<!-- Font Awesome non-blocking -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+
 <!-- CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
     
 <!-- JavaScript -->
@@ -69,7 +75,7 @@
 <main class="container">
     <!-- Avatar Section -->
     <section class="avatar">
-        <img src="img/avatar.webp" alt="Denis Avatar" loading="lazy">
+        <img src="img/avatar.webp" alt="Denis Avatar" width="150" height="150" fetchpriority="high">
     <div class="status">
         <span class="status-emoji">🌹</span>
         <span class="status-text">I'd rather keep thorny rose</span>
@@ -87,7 +93,7 @@
 
     <!-- Real-time Spotify Widget -->
     <section id="spotify-widget" class="spotify-widget hidden">
-        <img id="album-art" src="" alt="Album Art" loading="lazy">
+        <img id="album-art" src="" alt="Album Art" width="64" height="64" loading="lazy">
         <div class="song-info">
             <div id="song-name">Song name</div>
             <div id="artist-name">Artist</div>
@@ -104,8 +110,8 @@
     <section class="discords">
         <!-- Georgian Community -->
         <div class="discord">
-            <img src="img/gcbanner.webp" alt="Georgian Community Banner" class="discord-banner" loading="lazy">
-            <img src="img/gclogo.webp" alt="Georgian Community Logo" class="discord-logo" loading="lazy">
+            <img src="img/gcbanner.webp" alt="Georgian Community Banner" class="discord-banner" width="320" loading="lazy">
+            <img src="img/gclogo.webp" alt="Georgian Community Logo" class="discord-logo" width="48" height="48" loading="lazy">
             <h3 class="discord-name"><a href="https://discord.gg/M8bD4qJmkN" target="_blank">Georgian Community</a></h3>
             <p class="discord-position">⭐️ Founder · Since 2022</p>
             <p class="discord-bio">
@@ -115,8 +121,8 @@
 
         <!-- G-Online Services -->
         <div class="discord">
-            <img src="img/gosbanner.webp" alt="G-Online Services Banner" class="discord-banner" loading="lazy">
-            <img src="img/goslogo.webp" alt="G-Online Services Logo" class="discord-logo" loading="lazy">
+            <img src="img/gosbanner.webp" alt="G-Online Services Banner" class="discord-banner" width="320" loading="lazy">
+            <img src="img/goslogo.webp" alt="G-Online Services Logo" class="discord-logo" width="48" height="48" loading="lazy">
             <h3 class="discord-name"><a href="https://discord.gg/GBMfc7VMpC" target="_blank">G-Online Services</a></h3>
             <p class="discord-position">⭐️ Founder & Freelancer · Since 2023</p>
             <p class="discord-bio">
@@ -126,8 +132,8 @@
 
         <!-- Wolves Land -->
         <div class="discord">
-            <img src="img/landbanner.webp" alt="Wolves Land Banner" class="discord-banner" loading="lazy">
-            <img src="img/land.webp" alt="Wolves Land Logo" class="discord-logo" loading="lazy">
+            <img src="img/landbanner.webp" alt="Wolves Land Banner" class="discord-banner" width="320" loading="lazy">
+            <img src="img/land.webp" alt="Wolves Land Logo" class="discord-logo" width="48" height="48" loading="lazy">
             <h3 class="discord-name"><a href="https://discord.gg/wQe6FuH3Je" target="_blank">Wolves Land</a></h3>
             <p class="discord-position">⚒️ Discord Manager · Since 2024</p>
             <p class="discord-bio">
@@ -137,8 +143,8 @@
 
         <!-- Lux Empire -->
         <div class="discord">
-            <img src="img/luxbanner.webp" alt="Lux Empire Banner" class="discord-banner" loading="lazy">
-            <img src="img/luxlogo.webp" alt="Lux Empire Logo" class="discord-logo" loading="lazy">
+            <img src="img/luxbanner.webp" alt="Lux Empire Banner" class="discord-banner" width="320" loading="lazy">
+            <img src="img/luxlogo.webp" alt="Lux Empire Logo" class="discord-logo" width="48" height="48" loading="lazy">
             <h3 class="discord-name"><a href="https://discord.gg/7Ekc8NZeqn" target="_blank">Lux Empire</a></h3>
             <p class="discord-position">⚒️ Discord Manager · Since 2022</p>
             <p class="discord-bio">
@@ -147,18 +153,6 @@
         </div>
     </section>
 
-      <!-- Davidio -->
-    <!--     <div class="discord">
-            <img src="img/lxbanner.webp" alt="lx Core Banner" class="discord-banner" loading="lazy">
-            <img src="img/lxcorelogo.webp" alt="Lx Core Logo" class="discord-logo" loading="lazy">
-            <h3 class="discord-name"><a href="https://discord.gg/WHcHpxeNY2" target="_blank">LXCore</a></h3>
-            <p class="discord-position">⚒️ Discord Manager · Since 2026</p>
-            <p class="discord-bio">
-                This Discord Server is built for serious RedM/FiveM development, production-grade roleplay systems, custom scripts, server tools.
-            </p>
-        </div>
-    </section> -->
-    
 <!-- Services Section -->
 <section class="services-section">
     <h3 class="section-title">Services Offered</h3>
@@ -203,7 +197,6 @@
   <input type="checkbox" id="archive-toggle">
   <label for="archive-toggle" class="archive-btn">
     worked with 
-  <!--  <span class="arrow"></span>  -->
   </label>
 
   <div class="archive-box">
