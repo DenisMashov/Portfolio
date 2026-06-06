@@ -90,30 +90,24 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 /* =========================
    DISCORD GRID
 ========================= */
 
 .discords {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     gap: 18px;
     margin: 20px 0;
 }
 
-.discords > *:nth-last-child(1):nth-child(3n + 1) {
-    grid-column: 2;
-}
-@media (max-width: 768px) {
-    .discords {
-        grid-template-columns: 1fr;
-        justify-items: center;
-    }
+.discords > .discord:nth-child(1) { grid-column: 1 / 3; }
+.discords > .discord:nth-child(2) { grid-column: 3 / 5; }
+.discords > .discord:nth-child(3) { grid-column: 5 / 7; }
+.discords > .discord:nth-child(4) { grid-column: 2 / 4; }
+.discords > .discord:nth-child(5) { grid-column: 4 / 6; }
 
-    .discords > *:nth-last-child(1):nth-child(3n + 1) {
-        grid-column: auto;
-    }
-}
 /* =========================
    DISCORD CARD
 ========================= */
@@ -127,7 +121,7 @@ body {
     overflow: hidden;
     border: none;
     width: 100%;
-    max-width: 320px;
+    max-width: 100%;
     transition: transform 0.2s ease, background 0.2s ease;
 }
 
@@ -135,10 +129,6 @@ body {
     transform: translateY(-4px);
     background: rgba(255,255,255,0.05);
 }
-
-/* =========================
-   DISCORD LOGO / BANNER
-========================= */
 
 .discord-logo {
     width: 48px;
@@ -149,6 +139,7 @@ body {
     position: relative;
     z-index: 2;
 }
+
 .discord-banner {
     width: 100%;
     max-height: 120px;
@@ -157,9 +148,6 @@ body {
     object-position: center;
     aspect-ratio: 1920 / 690;
 }
-/* =========================
-   DISCORD NAME
-========================= */
 
 .discord-name a {
     color: #fff;
@@ -174,10 +162,6 @@ body {
 .discord-name a:hover {
     color: #d1d1d1;
 }
-
-/* =========================
-   DISCORD ROLE
-========================= */
 
 .discord-position {
     display: inline-flex;
@@ -198,36 +182,11 @@ body {
     transform: translateY(-1px);
 }
 
-/* =========================
-   DISCORD BIO
-========================= */
-
 .discord-bio {
     font-size: 0.85rem;
     color: #b8b8b8;
     margin-top: 8px;
     line-height: 1.45;
-}
-
-/* =========================
-   MODE TOGGLE
-========================= */
-
-.mode-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    border: none;
-    background-color: transparent;
-    color: #fff;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.mode-toggle:hover {
-    color: #b1b0b1;
 }
 
 /* =========================
@@ -390,10 +349,10 @@ body {
 }
 
 /* =========================
-   ARCHIVED WORK 
+   ARCHIVED WORK
 ========================= */
 
-.archive-component{
+.archive-component {
     margin: 25px auto 25px auto;
     max-width: 520px;
     width: 100%;
@@ -401,11 +360,7 @@ body {
     font-family: "League Spartan", sans-serif;
 }
 
-/* =========================
-   BUTTON
-========================= */
-
-.archive-btn{
+.archive-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -416,54 +371,45 @@ body {
     background: #1f1f1f;
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 999px;
-    cursor:pointer;
+    cursor: pointer;
     transition: .25s ease;
     user-select: none;
 }
 
-.archive-btn:hover{
+.archive-btn:hover {
     background: #262626;
     transform: translateY(-2px);
 }
 
-/* arrow */
-.arrow{
+.arrow {
     font-size: 11px;
     transition: transform .3s ease;
     opacity: 0.8;
 }
 
-#archive-toggle{
+#archive-toggle {
     display: none;
 }
 
-#archive-toggle:checked + .archive-btn .arrow{
+#archive-toggle:checked + .archive-btn .arrow {
     transform: rotate(180deg);
     opacity: 1;
 }
 
-/* =========================
-   BOX
-========================= */
-
-.archive-box{
+.archive-box {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     transition: max-height .45s ease, opacity .3s ease;
 }
 
-#archive-toggle:checked ~ .archive-box{
+#archive-toggle:checked ~ .archive-box {
     max-height: 600px;
     opacity: 1;
     margin-top: 12px;
 }
 
-/* =========================
-   ITEMS 
-========================= */
-
-.archive-item{
+.archive-item {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -471,8 +417,7 @@ body {
     border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-/* LEFT SIDE */
-.archive-item .left{
+.archive-item .left {
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -480,31 +425,29 @@ body {
     text-align: left;
 }
 
-.archive-item h4{
+.archive-item h4 {
     margin: 0;
     font-size: 14px;
     color: #fff;
     line-height: 1.2;
 }
 
-.archive-item p{
+.archive-item p {
     margin: 0;
     font-size: 12px;
     color: #9a9a9a;
     line-height: 1.2;
 }
 
-/* RIGHT SIDE (DATE) */
-.archive-item span{
+.archive-item span {
     font-size: 12px;
     color: #777;
     white-space: nowrap;
     flex-shrink: 0;
 }
 
-/* hover */
-.archive-item:hover{
-    transform:translateX(0.5px);
+.archive-item:hover {
+    transform: translateX(0.5px);
     transition: .2s ease;
     border-bottom-color: rgba(255,255,255,0.15);
 }
@@ -519,10 +462,6 @@ body {
     justify-content: center;
 }
 
-/* =========================
-   SOCIAL MEDIA
-========================= */
-
 .social-media {
     display: flex;
     justify-content: center;
@@ -530,7 +469,6 @@ body {
     gap: 12px;
 }
 
-/* Icon style */
 .social-icon {
     width: 54px;
     height: 54px;
@@ -550,23 +488,16 @@ body {
     background: #262626;
 }
 
-/* Colors */
-
 .social-icon.discord { color: #7289da; }
 .social-icon.discord:hover { color: #5a6fb8; }
-
 .social-icon.steam { color: #00adee; }
 .social-icon.steam:hover { color: #66c0f4; }
-
 .social-icon.instagram { color: #e4405f; }
 .social-icon.instagram:hover { color: #c13584; }
-
 .social-icon.youtube { color: #ff0000; }
 .social-icon.youtube:hover { color: #cc0000; }
-
 .social-icon.spotify { color: #1DB954; }
 .social-icon.spotify:hover { color: #1ed760; }
-
 .social-icon.letterboxd { color: #d5d5d5; }
 .social-icon.letterboxd:hover { color: #ff8000; }
 
@@ -587,11 +518,15 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .discords > .discord:nth-child(n) {
+        grid-column: auto;
+    }
+
     .social-icon {
         font-size: 1.5rem;
         margin: 10px 5px;
     }
-    
+
     .service-item {
         gap: 12px;
         padding: 12px;
