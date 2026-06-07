@@ -432,6 +432,15 @@ body {
     line-height: 1.2;
 }
 
+.archive-item h4 a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.archive-item h4 a:hover {
+    color: #d1d1d1;
+}
 .archive-item p {
     margin: 0;
     font-size: 12px;
