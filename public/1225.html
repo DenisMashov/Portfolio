@@ -106,7 +106,7 @@ body {
 
 <div class="overlay" id="overlay">
     <p>parolayi zaten biliyon 🌹</p>
-    <input type="password" id="passwordInput" placeholder="····" autofocus>
+    <input type="password" id="passwordInput" autofocus>
 </div>
 
 <script>
@@ -126,8 +126,8 @@ async function check(val) {
     return hex === h;
 }
 
-input.addEventListener("keydown", async (e) => {
-    if (e.key === "Enter") {
+input.addEventListener("keydown", async (ev) => {
+    if (ev.key === "Enter") {
         const ok = await check(input.value);
         if (ok) {
             const overlay = document.getElementById("overlay");
