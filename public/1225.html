@@ -19,7 +19,6 @@ body {
     justify-content: center;
 }
 
-/* MESSAGE PAGE */
 .message-page {
     display: none;
     max-width: 600px;
@@ -40,7 +39,6 @@ body {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* OVERLAY */
 .overlay {
     position: fixed;
     inset: 0;
@@ -100,37 +98,41 @@ body {
 </head>
 <body>
 
-<!-- Message (behind overlay) -->
 <div class="message-page" id="message">
     <p>I miss you so much. I miss all of our memories. I miss your voice and your laugh. I miss the way you made me smile. I still have feelings for you. I still love you, even though we don't talk anymore and our relationship has grown distant. I remember all the days and nights we spent together. Now, we're almost strangers. But I still want to go back to the old days and make new memories with you. I don't even know how to explain everything I'm feeling. There are so many things I want to say, but a few words will never be enough to express how much you mean to me or how much I miss you.</p>
 </div>
 
-<!-- Password Overlay -->
 <div class="overlay" id="overlay">
     <p>parolayi zaten biliyon 🌹</p>
-    <input type="password" id="passwordInput" placeholder="····" maxlength="10" autofocus>
+    <input type="password" id="passwordInput" placeholder="····" autofocus>
 </div>
 
 <script>
-const correct = "1225";
+const h = "6ecf763ff6e7cef7b47e6611e1bf76fe2608a2e32a97b2d88b083ae1d8d02c82";
 
 document.getElementById("message").style.display = "block";
 
 const input = document.getElementById("passwordInput");
 
-input.addEventListener("input", () => {
-    if (input.value === correct) {
-        const overlay = document.getElementById("overlay");
-        overlay.classList.add("hidden");
-        setTimeout(() => overlay.remove(), 700);
-    }
-});
+async function check(val) {
+    const enc = new TextEncoder().encode(val);
+    const buf = await crypto.subtle.digest("SHA-256", enc);
+    const hex = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,"0")).join("");
+    return hex === h;
+}
 
-input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" && input.value !== correct) {
-        input.classList.add("wrong");
-        input.value = "";
-        setTimeout(() => input.classList.remove("wrong"), 400);
+input.addEventListener("keydown", async (e) => {
+    if (e.key === "Enter") {
+        const ok = await check(input.value);
+        if (ok) {
+            const overlay = document.getElementById("overlay");
+            overlay.classList.add("hidden");
+            setTimeout(() => overlay.remove(), 700);
+        } else {
+            input.classList.add("wrong");
+            input.value = "";
+            setTimeout(() => input.classList.remove("wrong"), 400);
+        }
     }
 });
 </script>
