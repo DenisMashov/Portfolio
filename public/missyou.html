@@ -94,25 +94,37 @@ body {
 const h = "6067d0559180cef598b147ea7a4ce0f13a74688e0d04994adbe74e6a937e20a3";
 const s = "r9x#mK2_";
 const e = "_wQpL7v";
-const encoded = "SSBtaXNzIHlvdSBzbyBtdWNoLiBJIG1pc3MgYWxsIG9mIG91ciBtZW1vcmllcy4gSSBtaXNzIHlvdXIgdm9pY2UgYW5kIHlvdXIgbGF1Z2guIEkgbWlzcyB0aGUgd2F5IHlvdSBtYWRlIG1lIHNtaWxlLiBJIHN0aWxsIGhhdmUgZmVlbGluZ3MgZm9yIHlvdS4gSSBzdGlsbCBsb3ZlIHlvdSwgZXZlbiB0aG91Z2ggd2UgZG9uJ3QgdGFsayBhbnltb3JlIGFuZCBvdXIgcmVsYXRpb25zaGlwIGhhcyBncm93biBkaXN0YW50LiBJIHJlbWVtYmVyIGFsbCB0aGUgZGF5cyBhbmQgbmlnaHRzIHdlIHNwZW50IHRvZ2V0aGVyLiBOb3csIHdlJ3JlIGFsbW9zdCBzdHJhbmdlcnMuIEJ1dCBJIHN0aWxsIHdhbnQgdG8gZ28gYmFjayB0byB0aGUgb2xkIGRheXMgYW5kIG1ha2UgbmV3IG1lbW9yaWVzIHdpdGggeW91LiBJIGRvbid0IGV2ZW4ga25vdyBob3cgdG8gZXhwbGFpbiBldmVyeXRoaW5nIEknbSBmZWVsaW5nLiBUaGVyZSBhcmUgc28gbWFueSB0aGluZ3MgSSB3YW50IHRvIHNheSwgYnV0IGEgZmV3IHdvcmRzIHdpbGwgbmV2ZXIgYmUgZW5vdWdoIHRvIGV4cHJlc3MgaG93IG11Y2ggeW91IG1lYW4gdG8gbWUgb3IgaG93IG11Y2ggSSBtaXNzIHlvdS4KClNvbWV0aW1lcyB3aGVuIEkgbGlzdGVuIHRvIG11c2ljLCB5b3UgY29tZSB0byBteSBtaW5kIOKAlCBhbmQgdGhlbiB0aG91Z2h0cyBzdGFydCBydXNoaW5nIGluLiBJIGdldCB0aGlzIHVyZ2UgdG8gZ2V0IHVwIGFuZCB3cml0ZSBhIGxldHRlciBhYm91dCBteSBmZWVsaW5ncywgYnV0IHNvbWVob3cgSSBqdXN0IGNhbid0LiBMaWtlIEkgc2FpZCwgcHV0dGluZyBlbW90aW9ucyBpbnRvIHdvcmRzIGlzIHNvIGhhcmQuIFlvdSd2ZSBhbHdheXMgaGFkIHRoZSBtb3N0IGJlYXV0aWZ1bCBleWVzLCBhbmQgSSB3aXNoIEkgY291bGQgbG9vayBpbnRvIHRoZW0gaW4gcmVhbCBsaWZlLiBTb21ldGltZXMgSSBvcGVuIHVwIHRvIG15IGZyaWVuZHMgYWJvdXQgZXZlcnl0aGluZywgYW5kIHRoZXkgYWxsIHRlbGwgbWUgdG8gJ21vdmUgb24nIG9yIHNvbWV0aGluZyBzaW1pbGFyIOKAlCBhbmQgc2F5IHRoaW5ncyBhYm91dCB5b3UuIEJ1dCBJJ3ZlIGFsd2F5cyBiZWVuIGNvbXBsZXRlbHkgYWdhaW5zdCB0aGF0Lg==";
+const cipher = "KUe9POLz7oz3xGeZFWyNhFkcRq5EJPQjqJRuC/8SAMwGR78g46CjkPXeNYMfP87Rc1QF5353uTO0kjxK5RFJwAVHsTv1oLea7cNnhhs5h5kUVCGuYG3qOfuTJg+zCUHaQB6/ILHtr5H9kSqPWj+NmFYRRq5EJOo+sosiSvsfVsZAAbUw/emgkuuRIYUIbJmeT1pIxy137SO3i24G/AhFgxkIpXmx5biQ9pEzghU5h5kaAw2uaWv3ba/HOgv/FQDCDh69OuPl7pT21WeFDz7Ag18YCfpka/c5s44+SvsfU4MHFb8i/6CqnOvFJoQOYsC4GgYN42hp+y+pxy8G/15UywVHtDTo8+6U9tVnhBMriIVJVB/rLXfpL7WTbh78GUXXCAKie7HOoYK0kTCPXT6F0VsYBeF+cLk5r5UvBPQbUtBOR5Ig5aCH1evFLoYWbJeQVABI+mIk/iX7hS8J+F5UzEATuDCx76KRuNUmkwlsgZ9eVAXvZmG5JL6Qbgf2E0/RCQKjdebpup24yCifVGyp0V4bBql5JPw8voluAf0RV4MICKd15e/ukODBK4sTIsCUTBEa93ls8CS8xwdN/l5GxgULuTv2ru6h8NQ1j1otkpQaBweuYGX3M/uTJgP9GVODKUenNP/07oH3kTSLA2DAk08ASO8tYvw9+5AhGPcNANQJC7x1/+W4kOqRJY9aKY6eTxMArnlruS+jlzwP4A0Ayw8Q8Djk46bV4d4yyhcpgZ8aAAeuYGG5JanHJgXkXk3WAw/wHLHtp4brkT6FD2Lq+2kbBet5bfQvqMc5AvYQAOpAC7km5eWg1ezeZ4cPP4mSFlQR4Xgk+iW2gm4e/F5N2kAKuTv1oCx1DJEmhB5slJlfGkj6ZWvsLbOTPUrgCkHRFEeiIOLop5v/kS6EVGyp0V0RHK55bPA5+5I8DfZeVMxAALUhsfW+1fnfI8oNPomFX1QJrmFh7T6+lW4L8RFV10AKqXX35auZ8d8gmVZsgoROVBvhYGHxJazHB0r5C1PXQASxO7b04NXU2CyPWgXAglsdDKItdOw+r44gDbMbTcwUDr874qCnm+zeZ50VPoSCGh0brn5ruSK6lSpEsydP1kcRtXXw7LmU4cJnghsowIVSEUjjYnftarmCLx/nF0bWDEe1LPTz4tX53yPKM2yXmEkcSMctZ/Y/t4NuBvwRS4MJCaQ6sfSmkPWRLoRaPoWQVlQE52tht2qIiCMP5xdNxhNHmXX+8KubuMQ3yg4jwJxDVA78ZGH3LqjHLwj8C1SDBRG1J+j0ppz21mvKGyKE0U4cDfctZfUm+5MrBv9eTcZAE791/O+4kLjeKcoVPsCCVRkN+mVt9y37lCcH+hJB0UCFUMGx4aCRuMImk1o4iJhUExuubGb2P6/HNwXmUADhFRPwHLb2q9X53TCLAz/Ak18RBq5ua/Q6t4I6D/8HAMIHBrk74vTugfDQM8Q=";
 
 document.getElementById("message").style.display = "block";
 
 const input = document.getElementById("passwordInput");
 
-async function check(val) {
+async function getKey(val) {
     const salted = s + val + e;
     const enc = new TextEncoder().encode(salted);
     const buf = await crypto.subtle.digest("SHA-256", enc);
-    const hex = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,"0")).join("");
+    return new Uint8Array(buf);
+}
+
+async function check(val) {
+    const key = await getKey(val);
+    const hex = Array.from(key).map(b => b.toString(16).padStart(2,"0")).join("");
     return hex === h;
+}
+
+function decrypt(cipherB64, key) {
+    const bytes = Uint8Array.from(atob(cipherB64), c => c.charCodeAt(0));
+    const dec = bytes.map((b, i) => b ^ key[i % key.length]);
+    return new TextDecoder().decode(dec);
 }
 
 input.addEventListener("keydown", async (ev) => {
     if (ev.key === "Enter") {
-        const ok = await check(input.value);
-        if (ok) {
-            document.getElementById("msg-text").textContent = atob(encoded);
+        const key = await getKey(input.value);
+        const hex = Array.from(key).map(b => b.toString(16).padStart(2,"0")).join("");
+        if (hex === h) {
+            document.getElementById("msg-text").textContent = decrypt(cipher, key);
             const overlay = document.getElementById("overlay");
             overlay.classList.add("hidden");
             setTimeout(() => overlay.remove(), 700);
