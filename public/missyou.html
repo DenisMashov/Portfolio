@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
     font-family: "League Spartan", sans-serif;
     background-color: #1a1a1a;
@@ -18,7 +17,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 .message-page {
     display: none;
     max-width: 600px;
@@ -26,19 +24,16 @@ body {
     text-align: center;
     animation: fadeIn 1.2s ease;
 }
-
 .message-page p {
     font-size: 1.1rem;
     color: #ccc;
     line-height: 1.9;
     font-weight: 300;
 }
-
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
 }
-
 .overlay {
     position: fixed;
     inset: 0;
@@ -53,18 +48,8 @@ body {
     z-index: 10;
     transition: opacity 0.6s ease;
 }
-
-.overlay.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.overlay p {
-    font-size: 0.95rem;
-    color: #888;
-    margin-bottom: 4px;
-}
-
+.overlay.hidden { opacity: 0; pointer-events: none; }
+.overlay p { font-size: 0.95rem; color: #888; margin-bottom: 4px; }
 .overlay input {
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.1);
@@ -79,17 +64,12 @@ body {
     width: 180px;
     transition: border-color 0.2s ease, background 0.2s ease;
 }
-
-.overlay input:focus {
-    border-color: rgba(255,255,255,0.25);
-}
-
+.overlay input:focus { border-color: rgba(255,255,255,0.25); }
 .overlay input.wrong {
     border-color: rgba(255, 60, 60, 0.8);
     background: rgba(255, 60, 60, 0.08);
     animation: shake 0.35s ease;
 }
-
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
     20%       { transform: translateX(-8px); }
@@ -101,11 +81,11 @@ body {
 <body>
 
 <div class="message-page" id="message">
-    <p>I miss you so much. I miss all of our memories. I miss your voice and your laugh. I miss the way you made me smile. I still have feelings for you. I still love you, even though we don't talk anymore and our relationship has grown distant. I remember all the days and nights we spent together. Now, we're almost strangers. But I still want to go back to the old days and make new memories with you. I don't even know how to explain everything I'm feeling. There are so many things I want to say, but a few words will never be enough to express how much you mean to me or how much I miss you.</p>
+    <p id="msg-text"></p>
 </div>
 
 <div class="overlay" id="overlay">
-    <p>you know very well what is password :)</p>
+    <p>parolayi zaten biliyon 🌹</p>
     <input type="password" id="passwordInput" autofocus>
 </div>
 
@@ -113,6 +93,9 @@ body {
 const h = "6067d0559180cef598b147ea7a4ce0f13a74688e0d04994adbe74e6a937e20a3";
 const s = "r9x#mK2_";
 const e = "_wQpL7v";
+
+// message encoded in base64, not visible as plain text in HTML
+const encoded = "SSBtaXNzIHlvdSBzbyBtdWNoLiBJIG1pc3MgYWxsIG9mIG91ciBtZW1vcmllcy4gSSBtaXNzIHlvdXIgdm9pY2UgYW5kIHlvdXIgbGF1Z2guIEkgbWlzcyB0aGUgd2F5IHlvdSBtYWRlIG1lIHNtaWxlLiBJIHN0aWxsIGhhdmUgZmVlbGluZ3MgZm9yIHlvdS4gSSBzdGlsbCBsb3ZlIHlvdSwgZXZlbiB0aG91Z2ggd2UgZG9uJ3QgdGFsayBhbnltb3JlIGFuZCBvdXIgcmVsYXRpb25zaGlwIGhhcyBncm93biBkaXN0YW50LiBJIHJlbWVtYmVyIGFsbCB0aGUgZGF5cyBhbmQgbmlnaHRzIHdlIHNwZW50IHRvZ2V0aGVyLiBOb3csIHdlJ3JlIGFsbW9zdCBzdHJhbmdlcnMuIEJ1dCBJIHN0aWxsIHdhbnQgdG8gZ28gYmFjayB0byB0aGUgb2xkIGRheXMgYW5kIG1ha2UgbmV3IG1lbW9yaWVzIHdpdGggeW91LiBJIGRvbid0IGV2ZW4ga25vdyBob3cgdG8gZXhwbGFpbiBldmVyeXRoaW5nIEkgbSBmZWVsaW5nLiBUaGVyZSBhcmUgc28gbWFueSB0aGluZ3MgSSB3YW50IHRvIHNheSwgYnV0IGEgZmV3IHdvcmRzIHdpbGwgbmV2ZXIgYmUgZW5vdWdoIHRvIGV4cHJlc3MgaG93IG11Y2ggeW91IG1lYW4gdG8gbWUgb3IgaG93IG11Y2ggSSBtaXNzIHlvdS4=";
 
 document.getElementById("message").style.display = "block";
 
@@ -130,6 +113,7 @@ input.addEventListener("keydown", async (ev) => {
     if (ev.key === "Enter") {
         const ok = await check(input.value);
         if (ok) {
+            document.getElementById("msg-text").textContent = atob(encoded);
             const overlay = document.getElementById("overlay");
             overlay.classList.add("hidden");
             setTimeout(() => overlay.remove(), 700);
