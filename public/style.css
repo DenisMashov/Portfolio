@@ -141,7 +141,6 @@ body {
   font-size: 0.78rem;
   color: var(--muted2);
   display: inline-flex;
-  align-items: center;
   gap: 5px;
 }
 
