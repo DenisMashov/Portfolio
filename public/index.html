@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -32,20 +34,17 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://denisweb.vercel.app">
 <link rel="preload" as="image" href="img/avatar.webp">
-<meta name="google-site-verification" content="nVxrFEWYtsQEFwMJysYdUPbVrA8s7oqXqzS1W4g2XDQ">
+<meta name="google-site-verification" content="nVxrFEWYtsQEFwMJysYdUPbVrA8s7oqXqzS1W4g2XDQ" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
-<script defer="" src="script.js"></script>
-<script defer="" src="https://va.vercel-scripts.com/v1/script.js"></script>
+<script defer src="script.js"></script>
+<script defer src="https://va.vercel-scripts.com/v1/script.js"></script>
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-<script src="https://va.vercel-scripts.com/v1/script.js" defer=""></script><style>
-    .fade { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .fade.in { opacity: 1; transform: translateY(0); }
-  </style></head>
+</head>
 
 <body>
 
@@ -53,58 +52,63 @@
 
   <main class="layout">
 
-    <!-- LEFT SIDEBAR -->
-    <aside class="sidebar fade in" style="transition-delay: 0ms;">
+    <!-- TOP BAR (horizontal) -->
+    <header class="topbar">
 
-      <div class="avatar-block">
-        <div class="avatar-glow"></div>
-        <div class="avatar-ring">
-          <img src="img/avatar.webp" alt="Denis" width="100" height="100" fetchpriority="high">
+      <div class="topbar-left">
+        <div class="topbar-main">
+          <div class="avatar-block">
+            <div class="avatar-glow"></div>
+            <div class="avatar-ring">
+              <img src="img/avatar.webp" alt="Denis" width="100" height="100" fetchpriority="high">
+            </div>
+          </div>
+
+          <div class="identity">
+            <div class="name-row">
+              <h1>Denis</h1>
+              <span class="avail-badge"><span class="avail-dot"></span><span class="avail-text">Available for work</span></span>
+            </div>
+            <p class="subtitle">Community Builder & Freelancer</p>
+
+            <!-- SOCIALS -->
+            <div class="socials">
+              <a href="https://discord.com/users/385117340028764165" target="_blank" class="soc discord" title="Discord"><i class="fab fa-discord"></i></a>
+              <a href="https://steamcommunity.com/id/DenisMashov1337" target="_blank" class="soc steam" title="Steam"><i class="fab fa-steam"></i></a>
+              <a href="https://www.instagram.com/denismashov04" target="_blank" class="soc instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/@DenisMashov1337" target="_blank" class="soc youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="https://open.spotify.com/user/bhn46vbx7g6mmjqse0kgmqo5a" target="_blank" class="soc spotify" title="Spotify"><i class="fab fa-spotify"></i></a>
+              <a href="https://letterboxd.com/Denis1337/films/" target="_blank" class="soc letterboxd" title="Letterboxd">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><circle cx="6" cy="12" r="5.5"/><circle cx="18" cy="12" r="5.5" fill-opacity="0.55"/><circle cx="12" cy="12" r="5.5" fill-opacity="0.8"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="identity">
-        <span class="avail-badge"><span class="avail-dot"></span> Available for work</span>
-        <h1>Denis</h1>
-        <p class="subtitle">Community Builder &amp; Freelancer</p>
-        <p class="location"><i class="fa-solid fa-location-dot"></i> Tbilisi, Georgia</p>
       </div>
 
       <!-- SPOTIFY -->
-      <div id="spotify-card" class="spotify-block">
+      <div id="spotify-card" class="spotify-block hidden">
         <div class="sp-header"><i class="fab fa-spotify"></i> now playing</div>
         <div class="sp-inner">
-          <img id="album-art" src="https://i.scdn.co/image/ab67616d0000b2732c904e7c27c0e16a9b60b2d7" alt="" width="44" height="44">
+          <img id="album-art" src="" alt="" width="40" height="40">
           <div class="sp-text">
-            <div id="song-name">Missing Textures - Super Slowed Down</div>
-            <div id="artist-name">NIVEK FFORHS</div>
+            <div id="song-name">—</div>
+            <div id="artist-name">—</div>
           </div>
         </div>
         <div class="sp-bar-wrap">
-          <div class="sp-track"><div id="progress-bar" style="width: 15.8271%;"></div></div>
-          <span id="time-display">0:32 / 3:27</span>
+          <div class="sp-track"><div id="progress-bar"></div></div>
+          <span id="time-display">0:00 / 0:00</span>
         </div>
       </div>
 
-      <!-- SOCIALS -->
-      <div class="socials">
-        <a href="https://discord.com/users/385117340028764165" target="_blank" class="soc discord" title="Discord"><i class="fab fa-discord"></i></a>
-        <a href="https://steamcommunity.com/id/DenisMashov1337" target="_blank" class="soc steam" title="Steam"><i class="fab fa-steam"></i></a>
-        <a href="https://www.instagram.com/denismashov04" target="_blank" class="soc instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@DenisMashov1337" target="_blank" class="soc youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://open.spotify.com/user/bhn46vbx7g6mmjqse0kgmqo5a" target="_blank" class="soc spotify" title="Spotify"><i class="fab fa-spotify"></i></a>
-        <a href="https://letterboxd.com/Denis1337/films/" target="_blank" class="soc letterboxd" title="Letterboxd">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><circle cx="6" cy="12" r="5.5"></circle><circle cx="18" cy="12" r="5.5" fill-opacity="0.55"></circle><circle cx="12" cy="12" r="5.5" fill-opacity="0.8"></circle></svg>
-        </a>
-      </div>
+    </header>
 
-    </aside>
-
-    <!-- RIGHT CONTENT -->
+    <!-- CONTENT (stacked below) -->
     <div class="content">
 
       <!-- ACTIVE SERVERS -->
-      <section class="section fade in" style="transition-delay: 80ms;">
+      <section class="section">
         <div class="section-head">
           <span class="dot"></span>
           <h2>Active Servers</h2>
@@ -114,33 +118,29 @@
 
           <a href="https://discord.gg/M8bD4qJmkN" target="_blank" class="srv-card">
             <img src="img/gcbanner.webp" alt="Georgian Community" class="srv-banner">
-            <div class="srv-bottom">
-              <img src="img/gclogo.webp" alt="GC" class="srv-logo">
-              <div class="srv-info">
-                <span class="srv-name">Georgian Community</span>
-                <span class="srv-role founder">⭐ Founder · 2022</span>
-              </div>
+            <img src="img/gclogo.webp" alt="GC" class="srv-logo">
+            <div class="srv-body">
+              <span class="srv-name">Georgian Community</span>
+              <span class="srv-role founder"><i class="fa-solid fa-star"></i> Founder</span>
+              <p class="srv-desc">A server where Georgians connect, play, and celebrate together.</p>
             </div>
-            <p class="srv-desc">A server where Georgians connect, play, and celebrate together.</p>
           </a>
 
           <a href="https://discord.gg/GBMfc7VMpC" target="_blank" class="srv-card">
             <img src="img/gosbanner.webp" alt="G-Online Services" class="srv-banner">
-            <div class="srv-bottom">
-              <img src="img/goslogo.webp" alt="GOS" class="srv-logo">
-              <div class="srv-info">
-                <span class="srv-name">G-Online Services</span>
-                <span class="srv-role founder">⭐ Founder · 2023</span>
-              </div>
+            <img src="img/goslogo.webp" alt="GOS" class="srv-logo">
+            <div class="srv-body">
+              <span class="srv-name">G-Online Services</span>
+              <span class="srv-role founder"><i class="fa-solid fa-star"></i> Founder</span>
+              <p class="srv-desc">Freelance marketplace for Discord server services.</p>
             </div>
-            <p class="srv-desc">Freelance marketplace for Discord server services.</p>
           </a>
 
         </div>
       </section>
 
       <!-- WORKED WITH -->
-      <section class="section fade in" style="transition-delay: 160ms;">
+      <section class="section">
         <div class="section-head">
           <span class="dot"></span>
           <h2>Experience</h2>
@@ -205,6 +205,5 @@
 
   <div style="display:none" id="status-message"></div>
 
-
-
-</body></html>
+</body>
+</html>
