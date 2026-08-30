@@ -204,7 +204,6 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 18px 22px;
-  width: 280px;
   flex-shrink: 0;
   align-self: center;
 }
