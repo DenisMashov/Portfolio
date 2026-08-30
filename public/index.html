@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-<!-- Structured Data: JSON-LD -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -13,8 +10,8 @@
   "alternateName": "Denis Mashov",
   "url": "https://denisweb.vercel.app",
   "image": "https://denisweb.vercel.app/img/avatar.webp",
-  "jobTitle": "Freelancer, Discord Manager, Discord Server Manager, Discord Server Developer, Community Builder",
-  "description": " hello, i'm a community builder and freelancer. also, working on a few projects as a discord server manager",
+  "jobTitle": "Discord Server Manager, Community Builder, Freelancer",
+  "description": "hello, i'm a community builder and freelancer.",
   "sameAs": [
     "https://discord.com/users/385117340028764165",
     "https://steamcommunity.com/id/DenisMashov1337",
@@ -22,226 +19,188 @@
     "https://www.youtube.com/@DenisMashov1337",
     "https://open.spotify.com/user/bhn46vbx7g6mmjqse0kgmqo5a",
     "https://letterboxd.com/Denis1337/films/"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Tbilisi",
-    "addressCountry": "Georgia"
-  }
+  ]
 }
-</script>    
-    
-<title>Denis - Portfolio</title>
+</script>
 
-<!-- Seo Meta & Preload -->
-<meta name="description" content="Hi, I'm Denis — a freelancer and Discord server manager from Tbilisi, Georgia. I offer Discord server setup, redesign, bot integration, and community management services.">
-<meta name="keywords" content="Denis Mashov, Denis1337, Discord Server Manager, Discord Freelancer, Discord Server Setup, Discord Server Redesign, Bot Integration, Georgian Community Discord, Georgia Discord, Tbilisi Discord, freelance Discord setup">
-<meta property="og:title" content="Denis Mashov — Discord Server Manager & Freelancer">
-<meta property="og:description" content="Hi, I'm Denis — a freelancer and Discord server manager from Tbilisi, Georgia. I offer Discord server setup, redesign, bot integration, and community management services.">
+<title>Denis — Community Builder</title>
+<meta name="description" content="Hi, I'm Denis — a freelancer and Discord server manager from Tbilisi, Georgia.">
+<meta property="og:title" content="Denis Mashov — Discord Server Manager">
 <meta property="og:image" content="https://denisweb.vercel.app/img/avatar.webp">
 <meta property="og:url" content="https://denisweb.vercel.app">
 <meta name="author" content="Denis Mashov">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://denisweb.vercel.app">
-<link rel="preload" as="image" href="img/avatar.webp"> <!-- Preload avatar for LCP -->
-<meta name="google-site-verification" content="nVxrFEWYtsQEFwMJysYdUPbVrA8s7oqXqzS1W4g2XDQ" />
-    
-<!-- Fonts & Icons -->
+<link rel="preload" as="image" href="img/avatar.webp">
+<meta name="google-site-verification" content="nVxrFEWYtsQEFwMJysYdUPbVrA8s7oqXqzS1W4g2XDQ">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap&font-display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- Assets  -->
 <link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script> 
-<script defer src="https://va.vercel-scripts.com/v1/script.js"></script>
-    
-<!-- Sitemap -->
-<link rel="sitemap" type="xml" href="https://denisweb.vercel.app/sitemap.xml">
-
-<!-- Favicon -->
+<script defer="" src="script.js"></script>
+<script defer="" src="https://va.vercel-scripts.com/v1/script.js"></script>
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-    
 </head>
 
 <body>
-    
-<main class="container">
-    <!-- Avatar Section -->
-    <section class="avatar">
-        <img src="img/avatar.webp" alt="Denis Avatar" width="150" height="150" fetchpriority="high">
-    <div class="status">
-<span class="status-emoji" onclick="window.open('missyou.html', '_blank')" style="cursor: pointer;">🌹</span>
-<a href="missyou.html" target="_blank" class="status-text" style="pointer-events: auto; cursor: pointer;">I'd rather keep thorny rose</a>
-    </section>
 
-    <!-- Header Section -->
-    <header class="header">
-        <h2>Denis</h2>
-        <p id="status-message"></p>
-        <p class="bio">
-            👋 hello, i'm a community builder and freelancer.<br>
-            also, working on a few projects as a discord server manager
-        </p>
-    </header>
+  <div class="noise"></div>
 
-    <!-- Real-time Spotify Widget -->
-    <section id="spotify-widget" class="spotify-widget hidden">
-        <img id="album-art" src="" alt="Album Art" width="64" height="64" loading="lazy">
-        <div class="song-info">
-            <div id="song-name">Song name</div>
-            <div id="artist-name">Artist</div>
-            <div class="progress-container">
-                <div id="progress-bar"></div>
+  <main class="layout">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="avatar-block">
+        <div class="avatar-glow"></div>
+        <div class="avatar-ring">
+          <img src="img/avatar.webp" alt="Denis" width="100" height="100" fetchpriority="high">
+        </div>
+      </div>
+
+      <div class="identity">
+        <span class="avail-badge"><span class="avail-dot"></span> Available for work</span>
+        <h1>Denis</h1>
+        <p class="subtitle">Community Builder<br>&amp; Freelancer</p>
+        <p class="location"><i class="fa-solid fa-location-dot"></i> Tbilisi, Georgia</p>
+      </div>
+
+      <!-- SPOTIFY -->
+      <div id="spotify-card" class="spotify-block hidden">
+        <div class="sp-header"><i class="fab fa-spotify"></i> now playing</div>
+        <div class="sp-inner">
+          <img id="album-art" src="" alt="" width="44" height="44">
+          <div class="sp-text">
+            <div id="song-name">—</div>
+            <div id="artist-name">—</div>
+          </div>
+        </div>
+        <div class="sp-bar-wrap">
+          <div class="sp-track"><div id="progress-bar"></div></div>
+          <span id="time-display">0:00 / 0:00</span>
+        </div>
+      </div>
+
+      <!-- SOCIALS -->
+      <div class="socials">
+        <a href="https://discord.com/users/385117340028764165" target="_blank" class="soc discord" title="Discord"><i class="fab fa-discord"></i></a>
+        <a href="https://steamcommunity.com/id/DenisMashov1337" target="_blank" class="soc steam" title="Steam"><i class="fab fa-steam"></i></a>
+        <a href="https://www.instagram.com/denismashov04" target="_blank" class="soc instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@DenisMashov1337" target="_blank" class="soc youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://open.spotify.com/user/bhn46vbx7g6mmjqse0kgmqo5a" target="_blank" class="soc spotify" title="Spotify"><i class="fab fa-spotify"></i></a>
+        <a href="https://letterboxd.com/Denis1337/films/" target="_blank" class="soc letterboxd" title="Letterboxd">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><circle cx="6" cy="12" r="5.5"></circle><circle cx="18" cy="12" r="5.5" fill-opacity="0.55"></circle><circle cx="12" cy="12" r="5.5" fill-opacity="0.8"></circle></svg>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <div class="content">
+
+      <!-- ACTIVE SERVERS -->
+      <section class="section">
+        <div class="section-head">
+          <span class="dot"></span>
+          <h2>Active Servers</h2>
+          <span class="count-badge">2</span>
+        </div>
+        <div class="server-grid">
+
+          <a href="https://discord.gg/M8bD4qJmkN" target="_blank" class="srv-card">
+            <img src="img/gcbanner.webp" alt="Georgian Community" class="srv-banner">
+            <div class="srv-bottom">
+              <img src="img/gclogo.webp" alt="GC" class="srv-logo">
+              <div class="srv-info">
+                <span class="srv-name">Georgian Community</span>
+                <span class="srv-role founder">⭐ Founder · 2022</span>
+              </div>
             </div>
-            <div class="time-wrapper">
-                <span id="time-display">0:00 / 0:00</span>
+            <p class="srv-desc">A server where Georgians connect, play, and celebrate together.</p>
+          </a>
+
+          <a href="https://discord.gg/GBMfc7VMpC" target="_blank" class="srv-card">
+            <img src="img/gosbanner.webp" alt="G-Online Services" class="srv-banner">
+            <div class="srv-bottom">
+              <img src="img/goslogo.webp" alt="GOS" class="srv-logo">
+              <div class="srv-info">
+                <span class="srv-name">G-Online Services</span>
+                <span class="srv-role founder">⭐ Founder · 2023</span>
+              </div>
             </div>
+            <p class="srv-desc">Freelance marketplace for Discord server services.</p>
+          </a>
+
         </div>
-    </section>
-    
-    <!-- Discord Server Section -->
-    <section class="discords">
-        <!-- Georgian Community -->
-        <div class="discord">
-            <img src="img/gcbanner.webp" alt="Georgian Community Banner" class="discord-banner" width="1920" loading="lazy">
-            <img src="img/gclogo.webp" alt="Georgian Community Logo" class="discord-logo" width="48" height="48" loading="lazy">
-            <h3 class="discord-name"><a href="https://discord.gg/M8bD4qJmkN" target="_blank">Georgian Community</a></h3>
-            <p class="discord-position">Founder · Since 2022</p>
-            <p class="discord-bio">
-                Georgian Community is a Discord server where people connect, play together, discuss different topics, and participate in exciting events and giveaways.
-            </p>
+      </section>
+
+      <!-- WORKED WITH -->
+      <section class="section">
+        <div class="section-head">
+          <span class="dot"></span>
+          <h2>Experience</h2>
+          <span class="count-badge">6</span>
         </div>
 
-        <!-- G-Online Services -->
-        <div class="discord">
-            <img src="img/gosbanner.webp" alt="G-Online Services Banner" class="discord-banner" width="1920" loading="lazy">
-            <img src="img/goslogo.webp" alt="G-Online Services Logo" class="discord-logo" width="48" height="48" loading="lazy">
-            <h3 class="discord-name"><a href="https://discord.gg/GBMfc7VMpC" target="_blank">G-Online Services</a></h3>
-            <p class="discord-position">Founder & Freelancer · Since 2023</p>
-            <p class="discord-bio">
-                G-Online Services is a freelance marketplace for Discord server services, including Discord server management, Discord server setup, and various other services.
-            </p>
-        </div> 
+        <div class="exp-list">
 
-         <!-- Lux Empire 
-        <div class="discord">
-            <img src="img/luxbanner.webp" alt="Lux Empire Banner" class="discord-banner" width="1920" loading="lazy">
-            <img src="img/luxlogo.webp" alt="Lux Empire Logo" class="discord-logo" width="48" height="48" loading="lazy">
-            <h3 class="discord-name"><a href="https://discord.gg/7Ekc8NZeqn" target="_blank">Lux Empire</a></h3>
-            <p class="discord-position">Discord Manager · Since 2022</p>
-            <p class="discord-bio">
-                Lux Empire is a Georgian FiveM roleplay server set in GTA V, where players create stories and shape their journey together.
-            </p> 
-        </div> -->
-        
-        <!-- Wolves Land 
-        <div class="discord">
-            <img src="img/landbanner.webp" alt="Wolves Land Banner" class="discord-banner" width="1920" loading="lazy">
-            <img src="img/land.webp" alt="Wolves Land Logo" class="discord-logo" width="48" height="48" loading="lazy">
-            <h3 class="discord-name"><a href="https://discord.gg/wQe6FuH3Je" target="_blank">Wolves Land</a></h3>
-            <p class="discord-position">Discord Manager · Since 2024</p>
-            <p class="discord-bio">
-                Wolves Land is a Georgian RedM roleplay server set in RDR2, where players create stories and shape their immersive Wild West journey together.
-            </p> 
-        </div> -->
-        
-<!-- Lxcore 
-        <div class="discord">
-            <img src="img/lxbanner.webp" alt="LX Banner" class="discord-banner" width="1920" loading="lazy">
-            <img src="img/lxcorelogo.webp" alt="LX Logo" class="discord-logo" width="48" height="48" loading="lazy">
-            <h3 class="discord-name"><a href="https://discord.gg/WHcHpxeNY2" target="_blank">LXCore</a></h3>
-            <p class="discord-position">Discord Manager · Since 2026</p>
-            <p class="discord-bio">
-                This Discord is built for serious RedM/FiveM development, production-grade roleplay systems, custom scripts, server tools.
-            </p> -->
+          <div class="exp-item">
+            <div class="exp-left">
+              <a href="https://discord.gg/7Ekc8NZeqn" target="_blank" class="exp-name">Lux Empire</a>
+              <span class="exp-role">Discord Manager</span>
+            </div>
+            <span class="exp-date">2022/09/16 — 2026/08/21</span>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-left">
+              <a href="https://discord.gg/3UcRNTmjZr" target="_blank" class="exp-name">PixelCraft</a>
+              <span class="exp-role">Discord Manager</span>
+            </div>
+            <span class="exp-date">2024/06/01 — 2024/12/28</span>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-left">
+              <a href="https://discord.gg/wQe6FuH3Je" target="_blank" class="exp-name">Land of Wolves</a>
+              <span class="exp-role">Discord Manager</span>
+            </div>
+            <span class="exp-date">2024/07/10 — 2026/08/21</span>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-left">
+              <a href="https://discord.gg/3UcRNTmjZr" target="_blank" class="exp-name">PixelCraft S2</a>
+              <span class="exp-role">Discord Manager</span>
+            </div>
+            <span class="exp-date">2026/01/30 — 2026/04/19</span>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-left">
+              <a href="https://discord.gg/WHcHpxeNY2" target="_blank" class="exp-name">LXCore</a>
+              <span class="exp-role">Discord Manager</span>
+            </div>
+            <span class="exp-date">2026/03/30 — 2026/08/21</span>
+          </div>
+
+          <div class="exp-item more">
+            <div class="exp-left">
+              <a href="https://discord.gg/GBMfc7VMpC" target="_blank" class="exp-name">And many more</a>
+              <span class="exp-role">Worked with 20+ servers — click to see full list</span>
+            </div>
+          </div>
+
         </div>
-    </section>    
+      </section>
 
-<!-- Archived Work Section -->
-<section class="archive-component">
-  <input type="checkbox" id="archive-toggle">
-  <label for="archive-toggle" class="archive-btn">
-    worked with 
-  </label>
-    
-  <div class="archive-box">
-          <div class="archive-item">
-      <div class="left">
-        <h4><a href="https://discord.gg/7Ekc8NZeqn" target="_blank">LuxEmpire</a></h4>
-        <p>Discord Manager</p>
-      </div>
-      <span>2022/09 — 2026/08/21</span>
     </div>
 
-        <div class="archive-item">
-      <div class="left">
-        <h4><a href="https://discord.gg/wQe6FuH3Je" target="_blank">Land of Wolves</a></h4>
-        <p>Discord Manager</p>
-      </div>
-      <span>2024/07/10 — 2026/08/21</span>
-    </div>
-      
-    <div class="archive-item">
-      <div class="left">
-        <h4><a href="https://discord.gg/3UcRNTmjZr" target="_blank">PixelCraft</a></h4>
-        <p>Discord Manager</p>
-      </div>
-      <span>2024/06/01 — 2024/12/28</span>
-    </div>
+  </main>
 
-    <div class="archive-item">
-      <div class="left">
-        <h4><a href="https://discord.gg/3UcRNTmjZr" target="_blank">PixelCraft S2</a></h4>
-        <p>Discord Manager</p>
-      </div>
-      <span>2026/01/30 — 2026/04/19</span>
-    </div>
+  <div style="display:none" id="status-message"></div>
 
-    <div class="archive-item">
-      <div class="left">
-        <h4><a href="https://discord.gg/GBMfc7VMpC" target="_blank">And many more</a></h4>
-        <p>Worked with 20+ servers — click to see the full list</p>
-      </div>
-      <span></span>
-    </div>
-  </div>
 
-</section>
-            
-    <!-- Social Media Icons -->
- <footer class="footer">
-
-    <section class="social-media">
-
-        <a href="https://discord.com/users/385117340028764165" target="_blank" class="social-icon discord">
-            <i class="fab fa-discord"></i>
-        </a>
-
-        <a href="https://steamcommunity.com/id/DenisMashov1337" target="_blank" class="social-icon steam">
-            <i class="fab fa-steam"></i>
-        </a>
-
-        <a href="https://www.instagram.com/denismashov04" target="_blank" class="social-icon instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-
-        <a href="https://www.youtube.com/@DenisMashov1337" target="_blank" class="social-icon youtube">
-            <i class="fab fa-youtube"></i>
-        </a>
-
-        <a href="https://open.spotify.com/user/bhn46vbx7g6mmjqse0kgmqo5a" target="_blank" class="social-icon spotify">
-            <i class="fab fa-spotify"></i>
-        </a>
-
-        <a href="https://letterboxd.com/Denis1337/films/" target="_blank" class="social-icon letterboxd">
-            <i class="fa-brands fa-letterboxd"></i>
-        </a>
-    </section>
-</footer>
-    
-</main>
-
-</body>
-</html>
+</body></html>
