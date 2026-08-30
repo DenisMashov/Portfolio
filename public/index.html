@@ -42,7 +42,10 @@
 <script defer="" src="script.js"></script>
 <script defer="" src="https://va.vercel-scripts.com/v1/script.js"></script>
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-</head>
+<script src="https://va.vercel-scripts.com/v1/script.js" defer=""></script><style>
+    .fade { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade.in { opacity: 1; transform: translateY(0); }
+  </style></head>
 
 <body>
 
@@ -51,7 +54,7 @@
   <main class="layout">
 
     <!-- LEFT SIDEBAR -->
-    <aside class="sidebar">
+    <aside class="sidebar fade in" style="transition-delay: 0ms;">
 
       <div class="avatar-block">
         <div class="avatar-glow"></div>
@@ -63,23 +66,23 @@
       <div class="identity">
         <span class="avail-badge"><span class="avail-dot"></span> Available for work</span>
         <h1>Denis</h1>
-        <p class="subtitle">Community Builder & Freelancer</p>
+        <p class="subtitle">Community Builder &amp; Freelancer</p>
         <p class="location"><i class="fa-solid fa-location-dot"></i> Tbilisi, Georgia</p>
       </div>
 
       <!-- SPOTIFY -->
-      <div id="spotify-card" class="spotify-block hidden">
+      <div id="spotify-card" class="spotify-block">
         <div class="sp-header"><i class="fab fa-spotify"></i> now playing</div>
         <div class="sp-inner">
-          <img id="album-art" src="" alt="" width="44" height="44">
+          <img id="album-art" src="https://i.scdn.co/image/ab67616d0000b2732c904e7c27c0e16a9b60b2d7" alt="" width="44" height="44">
           <div class="sp-text">
-            <div id="song-name">—</div>
-            <div id="artist-name">—</div>
+            <div id="song-name">Missing Textures - Super Slowed Down</div>
+            <div id="artist-name">NIVEK FFORHS</div>
           </div>
         </div>
         <div class="sp-bar-wrap">
-          <div class="sp-track"><div id="progress-bar"></div></div>
-          <span id="time-display">0:00 / 0:00</span>
+          <div class="sp-track"><div id="progress-bar" style="width: 15.8271%;"></div></div>
+          <span id="time-display">0:32 / 3:27</span>
         </div>
       </div>
 
@@ -101,7 +104,7 @@
     <div class="content">
 
       <!-- ACTIVE SERVERS -->
-      <section class="section">
+      <section class="section fade in" style="transition-delay: 80ms;">
         <div class="section-head">
           <span class="dot"></span>
           <h2>Active Servers</h2>
@@ -137,7 +140,7 @@
       </section>
 
       <!-- WORKED WITH -->
-      <section class="section">
+      <section class="section fade in" style="transition-delay: 160ms;">
         <div class="section-head">
           <span class="dot"></span>
           <h2>Experience</h2>
@@ -201,6 +204,7 @@
   </main>
 
   <div style="display:none" id="status-message"></div>
+
 
 
 </body></html>
