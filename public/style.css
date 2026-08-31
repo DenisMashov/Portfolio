@@ -197,10 +197,11 @@ body {
   background: linear-gradient(160deg, rgba(29,185,84,0.06), transparent);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 18px 22px;
+  padding: 13px 20px;
   width: 280px;
   flex-shrink: 0;
   align-self: center;
+  box-sizing: border-box;
 }
 
 .spotify-block.hidden { display: none; }
