@@ -158,6 +158,7 @@ body {
   display: inline-grid;
   grid-template-columns: auto auto;
   align-items: center;
+  align-self: center;
   gap: 6px;
   font-size: 0.62rem;
   color: var(--muted);
@@ -167,19 +168,7 @@ body {
   border: 1px solid var(--border);
   font-weight: 500;
   white-space: nowrap;
-}
-
-.avail-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.68rem;
-  color: var(--green);
-  background: rgba(29,185,84,0.1);
-  border: 1px solid rgba(29,185,84,0.25);
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-weight: 600;
+  margin-top: 2px;
 }
 
 .avail-dot {
@@ -189,6 +178,11 @@ body {
   background: var(--green);
   box-shadow: 0 0 6px rgba(29,185,84,0.8);
   animation: pulse-dot 2s ease-in-out infinite;
+  justify-self: center;
+}
+
+.avail-text {
+  display: block;
 }
 
 @keyframes pulse-dot {
@@ -204,6 +198,7 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 18px 22px;
+  width: 280px;
   flex-shrink: 0;
   align-self: center;
 }
@@ -291,8 +286,8 @@ body {
   justify-content: space-between;
   gap: 8px;
   flex-shrink: 0;
-  margin-top: -2.5px;
-  margin-left: -5px;
+  margin-top: 4px;
+  margin-left: -4px;
   width: fit-content;
 }
 
@@ -344,17 +339,8 @@ body {
 .section-head {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 20px;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--blue);
-  flex-shrink: 0;
-  box-shadow: 0 0 8px rgba(59,130,246,0.6);
 }
 
 .section-head h2 {
@@ -363,16 +349,22 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--muted);
+  line-height: 1;
 }
 
 .count-badge {
-  font-size: 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  font-size: 0.68rem;
   font-weight: 700;
   color: var(--blue);
   background: var(--blue-dim);
-  padding: 2px 8px;
   border-radius: 999px;
-  margin-left: auto;
+  padding: 0 7px;
+  line-height: 1;
 }
 
 /* ================================
