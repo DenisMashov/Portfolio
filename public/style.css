@@ -624,3 +624,17 @@ body {
   .identity h1 { font-size: 1.5rem; }
   .server-grid { grid-template-columns: 1fr; }
 }
+
+/* ================================
+   FOOTER
+================================ */
+.site-footer {
+  text-align: center;
+  padding: 24px 20px 8px;
+}
+
+.site-footer p {
+  font-size: 0.72rem;
+  color: var(--muted2);
+  letter-spacing: 0.02em;
+}
