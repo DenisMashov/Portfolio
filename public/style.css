@@ -190,7 +190,7 @@ body {
   background: linear-gradient(160deg, rgba(29,185,84,0.06), transparent);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 14px 18px;
+  padding: 18px 18px;
   width: 290px;
   flex-shrink: 0;
   align-self: flex-end;
@@ -198,7 +198,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: -3.85px;
+  margin-bottom: -4px;
 }
 
 .spotify-block.hidden { display: none; }
