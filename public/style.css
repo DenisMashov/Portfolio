@@ -467,15 +467,13 @@ body {
 
 .srv-role {
   display: inline-flex;
-  align-items: center;
   gap: 5px;
-  font-size: 0.65rem;
+  font-size: 0.70rem;
   color: var(--muted);
   background: var(--border);
   padding: 4px 9px;
   border-radius: 999px;
   margin-bottom: 8px;
-  line-height: 1;
 }
 
 .srv-role i {
