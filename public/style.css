@@ -707,6 +707,13 @@ body {
 /* ================================
    DISCORD STATUS BADGE
 ================================ */
+.name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -717,7 +724,7 @@ body {
   border-radius: 999px;
   line-height: 1;
   white-space: nowrap;
-  transform: translateY(-1px);
+  transform: translateY(0.60px);
 }
 
 .status-badge::before {
