@@ -492,6 +492,20 @@ body {
 }
 
 /* ================================
+   EXPERIENCE + SKILLS (side by side)
+================================ */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.col-exp, .col-skills {
+  min-width: 0;
+}
+
+/* ================================
    EXPERIENCE LIST
 ================================ */
 .exp-list {
@@ -579,6 +593,68 @@ body {
 .exp-item.more .exp-name { color: var(--blue); font-size: 0.85rem; }
 
 /* ================================
+   SKILLS LIST
+================================ */
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 300px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 9px 0;
+}
+
+.skill-item:last-child { border-bottom: none; }
+
+.skill-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.skill-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.skill-name i {
+  color: var(--blue);
+  font-size: 1rem;
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.skill-role {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.skill-bar {
+  width: 100%;
+  height: 5px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), #60a5fa);
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+/* ================================
    RESPONSIVE
 ================================ */
 @media (max-width: 700px) {
@@ -614,6 +690,13 @@ body {
 
   .exp-list { padding-left: 16px; }
   .exp-item::before { left: -16px; }
+
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .exp-list, .skill-list { max-width: 100%; }
 }
 
 @media (max-width: 400px) {
