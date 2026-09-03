@@ -403,7 +403,6 @@ body {
 .srv-card:hover {
   border-color: var(--blue);
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px -10px rgba(59,130,246,0.35);
 }
 
 .srv-card::after {
