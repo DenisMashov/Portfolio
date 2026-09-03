@@ -59,8 +59,9 @@ function connect() {
           dnd:     "Online",
           offline: "Offline"
         };
+        const displayStatus = (status === "offline") ? "offline" : "online";
         badge.textContent = labels[status] || status;
-        badge.className = `status-badge ${status}`;
+        badge.className = `status-badge ${displayStatus}`;
       }
     }
   });
