@@ -705,6 +705,65 @@ body {
 }
 
 /* ================================
+   DISCORD STATUS BADGE
+================================ */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  line-height: 1;
+  white-space: nowrap;
+  transform: translateY(-1px);
+}
+
+.status-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-badge.online {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+}
+.status-badge.online::before {
+  background: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.status-badge.idle {
+  background: rgba(234, 179, 8, 0.12);
+  color: #eab308;
+}
+.status-badge.idle::before {
+  background: #eab308;
+}
+
+.status-badge.dnd {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+}
+.status-badge.dnd::before {
+  background: #ef4444;
+}
+
+.status-badge.offline {
+  background: rgba(107, 114, 128, 0.12);
+  color: #6b7280;
+}
+.status-badge.offline::before {
+  background: #6b7280;
+}
+
+/* ================================
    FOOTER
 ================================ */
 .site-footer {
