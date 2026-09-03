@@ -55,8 +55,8 @@ function connect() {
       if (badge && status) {
         const labels = {
           online:  "Online",
-          idle:    "Idle",
-          dnd:     "Do Not Disturb",
+          idle:    "Online",
+          dnd:     "Online",
           offline: "Offline"
         };
         badge.textContent = labels[status] || status;
