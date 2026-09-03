@@ -103,3 +103,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   els.forEach(el => obs.observe(el));
 });
+
+// Discord status
+const status = presence.discord_status;
+const badge = document.getElementById("discord-status");
+if (badge && status) {
+  const labels = {
+    online:  "Online",
+    idle:    "Online",
+    dnd:     "Online",
+    offline: "Offline"
+  };
+  badge.textContent = labels[status] || status;
+  badge.className = `status-badge ${status}`;
+}
