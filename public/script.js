@@ -7,7 +7,6 @@
   script.defer = true;
   document.head.appendChild(script);
 })();
-
 window.va = window.va || function () {
   (window.vaq = window.vaq || []).push(arguments);
 };
@@ -30,6 +29,8 @@ function connect() {
     const data = JSON.parse(event.data);
     if (data.t === "INIT_STATE" || data.t === "PRESENCE_UPDATE") {
       const presence = data.d;
+
+      // --- Spotify ---
       const card = document.getElementById("spotify-card");
       if (presence.spotify && presence.spotify.timestamps) {
         const s = presence.spotify;
@@ -46,6 +47,20 @@ function connect() {
         updateProgress();
       } else {
         if (card) card.classList.add("hidden");
+      }
+
+      // --- Discord Status ---
+      const status = presence.discord_status;
+      const badge = document.getElementById("discord-status");
+      if (badge && status) {
+        const labels = {
+          online:  "Online",
+          idle:    "Idle",
+          dnd:     "Do Not Disturb",
+          offline: "Offline"
+        };
+        badge.textContent = labels[status] || status;
+        badge.className = `status-badge ${status}`;
       }
     }
   });
@@ -103,17 +118,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   els.forEach(el => obs.observe(el));
 });
-
-// Discord status
-const status = presence.discord_status;
-const badge = document.getElementById("discord-status");
-if (badge && status) {
-  const labels = {
-    online:  "Online",
-    idle:    "Online",
-    dnd:     "Online",
-    offline: "Offline"
-  };
-  badge.textContent = labels[status] || status;
-  badge.className = `status-badge ${status}`;
-}
