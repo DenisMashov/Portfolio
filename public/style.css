@@ -94,12 +94,12 @@ body {
 }
 
 .avatar-ring {
-  width: 110px;
-  height: 110px;
+  width: 115px;
+  height: 115px;
   border-radius: 50%;
   padding: 3px;
   background: var(--surface2);
-  border: 1px solid var(--border-hi);
+  border: 2.85px solid var(--border-hi);
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -191,7 +191,7 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 18px 18px;
-  width: 290px;
+  width: 280px;
   flex-shrink: 0;
   align-self: flex-end;
   box-sizing: border-box;
