@@ -121,13 +121,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  margin-top: 10px; /* önceki 24px'di */
+  margin-top: 10px;
 }
 
 .name-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
@@ -332,6 +332,19 @@ body {
 .soc.youtube:hover   { color: #ff0000; border-color: #ff000044; }
 .soc.spotify:hover   { color: var(--green); border-color: #1db95444; }
 .soc.letterboxd:hover{ color: #ff8000; border-color: #ff800044; }
+
+/* ================================
+   IDENTITY CLOCK
+================================ */
+.identity-clock {
+  font-size: 0.62rem;
+  color: var(--muted2);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-top: 6px;
+  margin-left: -2px;
+  font-variant-numeric: tabular-nums;
+}
 
 /* ================================
    CONTENT
@@ -707,13 +720,6 @@ body {
 /* ================================
    DISCORD STATUS BADGE
 ================================ */
-.name-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
 .status-badge {
   display: inline-flex;
   align-items: center;
