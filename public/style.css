@@ -673,7 +673,7 @@ body {
 .avatar-status-dot {
   position: absolute;
   bottom: 6px;
-  right: 9px; /* biraz sola aldık */
+  right: 14px;
   width: 14px;
   height: 14px;
   border-radius: 50%;
