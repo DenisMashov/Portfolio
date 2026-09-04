@@ -68,16 +68,30 @@ function connect() {
       }
 
       // --- Discord Status ---
-const status = presence.discord_status;
-const badge = document.getElementById("discord-status");
-const dot = document.getElementById("avatar-dot");
-const displayStatus = (status === "offline") ? "offline" : "online";
-
-if (badge && status) {
-  const labels = { online: "Online", idle: "Online", dnd: "Online", offline: "Offline" };
-  badge.textContent = labels[status] || status;
-  badge.className = `status-badge ${displayStatus}`;
+      const status = presence.discord_status;
+      const badge = document.getElementById("discord-status");
+      if (badge && status) {
+        const labels = {
+          online:  "Online",
+          idle:    "Online",
+          dnd:     "Online",
+          offline: "Offline"
+        };
+        const displayStatus = (status === "offline") ? "offline" : "online";
+        badge.textContent = labels[status] || status;
+        badge.className = `status-badge ${displayStatus}`;
+      }
+    }
+  });
+  ws.addEventListener("error", () => setTimeout(connect, 10000));
+  ws.addEventListener("close", () => setTimeout(connect, 10000));
 }
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible" && (!ws || ws.readyState !== WebSocket.OPEN)) {
+    connect();
+  }
+});
 
 function formatTime(ms) {
   const s = Math.floor(ms / 1000);
