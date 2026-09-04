@@ -673,23 +673,34 @@ body {
 .avatar-status-dot {
   position: absolute;
   bottom: 6px;
-  right: 6px;
-  width: 18px;
-  height: 18px;
+  right: 9px; /* biraz sola aldık */
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: #22c55e;
-  border: 3px solid var(--bg);
+  background: #6b7280;
+  border: 2px solid var(--bg);
   z-index: 3;
   transition: background 0.3s ease;
 }
 
-.avatar-status-dot.offline {
-  background: #6b7280;
+.avatar-status-dot.online {
+  background: #23a55a;
+  animation: discord-pulse 1.8s ease-in-out infinite;
 }
 
-.avatar-status-dot.online {
-  background: #22c55e;
-  box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+.avatar-status-dot.offline {
+  background: #6b7280;
+  animation: none;
+}
+
+@keyframes discord-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
 }
 
 /* ================================
