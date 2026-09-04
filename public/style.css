@@ -337,7 +337,7 @@ body {
    IDENTITY CLOCK
 ================================ */
 .identity-clock {
-  font-size: 0.62rem;
+  font-size: 0.70rem;
   color: var(--muted2);
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -668,56 +668,6 @@ body {
 }
 
 /* ================================
-   RESPONSIVE
-================================ */
-@media (max-width: 700px) {
-  .layout {
-    padding: 28px 16px 48px;
-    gap: 24px;
-  }
-
-  .topbar {
-    flex-wrap: wrap;
-    padding: 22px 18px;
-    gap: 18px;
-  }
-
-  .topbar-left {
-    width: 100%;
-  }
-
-  .topbar-main {
-    gap: 14px;
-  }
-
-  .name-row { flex-wrap: wrap; }
-
-  .subtitle { white-space: normal; }
-
-  .spotify-block { width: 100%; align-self: stretch; }
-
-  .server-grid { grid-template-columns: 1fr; justify-items: center; }
-  .srv-card { max-width: 280px; }
-
-  .avatar-ring { width: 76px; height: 76px; }
-
-  .exp-list { padding-left: 16px; }
-  .exp-item::before { left: -16px; }
-
-  .two-col {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .exp-list, .skill-list { max-width: 100%; }
-}
-
-@media (max-width: 400px) {
-  .identity h1 { font-size: 1.5rem; }
-  .server-grid { grid-template-columns: 1fr; }
-}
-
-/* ================================
    DISCORD STATUS BADGE
 ================================ */
 .status-badge {
@@ -772,4 +722,54 @@ body {
   font-size: 0.72rem;
   color: var(--muted2);
   letter-spacing: 0.02em;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 700px) {
+  .layout {
+    padding: 28px 16px 48px;
+    gap: 24px;
+  }
+
+  .topbar {
+    flex-wrap: wrap;
+    padding: 22px 18px;
+    gap: 18px;
+  }
+
+  .topbar-left {
+    width: 100%;
+  }
+
+  .topbar-main {
+    gap: 14px;
+  }
+
+  .name-row { flex-wrap: wrap; }
+
+  .subtitle { white-space: normal; }
+
+  .spotify-block { width: 100%; align-self: stretch; }
+
+  .server-grid { grid-template-columns: 1fr; justify-items: center; }
+  .srv-card { max-width: 280px; }
+
+  .avatar-ring { width: 76px; height: 76px; }
+
+  .exp-list { padding-left: 16px; }
+  .exp-item::before { left: -16px; }
+
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .exp-list, .skill-list { max-width: 100%; }
+}
+
+@media (max-width: 400px) {
+  .identity h1 { font-size: 1.5rem; }
+  .server-grid { grid-template-columns: 1fr; }
 }
