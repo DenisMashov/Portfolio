@@ -79,12 +79,6 @@ if (badge && status) {
   badge.className = `status-badge ${displayStatus}`;
 }
 
-document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible" && (!ws || ws.readyState !== WebSocket.OPEN)) {
-    connect();
-  }
-});
-
 function formatTime(ms) {
   const s = Math.floor(ms / 1000);
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
