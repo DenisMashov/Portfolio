@@ -68,7 +68,6 @@ function connect() {
       }
 
       // --- Discord Status ---
-      // --- Discord Status ---
 const status = presence.discord_status;
 const badge = document.getElementById("discord-status");
 const dot = document.getElementById("avatar-dot");
@@ -78,28 +77,6 @@ if (badge && status) {
   const labels = { online: "Online", idle: "Online", dnd: "Online", offline: "Offline" };
   badge.textContent = labels[status] || status;
   badge.className = `status-badge ${displayStatus}`;
-}
-
-if (dot) {
-  dot.className = `avatar-status-dot ${displayStatus}`;
-}
-      const status = presence.discord_status;
-      const badge = document.getElementById("discord-status");
-      if (badge && status) {
-        const labels = {
-          online:  "Online",
-          idle:    "Online",
-          dnd:     "Online",
-          offline: "Offline"
-        };
-        const displayStatus = (status === "offline") ? "offline" : "online";
-        badge.textContent = labels[status] || status;
-        badge.className = `status-badge ${displayStatus}`;
-      }
-    }
-  });
-  ws.addEventListener("error", () => setTimeout(connect, 10000));
-  ws.addEventListener("close", () => setTimeout(connect, 10000));
 }
 
 document.addEventListener("visibilitychange", () => {
