@@ -12,6 +12,26 @@ window.va = window.va || function () {
 };
 
 // ===============================
+// TBILISI CLOCK
+// ===============================
+function updateClock() {
+  const now = new Date();
+  const tbilisi = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Tbilisi" }));
+
+  const hh = String(tbilisi.getHours()).padStart(2, "0");
+  const mm = String(tbilisi.getMinutes()).padStart(2, "0");
+  const yyyy = tbilisi.getFullYear();
+  const mo = String(tbilisi.getMonth() + 1).padStart(2, "0");
+  const dd = String(tbilisi.getDate()).padStart(2, "0");
+
+  const el = document.getElementById("identity-clock");
+  if (el) el.textContent = `${hh}:${mm}  |  ${yyyy}.${mo}.${dd}`;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+
+// ===============================
 // SPOTIFY / LANYARD
 // ===============================
 const userId = "385117340028764165";
@@ -20,11 +40,9 @@ let start = null, end = null, duration = 0;
 
 function connect() {
   ws = new WebSocket("wss://api.lanyard.rest/socket");
-
   ws.addEventListener("open", () => {
     ws.send(JSON.stringify({ op: 2, d: { subscribe_to_id: userId } }));
   });
-
   ws.addEventListener("message", (event) => {
     const data = JSON.parse(event.data);
     if (data.t === "INIT_STATE" || data.t === "PRESENCE_UPDATE") {
@@ -65,7 +83,6 @@ function connect() {
       }
     }
   });
-
   ws.addEventListener("error", () => setTimeout(connect, 10000));
   ws.addEventListener("close", () => setTimeout(connect, 10000));
 }
