@@ -68,6 +68,21 @@ function connect() {
       }
 
       // --- Discord Status ---
+      // --- Discord Status ---
+const status = presence.discord_status;
+const badge = document.getElementById("discord-status");
+const dot = document.getElementById("avatar-dot");
+const displayStatus = (status === "offline") ? "offline" : "online";
+
+if (badge && status) {
+  const labels = { online: "Online", idle: "Online", dnd: "Online", offline: "Offline" };
+  badge.textContent = labels[status] || status;
+  badge.className = `status-badge ${displayStatus}`;
+}
+
+if (dot) {
+  dot.className = `avatar-status-dot ${displayStatus}`;
+}
       const status = presence.discord_status;
       const badge = document.getElementById("discord-status");
       if (badge && status) {
