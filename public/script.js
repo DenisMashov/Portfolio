@@ -72,10 +72,10 @@ function connect() {
       const badge = document.getElementById("discord-status");
       if (badge && status) {
         const labels = {
-          online:  "",
-          idle:    "",
-          dnd:     "",
-          offline: ""
+          online:  " ",
+          idle:    " ",
+          dnd:     " ",
+          offline: " "
         };
         const displayStatus = (status === "offline") ? "offline" : "online";
         badge.textContent = labels[status] || status;
