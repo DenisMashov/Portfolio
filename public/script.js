@@ -25,7 +25,7 @@ function updateClock() {
   const dd = String(tbilisi.getDate()).padStart(2, "0");
 
   const el = document.getElementById("identity-clock");
-  if (el) el.textContent = `${hh}:${mm}  |  ${yyyy}.${mo}.${dd}`;
+  if (el) el.textContent = `${hh}:${mm}  |  ${yyyy}.${mo}.${dd}  |  GMT+4`;
 }
 
 updateClock();
