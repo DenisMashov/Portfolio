@@ -1,12 +1,6 @@
 // ===============================
 //  ANALYTICS
 // ===============================
-(function () {
-  const script = document.createElement("script");
-  script.src = "https://va.vercel-scripts.com/v1/script.js";
-  script.defer = true;
-  document.head.appendChild(script);
-})();
 window.va = window.va || function () {
   (window.vaq = window.vaq || []).push(arguments);
 };
@@ -20,9 +14,6 @@ function updateClock() {
 
   const hh = String(tbilisi.getHours()).padStart(2, "0");
   const mm = String(tbilisi.getMinutes()).padStart(2, "0");
-  const yyyy = tbilisi.getFullYear();
-  const mo = String(tbilisi.getMonth() + 1).padStart(2, "0");
-  const dd = String(tbilisi.getDate()).padStart(2, "0");
 
   const el = document.getElementById("identity-clock");
   if (el) el.textContent = `${hh}:${mm}  |  GMT+4`;
@@ -69,15 +60,8 @@ function connect() {
 
       // --- Discord Status ---
       const status = presence.discord_status;
-      const badge = document.getElementById("discord-status");
       const dot = document.getElementById("avatar-dot");
       const displayStatus = (status === "offline") ? "offline" : "online";
-
-      if (badge && status) {
-        const labels = { online: "Online", idle: "Online", dnd: "Online", offline: "Offline" };
-        badge.textContent = labels[status] || status;
-        badge.className = `status-badge ${displayStatus}`;
-      }
 
       if (dot) {
         dot.className = `avatar-status-dot ${displayStatus}`;
