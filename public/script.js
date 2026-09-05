@@ -63,9 +63,9 @@ function connect() {
       const dot = document.getElementById("avatar-dot");
       const displayStatus = (status === "offline") ? "offline" : "online";
 
-if (dot) {
-  dot.className = `avatar-status-dot ${displayStatus}`;
-  dot.title = displayStatus === "online" ? "Online" : "Offline";
+    if (dot) {
+     dot.className = `avatar-status-dot ${displayStatus}`;
+     dot.title = displayStatus === "online" ? "Online" : "Offline";
       }
     }
   });
