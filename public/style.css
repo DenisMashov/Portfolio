@@ -301,7 +301,7 @@ body {
    IDENTITY CLOCK
 ================================ */
 .identity-clock {
-  font-size: 0.80rem;
+  font-size: 0.75rem;
   color: var(--muted2);
   font-weight: 500;
   letter-spacing: 0.04em;
