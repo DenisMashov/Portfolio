@@ -170,99 +170,190 @@ body {
    SPOTIFY BLOCK
 ================================ */
 .spotify-block {
-  background: linear-gradient(160deg, rgba(212,168,83,0.06), transparent);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 18px;
+  position: relative;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025) 45%,
+      rgba(0, 0, 0, 0.18)
+    ),
+    rgba(18, 18, 27, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+  padding: 14px 15px 13px;
   width: 280px;
   min-height: 0;
   flex-shrink: 0;
   align-self: center;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 0px;
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    inset 0 -1px 0 rgba(0,0,0,0.25),
+    0 8px 25px rgba(0,0,0,0.30);
 }
 
 .spotify-block.hidden {
   display: none;
 }
 
+.spotify-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 14px;
+  right: 14px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.16),
+    transparent
+  );
+  pointer-events: none;
+}
+
 .sp-header {
-  font-size: 0.60rem;
-  font-weight: 400;
+  font-size: 0.57rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #d4a853;
-  margin-bottom: 2px;
+  letter-spacing: 0.15em;
+  color: #777783;
+  margin-bottom: 11px;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 5px;
   font-family: "League Spartan", system-ui, sans-serif;
 }
 
+.sp-header svg {
+  width: 10px;
+  height: 10px;
+  color: #d4a853;
+}
+
 .sp-inner {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 11px;
-  margin-bottom: 10px;
+  gap: 12px;
+  margin-bottom: 0;
 }
 
 #album-art {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-  box-shadow: 0 0 0 2.4px #2a2a3a, 0 0 0 5px #1a1a1a;
+  border: 2px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.65),
+    0 2px 8px rgba(0,0,0,0.65);
+  animation: cd-spin 10s linear infinite;
+}
+
+.sp-inner::before {
+  content: '';
+  position: absolute;
+  left: 20.5px;
+  top: 20.5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #111118;
+  border: 1px solid #444451;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes cd-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sp-text {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 #song-name {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 600;
-  color: var(--white);
+  color: #e4e4eb;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.2;
-  font-family: "League Spartan", system-ui, sans-serif;
 }
 
 #artist-name {
-  font-size: 0.75rem;
-  color: var(--muted);
+  font-size: 0.71rem;
+  font-weight: 400;
+  color: #707080;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.2;
-  font-family: "League Spartan", system-ui, sans-serif;
+  margin-top: 3px;
 }
 
-#progress-bar {
-  height: 100%;
-  background: #d4a853;
-  width: 0%;
-  transition: width 0.2s linear;
-  border-radius: 0;
+.sp-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  margin-top: 7px;
 }
 
 .sp-track {
   flex: 1;
+  min-width: 0;
   height: 3px;
-  background: var(--border-hi);
-  border-radius: 0;
+  background: rgba(255,255,255,0.10);
+  border-radius: 2px;
   overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.65);
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #a77d31, #d4a853);
+  border-radius: 2px;
+  transition: width 0.2s linear;
 }
 
 #time-display {
-  font-size: 0.64rem;
-  color: #d4a853;
+  font-size: 0.59rem;
+  color: #696975;
   white-space: nowrap;
   font-family: "League Spartan", system-ui, sans-serif;
   font-variant-numeric: tabular-nums;
 }
 
+.spotify-block:hover {
+  border-color: rgba(255,255,255,0.16);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    inset 0 -1px 0 rgba(0,0,0,0.25),
+    0 10px 30px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 700px) {
+  .spotify-block {
+    width: 100%;
+  }
+}
 /* ================================
    SOCIALS
 ================================ */
