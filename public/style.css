@@ -175,7 +175,7 @@ body {
   border-radius: var(--radius);
   padding: 18px;
   width: 280px;
-  min-height: 110px;
+  min-height: 0;
   flex-shrink: 0;
   align-self: center;
   box-sizing: border-box;
@@ -185,13 +185,17 @@ body {
   margin-bottom: 0px;
 }
 
+.spotify-block.hidden {
+  display: none;
+}
+
 .sp-header {
   font-size: 0.60rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: #d4a853;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
   gap: 5px;
