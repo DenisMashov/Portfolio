@@ -229,12 +229,6 @@ body {
   font-family: "League Spartan", system-ui, sans-serif;
 }
 
-.sp-header svg {
-  width: 10px;
-  height: 10px;
-  color: #d4a853;
-}
-
 .sp-inner {
   position: relative;
   display: flex;
