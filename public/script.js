@@ -96,3 +96,36 @@ function updateProgress() {
 }
 
 connect();
+
+// ===============================
+// FADE IN
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+  const style = document.createElement("style");
+  style.textContent = `
+    .fade { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade.in { opacity: 1; transform: translateY(0); }
+  `;
+  document.head.appendChild(style);
+
+  const topbar = document.querySelector(".topbar");
+  const sections = document.querySelectorAll(".section");
+
+  if (topbar) {
+    topbar.classList.add("fade");
+    setTimeout(() => topbar.classList.add("in"), 80);
+  }
+
+  sections.forEach((el, i) => {
+    el.classList.add("fade");
+    el.style.transitionDelay = `${i * 100}ms`;
+  });
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.05 });
+
+  sections.forEach(el => obs.observe(el));
+});
