@@ -100,3 +100,20 @@ connect();
 // ===============================
 // FADE IN
 // ===============================
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = [
+    document.querySelector(".topbar"),
+    ...document.querySelectorAll(".section")
+  ].filter(Boolean);
+
+  elements.forEach(el => {
+    el.style.opacity = "0";
+    el.style.transition = "opacity 0.5s ease";
+  });
+
+  elements.forEach((el, i) => {
+    setTimeout(() => {
+      el.style.opacity = "1";
+    }, 100 + i * 120);
+  });
+});
