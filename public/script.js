@@ -8,8 +8,6 @@ window.va = window.va || function () {
 // ===============================
 // BODY FADE
 // ===============================
-document.documentElement.style.opacity = "0";
-
 window.addEventListener("load", () => {
   document.documentElement.style.transition = "opacity 0.4s ease";
   document.documentElement.style.opacity = "1";
