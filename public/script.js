@@ -103,8 +103,8 @@ connect();
 document.addEventListener("DOMContentLoaded", () => {
   const style = document.createElement("style");
   style.textContent = `
-    .fade { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .fade.in { opacity: 1; transform: translateY(0); }
+    .fade { opacity: 0; transition: opacity 0.6s ease; }
+    .fade.in { opacity: 1; }
   `;
   document.head.appendChild(style);
 
