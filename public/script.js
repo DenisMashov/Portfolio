@@ -103,15 +103,22 @@ connect();
 document.addEventListener("DOMContentLoaded", () => {
   const style = document.createElement("style");
   style.textContent = `
-    .fade { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade.in { opacity: 1; transform: translateY(0); }
   `;
   document.head.appendChild(style);
 
-  const els = document.querySelectorAll(".sidebar, .section");
-  els.forEach((el, i) => {
+  const topbar = document.querySelector(".topbar");
+  const sections = document.querySelectorAll(".section");
+
+  if (topbar) {
+    topbar.classList.add("fade");
+    setTimeout(() => topbar.classList.add("in"), 80);
+  }
+
+  sections.forEach((el, i) => {
     el.classList.add("fade");
-    el.style.transitionDelay = `${i * 80}ms`;
+    el.style.transitionDelay = `${i * 100}ms`;
   });
 
   const obs = new IntersectionObserver((entries) => {
@@ -120,5 +127,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.05 });
 
-  els.forEach(el => obs.observe(el));
+  sections.forEach(el => obs.observe(el));
 });
