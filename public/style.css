@@ -170,105 +170,92 @@ body {
    SPOTIFY BLOCK
 ================================ */
 .spotify-block {
-  background: linear-gradient(160deg, rgba(29,185,84,0.06), transparent);
+  background: linear-gradient(160deg, rgba(212,168,83,0.06), transparent);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 18px 18px;
+  padding: 18px;
   width: 280px;
+  min-height: 110px;
   flex-shrink: 0;
-  align-self: flex-end;
+  align-self: center;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: -4px;
+  margin-bottom: 0px;
 }
-
-.spotify-block.hidden { display: none; }
 
 .sp-header {
   font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--green);
-  margin-bottom: 8px;
+  letter-spacing: 0.12em;
+  color: #d4a853;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   gap: 5px;
+  font-family: monospace;
 }
-
-.sp-header i { font-size: 0.8rem; }
 
 .sp-inner {
   display: flex;
   align-items: center;
   gap: 11px;
-  margin-bottom: 9px;
+  margin-bottom: 10px;
 }
 
 #album-art {
-  width: 42px;
-  height: 42px;
-  border-radius: 9px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
-}
-
-.sp-text {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  box-shadow: 0 0 0 3px #2a2a3a, 0 0 0 5px #1a1a1a;
 }
 
 #song-name {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--white);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.2;
+  font-family: monospace;
 }
 
 #artist-name {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.2;
+  font-family: monospace;
 }
 
-.sp-bar-wrap {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+#progress-bar {
+  height: 100%;
+  background: #d4a853;
+  width: 0%;
+  transition: width 0.2s linear;
+  border-radius: 0;
 }
 
 .sp-track {
   flex: 1;
   height: 3px;
   background: var(--border-hi);
-  border-radius: 3px;
+  border-radius: 0;
   overflow: hidden;
-}
-
-#progress-bar {
-  height: 100%;
-  background: var(--green);
-  width: 0%;
-  transition: width 0.2s linear;
-  border-radius: 3px;
 }
 
 #time-display {
   font-size: 0.64rem;
-  color: var(--muted);
+  color: #d4a853;
   white-space: nowrap;
+  font-family: monospace;
   font-variant-numeric: tabular-nums;
 }
 
