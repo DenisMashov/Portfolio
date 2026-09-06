@@ -191,15 +191,15 @@ body {
 
 .sp-header {
   font-size: 0.60rem;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: #d4a853;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   display: flex;
   align-items: center;
   gap: 5px;
-  font-family: monospace;
+  font-family: "League Spartan", system-ui, sans-serif;
 }
 
 .sp-inner {
@@ -215,7 +215,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-  box-shadow: 0 0 0 3px #2a2a3a, 0 0 0 5px #1a1a1a;
+  box-shadow: 0 0 0 2.4px #2a2a3a, 0 0 0 5px #1a1a1a;
 }
 
 #song-name {
@@ -226,7 +226,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.2;
-  font-family: monospace;
+  font-family: "League Spartan", system-ui, sans-serif;
 }
 
 #artist-name {
@@ -236,7 +236,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.2;
-  font-family: monospace;
+  font-family: "League Spartan", system-ui, sans-serif;
 }
 
 #progress-bar {
@@ -259,7 +259,7 @@ body {
   font-size: 0.64rem;
   color: #d4a853;
   white-space: nowrap;
-  font-family: monospace;
+  font-family: "League Spartan", system-ui, sans-serif;
   font-variant-numeric: tabular-nums;
 }
 
