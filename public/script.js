@@ -6,14 +6,6 @@ window.va = window.va || function () {
 };
 
 // ===============================
-// BODY FADE
-// ===============================
-window.addEventListener("load", () => {
-  document.documentElement.style.transition = "opacity 0.4s ease";
-  document.documentElement.style.opacity = "1";
-});
-
-// ===============================
 // TBILISI CLOCK
 // ===============================
 function updateClock() {
