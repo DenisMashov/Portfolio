@@ -221,7 +221,8 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: #777783;
-  margin-bottom: 11px;
+  margin-bottom: 8.80px;
+  margin-left: 4px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -234,20 +235,6 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 0;
-}
-
-#album-art {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-  border: 2px solid rgba(255,255,255,0.12);
-  box-shadow:
-    0 0 0 1px rgba(0,0,0,0.65),
-    0 2px 8px rgba(0,0,0,0.65);
-  animation: cd-spin 10s linear infinite;
 }
 
 .sp-inner::before {
@@ -264,13 +251,22 @@ body {
   z-index: 2;
 }
 
+#album-art {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.65),
+    0 2px 8px rgba(0,0,0,0.65);
+  animation: cd-spin 10s linear infinite;
+}
+
 @keyframes cd-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .sp-text {
@@ -306,25 +302,26 @@ body {
   align-items: center;
   gap: 7px;
   width: 100%;
-  margin-top: 7px;
+  margin-top: 6px;
 }
 
 .sp-track {
   flex: 1;
   min-width: 0;
   height: 3px;
-  background: rgba(255,255,255,0.10);
-  border-radius: 2px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
   overflow: hidden;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.65);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
 }
 
 #progress-bar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #a77d31, #d4a853);
-  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(167,125,49,0.7), rgba(212,168,83,0.85));
+  border-radius: 999px;
   transition: width 0.2s linear;
+  box-shadow: 0 0 6px rgba(212,168,83,0.3);
 }
 
 #time-display {
