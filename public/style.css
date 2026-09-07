@@ -267,8 +267,8 @@ body {
 .sp-inner::before {
   content: '';
   position: absolute;
-  left: 20.5px;
-  top: 20.5px;
+  left: 22.5px;
+  top: 22.5px;
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -279,8 +279,8 @@ body {
 }
 
 #album-art {
-  width: 48px;
-  height: 48px;
+  width: 54px;
+  height: 54px;
   flex-shrink: 0;
   border-radius: 50%;
   object-fit: cover;
@@ -338,7 +338,7 @@ body {
   align-items: center;
   gap: 7px;
   width: 100%;
-  margin-top: 4px;
+  margin-top: 1.4px;
 }
 
 .sp-track {
