@@ -279,27 +279,30 @@ body {
 }
 
 #album-art {
-  width:48px;
-  height:48px;
-  flex-shrink:0;
-  border-radius:50%;
-  object-fit:cover;
-  border:2px solid rgba(255,255,255,.12);
-  box-shadow:0 0 0 1px rgba(0,0,0,.65),0 2px 8px rgba(0,0,0,.65);
-  animation:cd-spin 10s linear infinite;
-  will-change:transform;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,.12);
+  box-shadow: 0 0 0 1px rgba(0,0,0,.65), 0 2px 8px rgba(0,0,0,.65);
+  transform-origin: center center;
+  animation-name: cd-spin !important;
+  animation-duration: 10s !important;
+  animation-timing-function: linear !important;
+  animation-iteration-count: infinite !important;
+  animation-play-state: running !important;
+  will-change: transform;
 }
 
 @keyframes cd-spin {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
 }
-
 
 .sp-content {
   min-width: 0;
