@@ -179,20 +179,30 @@ body {
       rgba(0, 0, 0, 0.18)
     ),
     rgba(18, 18, 27, 0.72);
+
   border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 12px;
+
   padding: 14px 15px 13px;
+
   width: 280px;
   min-height: 0;
   flex-shrink: 0;
   align-self: center;
+
   box-sizing: border-box;
+
   backdrop-filter: blur(14px) saturate(130%);
   -webkit-backdrop-filter: blur(14px) saturate(130%);
+
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.08),
     inset 0 -1px 0 rgba(0,0,0,0.25),
     0 8px 25px rgba(0,0,0,0.30);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .spotify-block.hidden {
@@ -206,145 +216,214 @@ body {
   left: 14px;
   right: 14px;
   height: 1px;
+
   background: linear-gradient(
     90deg,
     transparent,
     rgba(255,255,255,0.16),
     transparent
   );
+
   pointer-events: none;
 }
 
+/* NOW PLAYING */
 .sp-header {
+  margin: 0 0 9px 3px;
+
+  font-family: "League Spartan", system-ui, sans-serif;
   font-size: 0.57rem;
   font-weight: 600;
+
   text-transform: uppercase;
   letter-spacing: 0.15em;
+
   color: #777783;
-  margin-bottom: 8.80px;
-  margin-left: 4px;
+
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 5px;
-  font-family: "League Spartan", system-ui, sans-serif;
 }
 
+/* SONG ROW */
 .sp-inner {
   position: relative;
+
   display: flex;
   align-items: center;
+
   gap: 12px;
 }
 
+/* SMALL CENTER DOT ON THE CD */
 .sp-inner::before {
   content: '';
+
   position: absolute;
+
   left: 20.5px;
   top: 20.5px;
+
   width: 7px;
   height: 7px;
+
   border-radius: 50%;
+
   background: #111118;
   border: 1px solid #444451;
+
   pointer-events: none;
+
   z-index: 2;
 }
 
+/* ALBUM / CD */
 #album-art {
   width: 48px;
   height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
+
   flex-shrink: 0;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
   border: 2px solid rgba(255,255,255,0.12);
+
   box-shadow:
     0 0 0 1px rgba(0,0,0,0.65),
     0 2px 8px rgba(0,0,0,0.65);
+
   animation: cd-spin 10s linear infinite;
 }
 
 @keyframes cd-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.sp-text {
+/* TEXT + PROGRESS */
+.sp-content {
   min-width: 0;
   flex: 1;
+
   display: flex;
   flex-direction: column;
 }
 
+/* SONG TITLE */
 #song-name {
   font-size: 0.84rem;
   font-weight: 600;
+
   color: #e4e4eb;
+
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
   line-height: 1.2;
 }
 
+/* ARTIST */
 #artist-name {
+  margin-top: 3px;
+
   font-size: 0.71rem;
   font-weight: 400;
+
   color: #707080;
+
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
   line-height: 1.2;
-  margin-top: 3px;
 }
 
+/* PROGRESS + TIME */
 .sp-bar-wrap {
   display: flex;
   align-items: center;
+
   gap: 7px;
+
   width: 100%;
-  margin-top: 6px;
+
+  margin-top: 7px;
 }
 
+/* PROGRESS TRACK */
 .sp-track {
   flex: 1;
   min-width: 0;
+
   height: 3px;
+
   background: rgba(255,255,255,0.08);
+
   border-radius: 999px;
+
   overflow: hidden;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
+
+  box-shadow:
+    inset 0 1px 3px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(255,255,255,0.04);
 }
 
+/* PROGRESS */
 #progress-bar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, rgba(167,125,49,0.7), rgba(212,168,83,0.85));
+
+  background: linear-gradient(
+    90deg,
+    rgba(167,125,49,0.7),
+    rgba(212,168,83,0.85)
+  );
+
   border-radius: 999px;
+
   transition: width 0.2s linear;
-  box-shadow: 0 0 6px rgba(212,168,83,0.3);
+
+  box-shadow:
+    0 0 6px rgba(212,168,83,0.3);
 }
 
+/* TIME */
 #time-display {
-  font-size: 0.59rem;
-  color: #696975;
-  white-space: nowrap;
   font-family: "League Spartan", system-ui, sans-serif;
+
+  font-size: 0.59rem;
+
+  color: #696975;
+
+  white-space: nowrap;
+
   font-variant-numeric: tabular-nums;
 }
 
+/* HOVER */
 .spotify-block:hover {
   border-color: rgba(255,255,255,0.16);
+
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.10),
     inset 0 -1px 0 rgba(0,0,0,0.25),
     0 10px 30px rgba(0,0,0,0.35);
 }
 
+/* MOBILE */
 @media (max-width: 700px) {
   .spotify-block {
     width: 100%;
   }
 }
+
 
 /* ================================
    SOCIALS
