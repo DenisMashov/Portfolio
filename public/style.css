@@ -2,26 +2,29 @@
   font-family: "League Spartan";
   src: url("fonts/league-spartan-v15-latin-regular.woff2") format("woff2");
   font-weight: 400;
-  font-display: block;
+  font-display: swap;
 }
+
 @font-face {
   font-family: "League Spartan";
   src: url("fonts/league-spartan-v15-latin-600.woff2") format("woff2");
   font-weight: 600;
-  font-display: block;
+  font-display: swap;
 }
+
 @font-face {
   font-family: "League Spartan";
   src: url("fonts/league-spartan-v15-latin-700.woff2") format("woff2");
   font-weight: 700;
-  font-display: block;
+  font-display: swap;
 }
 
 /* ================================
    RESET
 ================================ */
 *, *::before, *::after {
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -41,7 +44,9 @@
   --radius:    14px;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "League Spartan", system-ui, sans-serif;
@@ -70,12 +75,19 @@ body {
   gap: 32px;
 }
 
+/* ================================
+   TOP BAR
+================================ */
 .topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.025), transparent);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.025),
+    transparent
+  );
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 26px 30px;
@@ -101,15 +113,26 @@ body {
 .avatar-glow {
   position: absolute;
   inset: -14px;
-  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.08),
+    transparent 70%
+  );
   filter: blur(18px);
   z-index: 0;
   animation: pulse-glow 4s ease-in-out infinite;
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 0.9; transform: scale(1.06); }
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.06);
+  }
 }
 
 .avatar-ring {
@@ -174,12 +197,12 @@ body {
   background:
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.075),
-      rgba(255, 255, 255, 0.025) 45%,
-      rgba(0, 0, 0, 0.18)
+      rgba(255,255,255,0.075),
+      rgba(255,255,255,0.025) 45%,
+      rgba(0,0,0,0.18)
     ),
-    rgba(18, 18, 27, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+    rgba(18,18,27,0.72);
+  border: 1px solid rgba(255,255,255,0.10);
   border-radius: 12px;
   padding: 14px 15px 13px;
   width: 280px;
@@ -193,6 +216,7 @@ body {
     inset 0 1px 0 rgba(255,255,255,0.08),
     inset 0 -1px 0 rgba(0,0,0,0.25),
     0 8px 25px rgba(0,0,0,0.30);
+
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
@@ -209,6 +233,7 @@ body {
   left: 14px;
   right: 14px;
   height: 1px;
+
   background: linear-gradient(
     90deg,
     transparent,
@@ -219,7 +244,6 @@ body {
   pointer-events: none;
 }
 
-/* NOW PLAYING */
 .sp-header {
   margin: 0 0 9px 3px;
   font-family: "League Spartan", system-ui, sans-serif;
@@ -228,20 +252,18 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: #777783;
+
   display: flex;
   align-items: center;
 }
 
-/* SONG ROW */
 .sp-inner {
   position: relative;
   display: flex;
   align-items: center;
-
   gap: 12px;
 }
 
-/* SMALL CENTER DOT ON THE CD */
 .sp-inner::before {
   content: '';
   position: absolute;
@@ -256,7 +278,6 @@ body {
   z-index: 2;
 }
 
-/* ALBUM / CD */
 #album-art {
   width: 48px;
   height: 48px;
@@ -267,6 +288,7 @@ body {
   box-shadow:
     0 0 0 1px rgba(0,0,0,0.65),
     0 2px 8px rgba(0,0,0,0.65);
+
   animation: cd-spin 10s linear infinite;
 }
 
@@ -280,7 +302,6 @@ body {
   }
 }
 
-/* TEXT + PROGRESS */
 .sp-content {
   min-width: 0;
   flex: 1;
@@ -288,7 +309,6 @@ body {
   flex-direction: column;
 }
 
-/* SONG TITLE */
 #song-name {
   font-size: 0.84rem;
   font-weight: 600;
@@ -299,7 +319,6 @@ body {
   line-height: 1.2;
 }
 
-/* ARTIST */
 #artist-name {
   margin-top: 3px;
   font-size: 0.71rem;
@@ -312,7 +331,6 @@ body {
   line-height: 1.2;
 }
 
-/* PROGRESS + TIME */
 .sp-bar-wrap {
   display: flex;
   align-items: center;
@@ -321,7 +339,6 @@ body {
   margin-top: 4px;
 }
 
-/* PROGRESS TRACK */
 .sp-track {
   flex: 1;
   min-width: 0;
@@ -334,22 +351,22 @@ body {
     0 0 0 1px rgba(255,255,255,0.04);
 }
 
-/* PROGRESS */
 #progress-bar {
   height: 100%;
   width: 0%;
+
   background: linear-gradient(
     90deg,
     rgba(167,125,49,0.7),
     rgba(212,168,83,0.85)
   );
+
   border-radius: 999px;
   transition: width 0.2s linear;
   box-shadow:
     0 0 6px rgba(212,168,83,0.3);
 }
 
-/* TIME */
 #time-display {
   font-family: "League Spartan", system-ui, sans-serif;
   font-size: 0.59rem;
@@ -358,20 +375,12 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-/* HOVER */
 .spotify-block:hover {
   border-color: rgba(255,255,255,0.16);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.10),
     inset 0 -1px 0 rgba(0,0,0,0.25),
     0 10px 30px rgba(0,0,0,0.35);
-}
-
-/* MOBILE */
-@media (max-width: 700px) {
-  .spotify-block {
-    width: 100%;
-  }
 }
 
 /* ================================
@@ -399,11 +408,17 @@ body {
   font-size: 0.9rem;
   text-decoration: none;
   color: var(--muted);
-  transition: all 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
   flex-shrink: 0;
 }
 
-.soc svg { display: block; }
+.soc svg {
+  display: block;
+}
 
 .soc:hover {
   border-color: var(--border-hi);
@@ -411,12 +426,35 @@ body {
   transform: translateY(-3px);
 }
 
-.soc.discord:hover   { color: #7289da; border-color: #7289da44; }
-.soc.steam:hover     { color: #66c0f4; border-color: #66c0f444; }
-.soc.instagram:hover { color: #e4405f; border-color: #e4405f44; }
-.soc.youtube:hover   { color: #ff0000; border-color: #ff000044; }
-.soc.spotify:hover   { color: var(--green); border-color: #1db95444; }
-.soc.letterboxd:hover{ color: #ff8000; border-color: #ff800044; }
+.soc.discord:hover {
+  color: #7289da;
+  border-color: #7289da44;
+}
+
+.soc.steam:hover {
+  color: #66c0f4;
+  border-color: #66c0f444;
+}
+
+.soc.instagram:hover {
+  color: #e4405f;
+  border-color: #e4405f44;
+}
+
+.soc.youtube:hover {
+  color: #ff0000;
+  border-color: #ff000044;
+}
+
+.soc.spotify:hover {
+  color: var(--green);
+  border-color: #1db95444;
+}
+
+.soc.letterboxd:hover {
+  color: #ff8000;
+  border-color: #ff800044;
+}
 
 /* ================================
    IDENTITY CLOCK
@@ -460,21 +498,6 @@ body {
   line-height: 1;
 }
 
-.count-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 20px;
-  height: 20px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: var(--blue);
-  background: var(--blue-dim);
-  border-radius: 999px;
-  padding: 0 7px;
-  line-height: 1;
-}
-
 /* ================================
    SERVER CARDS
 ================================ */
@@ -491,7 +514,10 @@ body {
   overflow: hidden;
   text-decoration: none;
   display: block;
-  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  transition:
+    border-color 0.25s,
+    transform 0.25s,
+    box-shadow 0.25s;
   position: relative;
   width: 100%;
   max-width: 240px;
@@ -502,6 +528,7 @@ body {
   transform: translateY(-4px);
 }
 
+/* External-link indicator */
 .srv-card::after {
   content: '↗';
   position: absolute;
@@ -519,7 +546,11 @@ body {
   color: var(--white);
   opacity: 0;
   transform: translateX(4px);
-  transition: opacity 0.25s, transform 0.25s;
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
+
+  z-index: 4;
 }
 
 .srv-card:hover::after {
@@ -527,11 +558,82 @@ body {
   transform: translateX(0);
 }
 
+/* ================================
+   SERVER BANNERS
+   Original <img> elements remain
+   in HTML for future use.
+================================ */
 .srv-banner {
   width: 100%;
   height: 75px;
   object-fit: cover;
   display: block;
+  filter:
+    brightness(0.32)
+    saturate(0.35)
+    contrast(1.05);
+}
+
+/* Gradient layer above banner image */
+.srv-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 75px;
+
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 18% 25%,
+      rgba(96,165,250,0.55),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(37,99,235,0.42),
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(8,14,27,0.92) 0%,
+      rgba(23,37,84,0.72) 50%,
+      rgba(8,10,16,0.92) 100%
+    );
+}
+
+/* G-Online Services — slightly
+   more blue/purple than GC */
+.srv-card:nth-child(2)::before {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(139,92,246,0.52),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 15% 85%,
+      rgba(59,130,246,0.48),
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(10,13,27,0.94) 0%,
+      rgba(30,27,75,0.78) 50%,
+      rgba(8,10,16,0.94) 100%
+    );
+}
+
+/* Banner subtle highlight */
+.srv-card .srv-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
 .srv-logo {
@@ -542,7 +644,7 @@ body {
   display: block;
   margin: -20px auto 0;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .srv-body {
@@ -563,18 +665,13 @@ body {
 .srv-role {
   display: inline-flex;
   gap: 5px;
+
   font-size: 0.70rem;
   color: var(--muted);
   background: var(--border);
   padding: 4px 9px;
   border-radius: 999px;
   margin-bottom: 8px;
-}
-
-.srv-role i {
-  font-size: 0.58rem;
-  display: inline-block;
-  transform: translateY(-0.5px);
 }
 
 .srv-role.founder {
@@ -589,7 +686,7 @@ body {
 }
 
 /* ================================
-   EXPERIENCE + SKILLS (side by side)
+   EXPERIENCE + SKILLS
 ================================ */
 .two-col {
   display: grid;
@@ -598,7 +695,8 @@ body {
   align-items: start;
 }
 
-.col-exp, .col-skills {
+.col-exp,
+.col-skills {
   min-width: 0;
 }
 
@@ -637,9 +735,12 @@ body {
   position: absolute;
   left: -18px;
   top: 18px;
+
   width: 7px;
   height: 7px;
+
   border-radius: 50%;
+
   background: var(--blue);
   box-shadow: 0 0 0 3px var(--bg);
 }
@@ -652,12 +753,21 @@ body {
   display: none;
 }
 
-.exp-item:last-child { border-bottom: none; }
+.exp-item:last-child {
+  border-bottom: none;
+}
 
-.exp-item:hover { padding-left: 6px; }
+.exp-item:hover {
+  padding-left: 6px;
+}
 
-.exp-item.archived .exp-name { color: var(--muted); }
-.exp-item.archived:hover .exp-name { color: var(--text); }
+.exp-item.archived .exp-name {
+  color: var(--muted);
+}
+
+.exp-item.archived:hover .exp-name {
+  color: var(--text);
+}
 
 .exp-left {
   display: flex;
@@ -685,9 +795,14 @@ body {
   transition: color 0.2s;
 }
 
-.exp-name:hover { color: var(--blue); }
+.exp-name:hover {
+  color: var(--blue);
+}
 
-.exp-item.more .exp-name { color: var(--blue); font-size: 0.85rem; }
+.exp-item.more .exp-name {
+  color: var(--blue);
+  font-size: 0.85rem;
+}
 
 /* ================================
    SKILLS LIST
@@ -706,7 +821,9 @@ body {
   padding: 9px 0;
 }
 
-.skill-item:last-child { border-bottom: none; }
+.skill-item:last-child {
+  border-bottom: none;
+}
 
 .skill-left {
   display: flex;
@@ -745,8 +862,16 @@ body {
 
 .skill-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--blue), #60a5fa);
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--blue),
+      #60a5fa
+    );
+
   border-radius: 999px;
+
   transition: width 0.6s ease;
 }
 
@@ -777,8 +902,13 @@ body {
 }
 
 @keyframes discord-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
 }
 
 /* ================================
@@ -793,6 +923,23 @@ body {
   font-size: 0.72rem;
   color: var(--muted2);
   letter-spacing: 0.02em;
+}
+
+/* ================================
+   REDUCED MOTION
+================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* ================================
@@ -818,29 +965,58 @@ body {
     gap: 14px;
   }
 
-  .name-row { flex-wrap: wrap; }
+  .name-row {
+    flex-wrap: wrap;
+  }
 
-  .subtitle { white-space: normal; }
+  .subtitle {
+    white-space: normal;
+  }
 
-  .spotify-block { width: 100%; align-self: stretch; }
+  .spotify-block {
+    width: 100%;
+    align-self: stretch;
+  }
 
-  .server-grid { grid-template-columns: 1fr; justify-items: center; }
-  .srv-card { max-width: 280px; }
+  .server-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 
-  .avatar-ring { width: 76px; height: 76px; }
+  .srv-card {
+    max-width: 280px;
+  }
 
-  .exp-list { padding-left: 16px; }
-  .exp-item::before { left: -16px; }
+  .avatar-ring {
+    width: 76px;
+    height: 76px;
+  }
+
+  .exp-list {
+    padding-left: 16px;
+  }
+
+  .exp-item::before {
+    left: -16px;
+  }
 
   .two-col {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  .exp-list, .skill-list { max-width: 100%; }
+  .exp-list,
+  .skill-list {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 400px) {
-  .identity h1 { font-size: 1.5rem; }
-  .server-grid { grid-template-columns: 1fr; }
+  .identity h1 {
+    font-size: 1.5rem;
+  }
+
+  .server-grid {
+    grid-template-columns: 1fr;
+  }
 }
