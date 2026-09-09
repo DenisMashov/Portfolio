@@ -965,7 +965,7 @@ body {
   }
 
   .identity {
-    margin-top: 8px;
+    margin-top: 10px;
     min-width: 0;
     flex: 1;
   }
