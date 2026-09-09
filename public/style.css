@@ -1095,3 +1095,24 @@ body {
     line-height: 1.2;
   }
 }
+
+/* ================================
+   SOCIAL ICONS — SMALL PHONES
+================================ */
+@media (max-width: 360px) {
+  .socials {
+    width: 100%;
+    max-width: 100%;
+    gap: 5px;
+    margin-left: 0;
+    margin-top: 0;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .soc {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+  }
+}
