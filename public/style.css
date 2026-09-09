@@ -953,7 +953,26 @@ body {
   }
 
   .topbar-main {
+    width: 100%;
+    align-items: center;
     gap: 14px;
+  }
+
+  .avatar-block {
+    flex-shrink: 0;
+    width: 76px;
+    height: 76px;
+  }
+
+  .avatar-ring {
+    width: 76px;
+    height: 76px;
+  }
+
+  .identity {
+    margin-top: 0;
+    min-width: 0;
+    flex: 1;
   }
 
   .name-row {
@@ -962,6 +981,15 @@ body {
 
   .subtitle {
     white-space: normal;
+  }
+
+  /* Status dot avatarın dışına taşmaz */
+  .avatar-status-dot {
+    width: 13px;
+    height: 13px;
+    right: 1px;
+    bottom: 1px;
+    border-width: 2px;
   }
 
   .spotify-block {
@@ -976,11 +1004,6 @@ body {
 
   .srv-card {
     max-width: 280px;
-  }
-
-  .avatar-ring {
-    width: 76px;
-    height: 76px;
   }
 
   .exp-list {
