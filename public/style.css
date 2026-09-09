@@ -1065,15 +1065,8 @@ body {
 
 @media (max-width: 700px) {
   .identity-clock {
-    margin-top: 4px;
+    margin-top: 6px;
+    transform: none;
     line-height: 1.2;
-    transform: translateY(-1px);
-  }
-}
-
-@media (max-width: 400px) {
-  .identity-clock {
-    margin-top: 3px;
-    transform: translateY(-2px);
   }
 }
