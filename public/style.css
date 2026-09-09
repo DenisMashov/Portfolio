@@ -949,14 +949,12 @@ body {
 
   .topbar-main {
     width: 100%;
-    display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 14px;
   }
 
   .avatar-block {
-    position: relative;
-    flex: 0 0 76px;
+    flex-shrink: 0;
     width: 76px;
     height: 76px;
   }
@@ -967,10 +965,10 @@ body {
   }
 
   .identity {
+    margin-top: 0;
     min-width: 0;
     flex: 1;
-    margin-top: 0;
-    padding-top: 18px;
+    transform: translateY(10px);
   }
 
   .name-row {
@@ -981,7 +979,6 @@ body {
     white-space: normal;
   }
 
-  /* Discord status */
   .avatar-status-dot {
     width: 13px;
     height: 13px;
@@ -1025,19 +1022,34 @@ body {
 
 @media (max-width: 374px) {
   .identity {
-    padding-top: 15px;
+    transform: translateY(8px);
+  }
+
+  .avatar-status-dot {
+    right: 7px;
+    bottom: 3px;
   }
 }
 
 @media (min-width: 375px) and (max-width: 430px) {
   .identity {
-    padding-top: 18px;
+    transform: translateY(10px);
+  }
+
+  .avatar-status-dot {
+    right: 7px;
+    bottom: 3px;
   }
 }
 
 @media (min-width: 431px) and (max-width: 700px) {
   .identity {
-    padding-top: 17px;
+    transform: translateY(9px);
+  }
+
+  .avatar-status-dot {
+    right: 6px;
+    bottom: 3px;
   }
 }
 
