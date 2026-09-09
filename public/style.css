@@ -523,7 +523,6 @@ body {
   transform: translateY(-4px);
 }
 
-/* External-link indicator */
 .srv-card::after {
   content: '↗';
   position: absolute;
@@ -620,7 +619,6 @@ body {
     );
 }
 
-/* Banner subtle highlight */
 .srv-card .srv-banner::after {
   content: '';
   position: absolute;
@@ -726,12 +724,9 @@ body {
   position: absolute;
   left: -18px;
   top: 18px;
-
   width: 7px;
   height: 7px;
-
   border-radius: 50%;
-
   background: var(--blue);
   box-shadow: 0 0 0 3px var(--bg);
 }
@@ -970,7 +965,7 @@ body {
   }
 
   .identity {
-    margin-top: 0;
+    margin-top: 6px;
     min-width: 0;
     flex: 1;
   }
@@ -983,12 +978,11 @@ body {
     white-space: normal;
   }
 
-  /* Status dot avatarın dışına taşmaz */
   .avatar-status-dot {
     width: 13px;
     height: 13px;
-    right: 1px;
-    bottom: 1px;
+    right: 5px;
+    bottom: 3px;
     border-width: 2px;
   }
 
