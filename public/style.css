@@ -965,9 +965,10 @@ body {
   }
 
   .identity {
-    margin-top: 10px;
+    margin-top: 0;
     min-width: 0;
     flex: 1;
+    transform: translateY(10px);
   }
 
   .name-row {
@@ -1016,6 +1017,39 @@ body {
   .exp-list,
   .skill-list {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 374px) {
+  .identity {
+    transform: translateY(8px);
+  }
+
+  .avatar-status-dot {
+    right: 7px;
+    bottom: 3px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 430px) {
+  .identity {
+    transform: translateY(10px);
+  }
+
+  .avatar-status-dot {
+    right: 7px;
+    bottom: 3px;
+  }
+}
+
+@media (min-width: 431px) and (max-width: 700px) {
+  .identity {
+    transform: translateY(9px);
+  }
+
+  .avatar-status-dot {
+    right: 6px;
+    bottom: 3px;
   }
 }
 
