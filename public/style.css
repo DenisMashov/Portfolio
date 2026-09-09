@@ -1065,7 +1065,7 @@ body {
 
 @media (max-width: 700px) {
   .identity-clock {
-    margin-top: 6px;
+    margin-top: 6.75px;
     transform: none;
     line-height: 1.2;
   }
