@@ -965,7 +965,7 @@ body {
   }
 
   .identity {
-    margin-top: 6px;
+    margin-top: 8px;
     min-width: 0;
     flex: 1;
   }
@@ -981,7 +981,7 @@ body {
   .avatar-status-dot {
     width: 13px;
     height: 13px;
-    right: 5px;
+    right: 7px;
     bottom: 3px;
     border-width: 2px;
   }
