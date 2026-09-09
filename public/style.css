@@ -992,12 +992,15 @@ body {
     align-self: stretch;
   }
 
+  /* Server cards — mobile */
   .server-grid {
+    width: 100%;
     grid-template-columns: 1fr;
     justify-items: center;
   }
 
   .srv-card {
+    width: min(100%, 280px);
     max-width: 280px;
   }
 
@@ -1020,6 +1023,9 @@ body {
   }
 }
 
+/* ================================
+   SMALL PHONES
+================================ */
 @media (max-width: 374px) {
   .identity {
     transform: translateY(8px);
@@ -1031,6 +1037,9 @@ body {
   }
 }
 
+/* ================================
+   STANDARD PHONES
+================================ */
 @media (min-width: 375px) and (max-width: 430px) {
   .identity {
     transform: translateY(10px);
@@ -1042,6 +1051,9 @@ body {
   }
 }
 
+/* ================================
+   LARGE PHONES / SMALL TABLETS
+================================ */
 @media (min-width: 431px) and (max-width: 700px) {
   .identity {
     transform: translateY(9px);
@@ -1053,16 +1065,29 @@ body {
   }
 }
 
+/* ================================
+   VERY SMALL SCREENS
+================================ */
 @media (max-width: 400px) {
   .identity h1 {
     font-size: 1.5rem;
   }
 
   .server-grid {
+    width: 100%;
     grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .srv-card {
+    width: min(100%, 280px);
+    max-width: 280px;
   }
 }
 
+/* ================================
+   MOBILE CLOCK
+================================ */
 @media (max-width: 700px) {
   .identity-clock {
     margin-top: 4.75px;
