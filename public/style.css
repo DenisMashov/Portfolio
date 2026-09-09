@@ -200,7 +200,12 @@ body {
   align-self: center;
   box-sizing: border-box;
   background:
-    linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.025) 45%, rgba(0,0,0,.18)),
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.075),
+      rgba(255,255,255,.025) 45%,
+      rgba(0,0,0,.18)
+    ),
     rgba(18,18,27,.72);
   border: 1px solid rgba(255,255,255,.10);
   border-radius: 12px;
@@ -210,7 +215,9 @@ body {
     inset 0 1px 0 rgba(255,255,255,.08),
     inset 0 -1px 0 rgba(0,0,0,.25),
     0 8px 25px rgba(0,0,0,.30);
-  transition: border-color .2s ease, box-shadow .2s ease;
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease;
 }
 
 .spotify-block.hidden {
@@ -224,7 +231,13 @@ body {
   left: 14px;
   right: 14px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.16), transparent);
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.16),
+      transparent
+    );
   pointer-events: none;
 }
 
@@ -333,7 +346,12 @@ body {
 #progress-bar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, rgba(167,125,49,.7), rgba(212,168,83,.85));
+  background:
+    linear-gradient(
+      90deg,
+      rgba(167,125,49,.7),
+      rgba(212,168,83,.85)
+    );
   border-radius: 999px;
   transition: width .2s linear;
 }
@@ -526,7 +544,6 @@ body {
   transition:
     opacity 0.25s,
     transform 0.25s;
-
   z-index: 4;
 }
 
@@ -558,9 +575,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-
   height: 75px;
-
   z-index: 1;
   pointer-events: none;
 
@@ -642,7 +657,6 @@ body {
 .srv-role {
   display: inline-flex;
   gap: 5px;
-
   font-size: 0.70rem;
   color: var(--muted);
   background: var(--border);
