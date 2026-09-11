@@ -823,7 +823,7 @@ body {
   color: var(--text);
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 6px;
 }
 
 .skill-name svg {
