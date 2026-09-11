@@ -224,6 +224,23 @@ body {
   display: none;
 }
 
+.spotify-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 14px;
+  right: 14px;
+  height: 1px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.16),
+      transparent
+    );
+  pointer-events: none;
+}
+
 .sp-header {
   margin: 0 0 8px 3px;
   font-size: .57rem;
@@ -269,14 +286,6 @@ body {
   transform-origin: center center;
   animation: spotify-disc-spin 8s linear infinite !important;
   will-change: transform;
-}
-
-#album-art:not([src]), #album-art[src=""] {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(255,255,255,0.08);
-  box-shadow:
-    0 0 0 1px rgba(0,0,0,0.3),
-    inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
 @keyframes spotify-disc-spin {
