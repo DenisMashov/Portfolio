@@ -28,6 +28,7 @@ setInterval(updateClock, 1000);
 const userId = "385117340028764165";
 let ws = null;
 let start = null, end = null, duration = 0;
+let progressRunning = false;
 
 function connect() {
   ws = new WebSocket("wss://api.lanyard.rest/socket");
@@ -56,8 +57,10 @@ function connect() {
         start = s.timestamps.start;
         end = s.timestamps.end;
         duration = end - start;
+        progressRunning = true;
         updateProgress();
       } else {
+        progressRunning = false;
         if (card) card.classList.remove("hidden");
         if (art) { art.src = ""; art.style.animationPlayState = "paused"; }
         if (song) song.textContent = "Not playing";
@@ -93,6 +96,7 @@ function formatTime(ms) {
 }
 
 function updateProgress() {
+  if (!progressRunning) return;
   if (!start || !end || !duration) return;
   const elapsed = Date.now() - start;
   const pct = Math.min((elapsed / duration) * 100, 100);
@@ -101,6 +105,7 @@ function updateProgress() {
   if (bar) bar.style.width = pct + "%";
   if (time) time.textContent = `${formatTime(elapsed)} / ${formatTime(duration)}`;
   if (pct < 100) requestAnimationFrame(updateProgress);
+  else progressRunning = false;
 }
 
 connect();
