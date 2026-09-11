@@ -41,13 +41,16 @@ function connect() {
 
       // --- Spotify ---
       const card = document.getElementById("spotify-card");
+      const art = document.getElementById("album-art");
+      const song = document.getElementById("song-name");
+      const artist = document.getElementById("artist-name");
+      const bar = document.getElementById("progress-bar");
+      const time = document.getElementById("time-display");
+
       if (presence.spotify && presence.spotify.timestamps) {
         const s = presence.spotify;
         if (card) card.classList.remove("hidden");
-        const art = document.getElementById("album-art");
-        const song = document.getElementById("song-name");
-        const artist = document.getElementById("artist-name");
-        if (art) art.src = s.album_art_url;
+        if (art) { art.src = s.album_art_url; art.style.animationPlayState = "running"; }
         if (song) song.textContent = s.song;
         if (artist) artist.textContent = s.artist;
         start = s.timestamps.start;
@@ -55,7 +58,12 @@ function connect() {
         duration = end - start;
         updateProgress();
       } else {
-        if (card) card.classList.add("hidden");
+        if (card) card.classList.remove("hidden");
+        if (art) { art.src = ""; art.style.animationPlayState = "paused"; }
+        if (song) song.textContent = "Not playing";
+        if (artist) artist.textContent = "—";
+        if (bar) bar.style.width = "0%";
+        if (time) time.textContent = "";
       }
 
       // --- Discord Status ---
