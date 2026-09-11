@@ -839,9 +839,9 @@ body {
 }
 
 .skill-level {
-  font-size: 0.72rem;
-  color: var(--muted2);
-  margin-top: 2px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--muted);
 }
 
 /* ================================
