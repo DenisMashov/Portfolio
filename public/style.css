@@ -224,23 +224,6 @@ body {
   display: none;
 }
 
-.spotify-block::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 14px;
-  right: 14px;
-  height: 1px;
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,.16),
-      transparent
-    );
-  pointer-events: none;
-}
-
 .sp-header {
   margin: 0 0 8px 3px;
   font-size: .57rem;
