@@ -790,6 +790,55 @@ body {
   font-size: 0.85rem;
 }
 
+.exp-details {
+  width: 100%;
+}
+
+.exp-summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  list-style: none;
+  outline: none;
+}
+
+.exp-summary::-webkit-details-marker {
+  display: none;
+}
+
+.exp-summary .exp-name {
+  color: var(--text);
+}
+
+.exp-summary:hover .exp-name {
+  color: var(--blue);
+}
+
+.exp-arrow {
+  color: var(--muted);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.exp-details[open] .exp-arrow {
+  transform: rotate(180deg);
+}
+
+.exp-children {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  padding-left: 10px;
+  border-left: 1px solid var(--border);
+}
+
+.exp-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
 /* ================================
    SKILLS LIST
 ================================ */
